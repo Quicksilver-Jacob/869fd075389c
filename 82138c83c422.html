@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>身心健康原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:17px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:16px 20px 80px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:26px; margin:18px 0 4px; }
+.sec-title { font-size:21px; color:var(--c1); border-left:6px solid var(--c1); padding-left:10px; margin:34px 0 10px; }
+.sub { font-size:17px; color:var(--dark); margin:22px 0 8px; }
+.sub .tag { font-size:12px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:10px 14px; margin:10px 0; line-height:1.7; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:12px 0 4px; line-height:1.6; }
+p.en { margin:4px 0 16px; line-height:2.0; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:10px 0; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th { background:var(--dark); color:#fff; padding:8px 10px; text-align:left; font-weight:700; }
+td { padding:8px 10px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:10px 12px; margin:12px 0; line-height:1.9; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:2px 9px; margin:3px 6px 0 0; font-size:15px; }
+
+input.ans { font:inherit; font-size:16px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+            padding:3px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:16px; line-height:1.6; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+               padding:6px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:10px 12px;
+                color:var(--dark); line-height:1.7; font-size:15px; margin:6px 0 16px; }
+.translate { margin:4px 0 16px; }
+.translate textarea.ans { width:100%; min-height:84px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:14px 18px;
+            margin:10px 0; font-style:italic; font-size:16px; line-height:1.6; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:26px; }
+  textarea.ans { min-height:30px; }
+  .note, .wordbank, .exam-box { break-inside:avoid; }
+  table, tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:14mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="toolbar">
+<span class="tt">身心健康原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button>
+<button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button>
+<button class="btn no-print" id="btn-notes" type="button">📝 笔记</button>
+</div>
+<h1>身心健康原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇 · 饮食与营养 · 名词短语（S1）</h2>
+<div class="note">本节为中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。本组 7 词聚焦"吃"——从习惯到过量摄入，构成链条第一步 ① 饮食。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>饮食习惯</td><td><input class="ans" data-uid="1" style="width:17ch"></td></tr><tr><td>2</td><td>均衡饮食</td><td><input class="ans" data-uid="2" style="width:18ch"></td></tr><tr><td>3</td><td>有益健康的饮食</td><td><input class="ans" data-uid="3" style="width:19ch"></td></tr><tr><td>4</td><td>快餐食品</td><td><input class="ans" data-uid="4" style="width:18ch"></td></tr><tr><td>5</td><td>油腻食物</td><td><input class="ans" data-uid="5" style="width:14ch"></td></tr><tr><td>6</td><td>令人发胖的食物</td><td><input class="ans" data-uid="6" style="width:17ch"></td></tr><tr><td>7</td><td>过量摄入</td><td><input class="ans" data-uid="7" style="width:27ch"></td></tr></table></div>
+<h2 class="sec-title">二、词汇 · 疾病与身体后果 · 名词短语（S2）</h2>
+<div class="note">本组 8 词由饮食转入后果：从脂肪堆积、肥胖到各类疾病，构成"饮食—疾病"链条，对应 ② 疾病。可与 S1 的进食习惯对照理解。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>脂肪堆积</td><td><input class="ans" data-uid="8" style="width:19ch"></td></tr><tr><td>2</td><td>超重 / 肥胖</td><td><input class="ans" data-uid="9" style="width:21ch"></td></tr><tr><td>3</td><td>高胆固醇</td><td><input class="ans" data-uid="10" style="width:19ch"></td></tr><tr><td>4</td><td>高血压</td><td><input class="ans" data-uid="11" style="width:15ch"></td></tr><tr><td>5</td><td>慢性疾病</td><td><input class="ans" data-uid="12" style="width:19ch"></td></tr><tr><td>6</td><td>患心脏病</td><td><input class="ans" data-uid="13" style="width:25ch"></td></tr><tr><td>7</td><td>营养不良</td><td><input class="ans" data-uid="14" style="width:15ch"></td></tr><tr><td>8</td><td>进食障碍</td><td><input class="ans" data-uid="15" style="width:19ch"></td></tr></table></div>
+<h2 class="sec-title">三、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（饮食）与 S2（疾病）两组表达，体现"吃→病"因果逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：以频繁摄入快餐、油腻食物和发胖食物为特征的不良饮食习惯，会通过过量摄入，不可避免地导致脂肪在器官和血管周围堆积。</p>
+<p class="en">Poor <input class="ans" data-uid="16" style="width:17ch"> characterised by frequent consumption of <input class="ans" data-uid="17" style="width:18ch"> and <input class="ans" data-uid="18" style="width:14ch"> will, through <input class="ans" data-uid="19" style="width:22ch">, inevitably lead to <input class="ans" data-uid="20" style="width:19ch"> around the organs and blood vessels.</p>
+<p class="zh"><strong>2.</strong> 中文：富含发胖食物和油腻食物的饮食直接导致超重/肥胖，进而升高胆固醇和血压，最终发展为慢性疾病。</p>
+<p class="en">A diet high in <input class="ans" data-uid="21" style="width:17ch"> and <input class="ans" data-uid="22" style="width:14ch"> directly contributes to <input class="ans" data-uid="23" style="width:23ch">, which in turn raises <input class="ans" data-uid="24" style="width:19ch"> and <input class="ans" data-uid="25" style="width:15ch">, eventually developing into <input class="ans" data-uid="26" style="width:19ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：相比之下，保持包含均衡饮食、最好是健康饮食的饮食习惯，可以显著降低患慢性病的风险。</p>
+<p class="en">In contrast, maintaining <input class="ans" data-uid="27" style="width:17ch"> that include a <input class="ans" data-uid="28" style="width:16ch"> and preferably a <input class="ans" data-uid="29" style="width:17ch"> can significantly reduce the risk of developing <input class="ans" data-uid="30" style="width:19ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：摄入过量快餐食品的人不仅面临更高的肥胖风险，更有可能因长期营养不良造成的损害而患上心脏病。</p>
+<p class="en">Individuals who consume excessive amounts of <input class="ans" data-uid="31" style="width:18ch"> are not only at higher risk of being <input class="ans" data-uid="32" style="width:21ch"> but also more likely to <input class="ans" data-uid="33" style="width:25ch"> due to the long-term damage caused by poor nutrition.</p>
+<p class="zh"><strong>5.</strong> 中文：脂肪堆积源于过量摄入，而营养不良则源于食物摄入不足——两者的严重情况都可能发展为厌食症或暴食症等进食障碍。<span class="hint">（口译：口头完成，不写英文）</span></p>
+<h2 class="sec-title">四、词汇 · 生活方式与压力 · 名词短语（S3）</h2>
+<div class="note">本组 7 词聚焦"坐出来+压出来"的生活方式问题——从久坐、眼疲劳到压力与抑郁，构成"疾病+生活方式"叠加链条，对应 ③ 生活方式。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>久坐的生活方式</td><td><input class="ans" data-uid="34" style="width:24ch"></td></tr><tr><td>2</td><td>眼疲劳 / 近视</td><td><input class="ans" data-uid="35" style="width:22ch"></td></tr><tr><td>3</td><td>良好 / 不良姿势</td><td><input class="ans" data-uid="36" style="width:21ch"></td></tr><tr><td>4</td><td>失眠</td><td><input class="ans" data-uid="37" style="width:11ch"></td></tr><tr><td>5</td><td>心理压力</td><td><input class="ans" data-uid="38" style="width:25ch"></td></tr><tr><td>6</td><td>生活在巨大压力下</td><td><input class="ans" data-uid="39" style="width:29ch"></td></tr><tr><td>7</td><td>患抑郁症</td><td><input class="ans" data-uid="40" style="width:25ch"></td></tr></table></div>
+<h2 class="sec-title">五、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S2（疾病）与 S3（生活方式）两组表达，体现两种病因同时作用的叠加逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：由不良饮食和脂肪堆积引起的超重/肥胖，又因眼疲劳和不良姿势等久坐坏习惯而进一步恶化，给身体带来双重负担。</p>
+<p class="en"><input class="ans" data-uid="41" style="width:23ch"> caused by poor diet and <input class="ans" data-uid="42" style="width:19ch"> is further worsened by poor habits such as <input class="ans" data-uid="43" style="width:22ch"> and <input class="ans" data-uid="44" style="width:14ch">, creating a double burden on the body.</p>
+<p class="zh"><strong>2.</strong> 中文：因不良饮食而患有高胆固醇和高血压的人，更有可能因久坐的生活方式而经历眼疲劳，这进而导致失眠。</p>
+<p class="en">Individuals who suffer from <input class="ans" data-uid="45" style="width:19ch"> and <input class="ans" data-uid="46" style="width:15ch"> due to poor diet are also more likely to experience <input class="ans" data-uid="47" style="width:22ch"> from <input class="ans" data-uid="48" style="width:24ch">, which in turn leads to <input class="ans" data-uid="49" style="width:11ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：随着工作和生活压力积累形成心理压力，人们可能开始生活在巨大压力下，再加上久坐的生活方式，他们有患抑郁症的严重风险。</p>
+<p class="en">As <input class="ans" data-uid="50" style="width:25ch"> builds up from work and life pressures, people may begin to <input class="ans" data-uid="51" style="width:29ch">, and combined with <input class="ans" data-uid="52" style="width:24ch">, they are at serious risk of <input class="ans" data-uid="53" style="width:28ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：来自不健康饮食的慢性疾病和来自高压生活方式的巨大心理压力的结合，可能导致失眠，最终使一些人患上抑郁症。</p>
+<p class="en">The combination of <input class="ans" data-uid="54" style="width:19ch"> from an unhealthy diet and <input class="ans" data-uid="55" style="width:25ch"> from a high-stress lifestyle can lead to <input class="ans" data-uid="56" style="width:11ch">, which ultimately may cause some individuals to <input class="ans" data-uid="57" style="width:25ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：现代生活制造了一个恶性循环：患有高胆固醇和高血压的人采取久坐不动的生活方式，这又导致眼疲劳和不良姿势，最终使他们陷入抑郁。</p>
+<p class="en">Modern life creates a vicious cycle: people with <input class="ans" data-uid="58" style="width:19ch"> and <input class="ans" data-uid="59" style="width:15ch"> adopt <input class="ans" data-uid="60" style="width:24ch">, which causes <input class="ans" data-uid="61" style="width:22ch"> and <input class="ans" data-uid="62" style="width:14ch">, eventually making them <input class="ans" data-uid="63" style="width:25ch">.</p>
+<h2 class="sec-title">六、词汇 · 健康行为与积极防护 · 动词短语（S4）</h2>
+<div class="note">本组 9 个动词短语代表个人与社会的应对动作，与 S3 中的各项问题逐一对应，构成"问题—方案"关系，对应 ④ 行为。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>注重健康</td><td><input class="ans" data-uid="64" style="width:22ch"></td></tr><tr><td>2</td><td>经常锻炼</td><td><input class="ans" data-uid="65" style="width:19ch"></td></tr><tr><td>3</td><td>增强免疫系统</td><td><input class="ans" data-uid="66" style="width:26ch"></td></tr><tr><td>4</td><td>降低……的风险</td><td><input class="ans" data-uid="67" style="width:21ch"></td></tr><tr><td>5</td><td>远离发胖食物</td><td><input class="ans" data-uid="68" style="width:23ch"></td></tr><tr><td>6</td><td>缓解精神压力</td><td><input class="ans" data-uid="69" style="width:33ch"></td></tr><tr><td>7</td><td>对……免疫</td><td><input class="ans" data-uid="70" style="width:15ch"></td></tr><tr><td>8</td><td>延长寿命</td><td><input class="ans" data-uid="71" style="width:14ch"></td></tr><tr><td>9</td><td>感觉精力充沛</td><td><input class="ans" data-uid="72" style="width:17ch"></td></tr></table></div>
+<h2 class="sec-title">七、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为问题（S3）、后半为对策（S4），请对应识别其"问题—解决"结构。</div>
+<p class="zh"><strong>1.</strong> 中文：要打破导致失眠、心理压力和最终抑郁的久坐生活方式，个人首先必须有健康意识。</p>
+<p class="en">To break free from a <input class="ans" data-uid="73" style="width:22ch"> that causes <input class="ans" data-uid="74" style="width:11ch">, <input class="ans" data-uid="75" style="width:25ch">, and ultimately <input class="ans" data-uid="76" style="width:13ch">, individuals must first <input class="ans" data-uid="77" style="width:22ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：经常锻炼可以通过改善血液循环来增强免疫系统，同时也有助于缓解工作和学习中积累的精神压力。</p>
+<p class="en"><input class="ans" data-uid="78" style="width:19ch"> can help people <input class="ans" data-uid="79" style="width:28ch"> by improving blood circulation, and it also serves to <input class="ans" data-uid="80" style="width:21ch"> accumulated through work and study.</p>
+<p class="zh"><strong>3.</strong> 中文：那些有健康意识的人更有可能降低患重病的风险，加上经常锻炼，他们可以显著延长寿命。</p>
+<p class="en">Those who <input class="ans" data-uid="81" style="width:23ch"> are more likely to <input class="ans" data-uid="82" style="width:21ch"> serious illnesses, and combined with <input class="ans" data-uid="83" style="width:19ch">, they can significantly <input class="ans" data-uid="84" style="width:14ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：一旦个体开始远离发胖食物并积极降低疾病风险，他们会开始感到精力充沛，并逐渐对许多常见疾病产生免疫力。</p>
+<p class="en">Once individuals begin to <input class="ans" data-uid="85" style="width:23ch"> and actively <input class="ans" data-uid="86" style="width:29ch">, they will start to <input class="ans" data-uid="87" style="width:17ch"> and, over time, <input class="ans" data-uid="88" style="width:12ch"> to many common illnesses.</p>
+<p class="zh"><strong>5.</strong> 中文：因心理压力而患失眠的人可以通过培养健康意识、开始经常锻炼并学会缓解精神压力来扭转趋势——用活力替代压力。</p>
+<p class="en">People who suffer from <input class="ans" data-uid="89" style="width:11ch"> due to <input class="ans" data-uid="90" style="width:25ch"> can reverse the trend by <input class="ans" data-uid="91" style="width:25ch">, starting <input class="ans" data-uid="92" style="width:19ch">, and learning to <input class="ans" data-uid="93" style="width:21ch"> — thereby replacing stress with vitality.</p>
+<h2 class="sec-title">八、练习 · 句子填空（课本原题 · 课后句子填空）</h2>
+<div class="note">于空白处填入恰当的词或短语。本题不设词库，须凭记忆完成；注意词形变化。括号内为中文提示。</div>
+<p class="en"><strong>1.</strong> Poor living habits, enormous work and living pressure and deteriorating environment may <input class="ans" data-uid="94" style="width:40ch">. <span class="hint">（导致癌症几率增加）</span></p>
+<p class="en"><strong>2.</strong> Modern people are <input class="ans" data-uid="95" style="width:31ch">. Chronic stress may lead to <input class="ans" data-uid="96" style="width:11ch">, anxiety, depression and even mental disorders. <span class="hint">（生活在巨大的压力下，失眠）</span></p>
+<p class="en"><strong>3.</strong> When they cannot adequately <input class="ans" data-uid="97" style="width:21ch"> strain, stress may lead to <input class="ans" data-uid="98" style="width:10ch">, isolation, aggression and physical illnesses. <span class="hint">（恰当处理，焦虑）</span></p>
+<p class="en"><strong>4.</strong> In some countries, the average weight of people is <input class="ans" data-uid="99" style="width:13ch"> and their levels of health and fitness are <input class="ans" data-uid="100" style="width:13ch">. <span class="hint">（上升，下降）</span></p>
+<p class="en"><strong>5.</strong> Those who <input class="ans" data-uid="101" style="width:22ch"> are more likely to <input class="ans" data-uid="102" style="width:25ch"> than normal-weight people. <span class="hint">（遭受肥胖，患心脏病）</span></p>
+<h2 class="sec-title">九、练习 · 段落填空（课本原题 · 段落翻译改编 p32）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。两段分别讲述"缺锻炼"与"过度看电视"对儿童健康的影响。</div>
+<p class="zh"><strong>中文原文：</strong> 大多数儿童缺乏足够的体育锻炼来使他们保持身体健康和预防肥胖症。他们从不走路或骑车上下学。他们在家时也长时间坐在自己的房间里看电视或玩缺乏身体运动的电脑游戏，这也会导致他们吃更多的垃圾食品。科学已经证明缺乏运动的生活模式会使身体堆积脂肪，导致体重增加。</p>
+<p class="en">Most children do not get enough exercise to <input class="ans" data-uid="103" style="width:26ch"> and <input class="ans" data-uid="104" style="width:18ch">. They do not <input class="ans" data-uid="105" style="width:35ch">. At home, they spend long hours sitting in their room watching TV or <input class="ans" data-uid="106" style="width:36ch">, which also gives them time to eat more junk food. It has been scientifically proven that <input class="ans" data-uid="107" style="width:22ch"> can lead to <input class="ans" data-uid="108" style="width:19ch">, which causes <input class="ans" data-uid="109" style="width:14ch">.</p>
+<p class="zh"><strong>中文原文：</strong> 此外，小孩子看电视的时间加长会影响他们的身体健康。他们会每天坐在电视前几个小时，而不去和小伙伴玩游戏、运动。他们会有肥胖的问题，视力也会下降，并觉得疲劳。由于这样，他们没有足够的精力去应付学习，慢慢失去信心。</p>
+<p class="en">Another problem is that <input class="ans" data-uid="110" style="width:23ch"> can affect children's health. They sit in front of a screen for many hours every day, instead of playing games and doing sports with peers. They also <input class="ans" data-uid="111" style="width:40ch">. Because of this, they do not have enough energy to <input class="ans" data-uid="112" style="width:37ch"> and <input class="ans" data-uid="113" style="width:23ch"> over time.</p>
+<h2 class="sec-title">十、练习 · 句子翻译（课本原题 · 课堂操练 p27-28）</h2>
+<div class="note">将下列中文译为英文，须使用括号内提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：过量消费快餐会对身体造成损害，因为这类食物富含脂肪、糖分和卡路里。<span class="hint">（excessive consumption, physically damaging, be high in fat, sugar and calories）</span></p>
+<div class="translate"><textarea class="ans" data-uid="114" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：儿童肥胖已成为一个严重的全球性问题。学校能做的是更加重视体育教育，鼓励学生参与体育活动。<span class="hint">（childhood obesity, put more emphasis on physical education, participate in sports activities）</span></p>
+<div class="translate"><textarea class="ans" data-uid="115" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：过度打游戏还会导致近视和久坐的生活方式。<span class="hint">（excessive gaming, result in, myopia, a sedentary lifestyle）</span></p>
+<div class="translate"><textarea class="ans" data-uid="116" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：为了保持更健康，我们应该减少脂肪、糖分和卡路里的摄入。<span class="hint">（stay healthier, reduce the intake of fat, sugar and calories）</span></p>
+<div class="translate"><textarea class="ans" data-uid="117" rows="3"></textarea></div>
+<h2 class="sec-title">十一、真题 · 健康水平下降</h2>
+<h3 class="sub">10.1 题目</h3>
+<div class="exam-box"><em>Despite huge improvements in healthcare, the overall standard of physical health in many developed countries is now falling. What could be the reasons for this trend and what can be done to reverse it?</em></div>
+<h3 class="sub">10.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="118" style="width:8ch">。判断关键词：<input class="ans" data-uid="119" style="width:40ch"><br>问"原因 + 措施"→ 原因措施型，用"原因→措施"大纲：先列原因，再从原因反推措施，确保每项措施都回应某条原因。</div>
+<h3 class="sub">10.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（身心）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>本原则角度（身心）</th><th>其他角度补充</th></tr><tr><td>原因 (Reasons)</td><td><textarea class="ans" data-uid="120" rows="3"></textarea></td><td><textarea class="ans" data-uid="121" rows="3"></textarea></td></tr><tr><td>措施 (Measures)</td><td><textarea class="ans" data-uid="122" rows="3"></textarea></td><td><textarea class="ans" data-uid="123" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"原因—措施"骨架完成四段：Introduction（背景+总起）→ 原因段 → 措施段 → Conclusion（重申个人与政府共同责任）。</div>
+<h2 class="sec-title">十二、真题 · 运动设施与其他措施</h2>
+<h3 class="sub">11.1 题目</h3>
+<div class="exam-box"><em>Some people believe that the best way to improve public health is by increasing the number of sports facilities. Others, however, believe that it has little effect and other measures are needed to improve it. Discuss both views and give your own opinion.</em></div>
+<h3 class="sub">11.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="124" style="width:6ch">。判断关键词：<input class="ans" data-uid="125" style="width:40ch">。<br>问"讨论双方"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认运动设施有用），Body2 反驳（但其他措施更关键）。</div>
+<h3 class="sub">11.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（身心）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>本原则角度（身心）</th><th>其他角度补充</th></tr><tr><td>增加运动设施的理由 (View 1)</td><td><textarea class="ans" data-uid="126" rows="3"></textarea></td><td><textarea class="ans" data-uid="127" rows="3"></textarea></td></tr><tr><td>其他措施更重要的理由 (View 2)</td><td><textarea class="ans" data-uid="128" rows="3"></textarea></td><td><textarea class="ans" data-uid="129" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"让步反驳"骨架完成四段：Introduction（背景+立场）→ Body 1 让步（承认运动设施有用）→ Body 2 反驳（其他措施更关键）→ Conclusion 换说重申。</div>
+<p class="foot">《身心健康原则》讲义 · 雅思写作基础 · 第 2 课</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans') && el.dataset.uid) {
+      try { localStorage.setItem(KEY + el.dataset.uid, el.value); } catch(_){}
+    }
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    if (!el.dataset.uid) return;
+    try { var v = localStorage.getItem(KEY + el.dataset.uid); if (v != null) el.value = v; } catch(_){}
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      if (el.dataset.uid) { try { localStorage.removeItem(KEY + el.dataset.uid); } catch(_){} }
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      // 按打印布局（通栏、页面末尾）测量笔记高度，避免按屏幕 400px 宽算出的高度虚高
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+})();
+</script>
+
+</body>
+</html>

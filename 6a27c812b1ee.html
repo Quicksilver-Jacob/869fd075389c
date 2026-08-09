@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文化艺术原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:17px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:16px 20px 80px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:26px; margin:18px 0 4px; }
+.sec-title { font-size:21px; color:var(--c1); border-left:6px solid var(--c1); padding-left:10px; margin:34px 0 10px; }
+.sub { font-size:17px; color:var(--dark); margin:22px 0 8px; }
+.sub .tag { font-size:12px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:10px 14px; margin:10px 0; line-height:1.7; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:12px 0 4px; line-height:1.6; }
+p.en { margin:4px 0 16px; line-height:2.0; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:10px 0; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th { background:var(--dark); color:#fff; padding:8px 10px; text-align:left; font-weight:700; }
+td { padding:8px 10px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:10px 12px; margin:12px 0; line-height:1.9; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:2px 9px; margin:3px 6px 0 0; font-size:15px; }
+
+input.ans { font:inherit; font-size:16px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+            padding:3px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:16px; line-height:1.6; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+               padding:6px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:10px 12px;
+                color:var(--dark); line-height:1.7; font-size:15px; margin:6px 0 16px; }
+.translate { margin:4px 0 16px; }
+.translate textarea.ans { width:100%; min-height:84px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:14px 18px;
+            margin:10px 0; font-style:italic; font-size:16px; line-height:1.6; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:26px; }
+  textarea.ans { min-height:30px; }
+  .note, .wordbank, .exam-box { break-inside:avoid; }
+  table, tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:14mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="toolbar">
+<span class="tt">文化艺术原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button>
+<button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button>
+<button class="btn no-print" id="btn-notes" type="button">📝 笔记</button>
+</div>
+<h1>文化艺术原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇 · 文化遗产与身份 · 名词短语（S1）</h2>
+<div class="note">本节为中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。本组 8 词聚焦"有什么文化"——从遗产到身份，构成链条第一步 ① 文化遗产。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>文化遗产</td><td><input class="ans" data-uid="1" style="width:18ch"></td></tr><tr><td>2</td><td>历史建筑</td><td><input class="ans" data-uid="2" style="width:21ch"></td></tr><tr><td>3</td><td>民族手工艺品/服装</td><td><input class="ans" data-uid="3" style="width:31ch"></td></tr><tr><td>4</td><td>传统习俗</td><td><input class="ans" data-uid="4" style="width:22ch"></td></tr><tr><td>5</td><td>文化特性</td><td><input class="ans" data-uid="5" style="width:20ch"></td></tr><tr><td>6</td><td>归属感</td><td><input class="ans" data-uid="6" style="width:23ch"></td></tr><tr><td>7</td><td>民族自豪感</td><td><input class="ans" data-uid="7" style="width:17ch"></td></tr><tr><td>8</td><td>文化多样性</td><td><input class="ans" data-uid="8" style="width:21ch"></td></tr></table></div>
+<h2 class="sec-title">二、词汇 · 全球化的文化冲击 · 名词/动词短语（S2）</h2>
+<div class="note">本组 8 词聚焦文化"怎么没的"——从外来影响到语言灭绝，构成"遗产—冲击"链条，对应 ② 文化冲击。可与 S1 的遗产名词对照。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>外来影响</td><td><input class="ans" data-uid="9" style="width:21ch"></td></tr><tr><td>2</td><td>文化渗透</td><td><input class="ans" data-uid="10" style="width:23ch"></td></tr><tr><td>3</td><td>文化同化</td><td><input class="ans" data-uid="11" style="width:24ch"></td></tr><tr><td>4</td><td>破坏传统</td><td><input class="ans" data-uid="12" style="width:23ch"></td></tr><tr><td>5</td><td>抛弃原有信仰</td><td><input class="ans" data-uid="13" style="width:32ch"></td></tr><tr><td>6</td><td>感到与文化脱节</td><td><input class="ans" data-uid="14" style="width:40ch"></td></tr><tr><td>7</td><td>灭绝 / 消失</td><td><input class="ans" data-uid="15" style="width:22ch"></td></tr><tr><td>8</td><td>语言灭绝</td><td><input class="ans" data-uid="16" style="width:22ch"></td></tr></table></div>
+<h2 class="sec-title">三、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（遗产）与 S2（冲击）两组表达，体现"有→没"链条。</div>
+<p class="zh"><strong>1.</strong> 中文：一个民族的文化遗产由物质要素（如历史建筑和民族手工艺品）以及非物质传统习俗构成，这些共同塑造了文化认同、归属感，并最终形成民族自豪感。</p>
+<p class="en">A nation's <input class="ans" data-uid="17" style="width:18ch"> is composed of tangible elements such as <input class="ans" data-uid="18" style="width:21ch"> and <input class="ans" data-uid="19" style="width:31ch">, as well as intangible <input class="ans" data-uid="20" style="width:22ch">, which together shape <input class="ans" data-uid="21" style="width:20ch">, <input class="ans" data-uid="22" style="width:23ch">, and ultimately <input class="ans" data-uid="23" style="width:17ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：文化遗产对全球文化多样性做出贡献，但通过媒体和贸易日益增长的外来影响可能导致文化渗透，这反过来又破坏了传统。</p>
+<p class="en">While <input class="ans" data-uid="24" style="width:18ch"> contributes to global <input class="ans" data-uid="25" style="width:21ch">, the growing influence of <input class="ans" data-uid="26" style="width:21ch"> through media and trade can lead to <input class="ans" data-uid="27" style="width:23ch">, which in turn <input class="ans" data-uid="28" style="width:24ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：当少数族裔社区经历文化同化时，年轻一代可能感到与自己的文化遗产脱节，甚至抛弃原有的信仰，认为现代方式更优越。</p>
+<p class="en">When minority communities experience <input class="ans" data-uid="29" style="width:24ch">, their younger generation may <input class="ans" data-uid="30" style="width:40ch"> and even <input class="ans" data-uid="31" style="width:33ch">, believing that modern ways are superior.</p>
+<p class="zh"><strong>4.</strong> 中文：历史建筑和传统习俗的丧失削弱了社区的文化认同和归属感，在极端情况下，本地语言可能灭绝，导致语言消亡。</p>
+<p class="en">The loss of <input class="ans" data-uid="32" style="width:21ch"> and <input class="ans" data-uid="33" style="width:22ch"> weakens a community's <input class="ans" data-uid="34" style="width:20ch"> and <input class="ans" data-uid="35" style="width:23ch">, and in extreme cases, local languages may <input class="ans" data-uid="36" style="width:10ch">, leading to <input class="ans" data-uid="37" style="width:22ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：保护文化多样性不仅仅是为了保存过去，而是在文化渗透威胁着将全球文化同质化的时代中维护民族自豪感。</p>
+<p class="en">Protecting <input class="ans" data-uid="38" style="width:21ch"> is not just about preserving the past but about maintaining <input class="ans" data-uid="39" style="width:17ch"> in an era where <input class="ans" data-uid="40" style="width:23ch"> threatens to homogenise cultures worldwide.</p>
+<h2 class="sec-title">四、词汇 · 冲击的社会后果 · 名词短语（S3）</h2>
+<div class="note">本组 8 词聚焦文化冲击的长期后果——从价值观丧失到社会冲突，构成"冲击—后果"链条，对应 ③ 社会后果。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>传统价值观丧失</td><td><input class="ans" data-uid="41" style="width:29ch"></td></tr><tr><td>2</td><td>传统美德</td><td><input class="ans" data-uid="42" style="width:22ch"></td></tr><tr><td>3</td><td>丧失文化身份</td><td><input class="ans" data-uid="43" style="width:25ch"></td></tr><tr><td>4</td><td>使年轻人疏远……</td><td><input class="ans" data-uid="44" style="width:26ch"></td></tr><tr><td>5</td><td>代沟</td><td><input class="ans" data-uid="45" style="width:19ch"></td></tr><tr><td>6</td><td>文化冲突</td><td><input class="ans" data-uid="46" style="width:19ch"></td></tr><tr><td>7</td><td>种族/族群歧视</td><td><input class="ans" data-uid="47" style="width:33ch"></td></tr><tr><td>8</td><td>导致紧张与冲突</td><td><input class="ans" data-uid="48" style="width:31ch"></td></tr></table></div>
+<h2 class="sec-title">五、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句前半为冲击机制（S2）、后半为社会后果（S3），体现"侵蚀→崩塌"逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：当文化渗透和文化同化不受控制时，社区会经历传统价值观的丧失和诚实、孝顺等传统美德的衰退，最终导致人们丧失文化身份。</p>
+<p class="en">When <input class="ans" data-uid="49" style="width:23ch"> and <input class="ans" data-uid="50" style="width:24ch"> are left unchecked, communities experience <input class="ans" data-uid="51" style="width:29ch"> and a decline in <input class="ans" data-uid="52" style="width:22ch"> such as honesty and filial piety, which eventually causes people to <input class="ans" data-uid="53" style="width:25ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：随着年轻人感到与自己的文化传统脱节，他们与长辈之间变得越来越疏远，形成了一道以文化为界分裂家庭的代沟。</p>
+<p class="en">As young people <input class="ans" data-uid="54" style="width:20ch"> from their heritage, they become increasingly <input class="ans" data-uid="55" style="width:12ch"> from their elders, creating a <input class="ans" data-uid="56" style="width:19ch"> that divides families along cultural lines.</p>
+<p class="zh"><strong>3.</strong> 中文：日益扩大的代沟往往升级为不同文化背景群体之间的文化冲突，进而发展为种族歧视，并最终导致紧张与冲突。</p>
+<p class="en">A widening <input class="ans" data-uid="57" style="width:19ch"> often escalates into <input class="ans" data-uid="58" style="width:19ch"> between groups with different cultural backgrounds, which can develop into <input class="ans" data-uid="59" style="width:33ch"> and ultimately <input class="ans" data-uid="60" style="width:31ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：传统价值观的侵蚀削弱了社会的道德准则，没有共同的文化认同，不同族群更容易互相冲突。</p>
+<p class="en">The erosion of <input class="ans" data-uid="61" style="width:21ch"> weakens a society's moral compass, and without shared <input class="ans" data-uid="62" style="width:20ch">, different ethnic groups are more likely to <input class="ans" data-uid="63" style="width:31ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：当种族歧视和紧张冲突成为常态时，始于文化渗透和破坏传统的过程最终会导致社会分裂。</p>
+<p class="en">When <input class="ans" data-uid="64" style="width:33ch"> and <input class="ans" data-uid="65" style="width:25ch"> are the norm, the process that begins with <input class="ans" data-uid="66" style="width:23ch"> and <input class="ans" data-uid="67" style="width:25ch"> ultimately leads to social fragmentation.</p>
+<h2 class="sec-title">六、词汇 · 保护与传承 · 动词短语（S4）</h2>
+<div class="note">本组 8 词代表保护与传承的动作，与 S3 的各项后果逐一对应，构成"后果—保护"对应链条，对应 ④ 保护传承。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>保护传统</td><td><input class="ans" data-uid="68" style="width:22ch"></td></tr><tr><td>2</td><td>珍惜文化遗产</td><td><input class="ans" data-uid="69" style="width:28ch"></td></tr><tr><td>3</td><td>弘扬传统文化</td><td><input class="ans" data-uid="70" style="width:36ch"></td></tr><tr><td>4</td><td>代代相传</td><td><input class="ans" data-uid="71" style="width:40ch"></td></tr><tr><td>5</td><td>以……为豪</td><td><input class="ans" data-uid="72" style="width:16ch"></td></tr><tr><td>6</td><td>连接历史</td><td><input class="ans" data-uid="73" style="width:22ch"></td></tr><tr><td>7</td><td>在……之间取得平衡</td><td><input class="ans" data-uid="74" style="width:27ch"></td></tr><tr><td>8</td><td>增强文化多样性</td><td><input class="ans" data-uid="75" style="width:30ch"></td></tr></table></div>
+<h2 class="sec-title">七、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为后果（S3）、后半为对策（S4），体现"伤口→药方"对应逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：要扭转传统价值观的丧失和由此产生的文化冲突，政府必须积极保护传统，并鼓励社区将文化遗产视为自豪的来源而非负担。</p>
+<p class="en">To reverse <input class="ans" data-uid="76" style="width:33ch"> and the resulting <input class="ans" data-uid="77" style="width:19ch"> in society, governments must actively <input class="ans" data-uid="78" style="width:22ch"> and encourage communities to <input class="ans" data-uid="79" style="width:28ch"> as a source of pride rather than burden.</p>
+<p class="zh"><strong>2.</strong> 中文：为了弥合文化侵蚀造成的代沟，社区应弘扬传统文化，教育年轻人以他们的根为豪并连接历史。</p>
+<p class="en">In order to heal the <input class="ans" data-uid="80" style="width:19ch"> caused by cultural erosion, communities should <input class="ans" data-uid="81" style="width:36ch"> by teaching young people to <input class="ans" data-uid="82" style="width:16ch"> their roots and <input class="ans" data-uid="83" style="width:22ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：文化遗产必须代代相传；否则年轻人将继续与传统疏远，扩大代沟。</p>
+<p class="en">Cultural heritage must <input class="ans" data-uid="84" style="width:17ch"> from one generation to the next; otherwise, young people will continue to <input class="ans" data-uid="85" style="width:22ch"> from traditions, widening the <input class="ans" data-uid="86" style="width:19ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：解决文化冲突的关键不是拒绝现代性，而是在现代化与传统之间取得平衡——这正是社会在实现性别平等的同时保持文化认同的方式。</p>
+<p class="en">The key to resolving <input class="ans" data-uid="87" style="width:19ch"> is not to reject modernity but to <input class="ans" data-uid="88" style="width:27ch"> modernization and tradition, which is how societies achieve <input class="ans" data-uid="89" style="width:18ch"> while maintaining their <input class="ans" data-uid="90" style="width:20ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：当社会成功地在传统与现代之间取得平衡，它们不仅通过给每种文化尊严来增强文化多样性，还减少了由文化误解引起的紧张与冲突。</p>
+<p class="en">When societies successfully <input class="ans" data-uid="91" style="width:19ch">, they not only <input class="ans" data-uid="92" style="width:30ch"> by giving every culture dignity but also reduce the <input class="ans" data-uid="93" style="width:25ch"> that arise from cultural misunderstanding.</p>
+<h2 class="sec-title">八、练习 · 句子填空（课本原题 · 课后句子填空）</h2>
+<div class="note">于空白处填入恰当的词或短语。本题不设词库，须凭记忆完成；注意词形变化。括号内为中文提示。</div>
+<p class="en"><strong>1.</strong> The extensive use of English worldwide helps <input class="ans" data-uid="94" style="width:29ch">, as a universal language enables people to <input class="ans" data-uid="95" style="width:29ch"> in the global setting. <span class="hint">（促进全球合作，克服语言障碍）</span></p>
+<p class="en"><strong>2.</strong> For example, if a company's <input class="ans" data-uid="96" style="width:20ch"> are written in English, any investor who is <input class="ans" data-uid="97" style="width:13ch"> in English is able to read this company's materials and understand this company's operation, regardless of their own <input class="ans" data-uid="98" style="width:18ch">. <span class="hint">（财务报告，精通，母语）</span></p>
+<p class="en"><strong>3.</strong> Those who are opposed to the demolition of historic buildings believe that we should <input class="ans" data-uid="99" style="width:40ch"> of old buildings instead of their <input class="ans" data-uid="100" style="width:20ch">. <span class="hint">（优先考虑历史文化因素，功利价值）</span></p>
+<p class="en"><strong>4.</strong> There are a considerable number of travelers who take pleasure in <input class="ans" data-uid="101" style="width:40ch">, some of which are of <input class="ans" data-uid="102" style="width:40ch">. <span class="hint">（在墙壁或建筑上涂写，具有独特的历史文化价值）</span></p>
+<p class="en"><strong>5.</strong> That's why English has been identified as <input class="ans" data-uid="103" style="width:20ch"> by many <input class="ans" data-uid="104" style="width:40ch">. Around 80 per cent of websites in the world <input class="ans" data-uid="105" style="width:20ch"> in English. <span class="hint">（主要语言，国际会议和学术机构，发布信息）</span></p>
+<p class="en"><strong>6.</strong> As English, <input class="ans" data-uid="106" style="width:21ch">, is used in many large companies and also in many leading universities around the world, those who do not speak English find it difficult to <input class="ans" data-uid="107" style="width:35ch">. <span class="hint">（有领导地位的语言，在全球社会中生存）</span></p>
+<p class="en"><strong>7.</strong> By contrast, people who have <input class="ans" data-uid="108" style="width:32ch"> can easily find jobs, <input class="ans" data-uid="109" style="width:22ch"> and travel overseas. <span class="hint">（精通两种语言，收集信息）</span></p>
+<h2 class="sec-title">九、练习 · 段落填空（课本原题 · 段落翻译改编）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。</div>
+<p class="zh"><strong>中文原文：</strong> 尽管多元文化社会有诸多好处，但具有不同文化背景的移民的存在实际上带来了巨大的风险。一方面，保守的本地人几乎不可能接受外来定居者，他们常常被视为入侵者。一个不良后果是文化冲突，导致暴力和种族歧视。另一方面，那些发现自己文化和传统与当地相冲突的人，可能倾向于抛弃原有的信仰以融入主流社会。结果，文化多样性受到损害，小众文化被完全同化。</p>
+<p class="en">Despite the benefits of a <input class="ans" data-uid="110" style="width:24ch">, the presence of immigrants with distinct <input class="ans" data-uid="111" style="width:23ch"> actually poses enormous risks. For one thing, it is hardly possible for those conservative indigenes to <input class="ans" data-uid="112" style="width:27ch">, who are more often than not regarded as invaders. An undesirable result is <input class="ans" data-uid="113" style="width:19ch">, which lead to <input class="ans" data-uid="114" style="width:37ch">. For another, people who find their own cultures and traditions conflicting with the local ones may tend to <input class="ans" data-uid="115" style="width:27ch"> in order to be <input class="ans" data-uid="116" style="width:18ch"> the mainstream society. As a result, the <input class="ans" data-uid="117" style="width:21ch"> is impaired and the <input class="ans" data-uid="118" style="width:20ch"> are completely assimilated.</p>
+<h2 class="sec-title">十、练习 · 句子翻译（课本原题 · 课堂练习）</h2>
+<div class="note">将下列中文译为英文，须使用括号内提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：好的外观能增加建筑的文化和商业价值。<span class="hint">（good appearance, cultural and commercial value）</span></p>
+<div class="translate"><textarea class="ans" data-uid="119" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：政府和学校应该采取措施防止少数民族语言的灭绝。<span class="hint">（take measures, prevent the extinction of, minority languages）</span></p>
+<div class="translate"><textarea class="ans" data-uid="120" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：全球化对原住民文化和语言的保护构成潜在风险，因为跨文化交际越来越频繁，文化同化和渗透不可避免。<span class="hint">（potential risks, aboriginal culture, cultural assimilation and penetration）</span></p>
+<div class="translate"><textarea class="ans" data-uid="121" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：前往异国旅行使游客能够接触不同的文化和传统，开阔视野并促进文化交流。<span class="hint">（exotic places, expand horizons, enhance cultural exchanges）</span></p>
+<div class="translate"><textarea class="ans" data-uid="122" rows="3"></textarea></div>
+<h2 class="sec-title">十一、真题 · 建筑遗产保护</h2>
+<h3 class="sub">10.1 题目</h3>
+<div class="exam-box"><em>Some people think that old buildings should be demolished and replaced with modern ones. Others believe that old buildings should be protected. Discuss both these views and give your own opinion.</em></div>
+<h3 class="sub">10.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="123" style="width:6ch">。判断关键词：<input class="ans" data-uid="124" style="width:40ch">。<br>问"讨论双方"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认拆除有现实理由），Body2 反驳（但有价值的老建筑必须保护）。折中立场最合理。</div>
+<h3 class="sub">10.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（文化）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>本原则角度（文化）</th><th>其他角度补充</th></tr><tr><td>正方：应该保护 (Protect)</td><td><textarea class="ans" data-uid="125" rows="3"></textarea></td><td><textarea class="ans" data-uid="126" rows="3"></textarea></td></tr><tr><td>反方：可以拆除 (Demolish)</td><td><textarea class="ans" data-uid="127" rows="3"></textarea></td><td><textarea class="ans" data-uid="128" rows="3"></textarea></td></tr></table></div>
+<h2 class="sec-title">十二、真题 · 传统服饰保护</h2>
+<h3 class="sub">11.1 题目</h3>
+<div class="exam-box"><em>In many countries, people wear more Western-style clothes (suits and jeans) rather than traditional clothing. Why is this happening? Do you think this is a positive or negative development?</em></div>
+<h3 class="sub">11.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="129" style="width:9ch">。判断关键词：<input class="ans" data-uid="130" style="width:40ch"><br>问"原因 + 好还是坏"→ 原因+评价型，用"原因段 + 评价段"大纲：先分析穿西式服装的原因，再评价其文化影响。</div>
+<h3 class="sub">11.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（文化）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>本原则角度（文化）</th><th>其他角度补充</th></tr><tr><td>西式服装取代传统服饰的原因 (Reasons)</td><td><textarea class="ans" data-uid="131" rows="3"></textarea></td><td><textarea class="ans" data-uid="132" rows="3"></textarea></td></tr><tr><td>评价：好还是坏 (Evaluation)</td><td><textarea class="ans" data-uid="133" rows="3"></textarea></td><td><textarea class="ans" data-uid="134" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"原因—评价"骨架完成四段：Introduction（背景+总起）→ 原因段 → 评价段（承认正面 + 强调负面）→ Conclusion 换说重申。</div>
+<p class="foot">《文化艺术原则》讲义 · 雅思写作基础 · 第 3 课</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans') && el.dataset.uid) {
+      try { localStorage.setItem(KEY + el.dataset.uid, el.value); } catch(_){}
+    }
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    if (!el.dataset.uid) return;
+    try { var v = localStorage.getItem(KEY + el.dataset.uid); if (v != null) el.value = v; } catch(_){}
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      if (el.dataset.uid) { try { localStorage.removeItem(KEY + el.dataset.uid); } catch(_){} }
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      // 按打印布局（通栏、页面末尾）测量笔记高度，避免按屏幕 400px 宽算出的高度虚高
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+})();
+</script>
+
+</body>
+</html>

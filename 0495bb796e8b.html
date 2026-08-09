@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经济原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:17px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:16px 20px 80px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:26px; margin:18px 0 4px; }
+.sec-title { font-size:21px; color:var(--c1); border-left:6px solid var(--c1); padding-left:10px; margin:34px 0 10px; }
+.sub { font-size:17px; color:var(--dark); margin:22px 0 8px; }
+.sub .tag { font-size:12px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:10px 14px; margin:10px 0; line-height:1.7; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:12px 0 4px; line-height:1.6; }
+p.en { margin:4px 0 16px; line-height:2.0; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:10px 0; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th { background:var(--dark); color:#fff; padding:8px 10px; text-align:left; font-weight:700; }
+td { padding:8px 10px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:10px 12px; margin:12px 0; line-height:1.9; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:2px 9px; margin:3px 6px 0 0; font-size:15px; }
+
+input.ans { font:inherit; font-size:16px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+            padding:3px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:16px; line-height:1.6; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+               padding:6px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:10px 12px;
+                color:var(--dark); line-height:1.7; font-size:15px; margin:6px 0 16px; }
+.translate { margin:4px 0 16px; }
+.translate textarea.ans { width:100%; min-height:84px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:14px 18px;
+            margin:10px 0; font-style:italic; font-size:16px; line-height:1.6; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:26px; }
+  textarea.ans { min-height:30px; }
+  .note, .wordbank, .exam-box { break-inside:avoid; }
+  table, tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:14mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="toolbar">
+<span class="tt">经济原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button>
+<button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button>
+<button class="btn no-print" id="btn-notes" type="button">📝 笔记</button>
+</div>
+<h1>经济原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇 · 经济活动与谋生（S1）</h2>
+<div class="note">本节为中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。本组 7 词构成"个人经济升级链"——从谋生到安居，逐级递进，对应链条第一步 ① 赚钱。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>谋生</td><td><input class="ans" data-uid="1" style="width:16ch"></td></tr><tr><td>2</td><td>找到工作</td><td><input class="ans" data-uid="2" style="width:18ch"></td></tr><tr><td>3</td><td>进入职场</td><td><input class="ans" data-uid="3" style="width:22ch"></td></tr><tr><td>4</td><td>挣更高薪水</td><td><input class="ans" data-uid="4" style="width:23ch"></td></tr><tr><td>5</td><td>有稳定收入来源</td><td><input class="ans" data-uid="5" style="width:33ch"></td></tr><tr><td>6</td><td>提高生活水平</td><td><input class="ans" data-uid="6" style="width:38ch"></td></tr><tr><td>7</td><td>负担得起买房</td><td><input class="ans" data-uid="7" style="width:24ch"></td></tr></table></div>
+<h2 class="sec-title">二、词汇 · 财富分配与税收（S2）</h2>
+<div class="note">本组 7 词由个人收入转入社会分配：从交税、征税到财富再分配，构成"征税—再分配—结果"链条，对应 ② 分配。首词 pay tax 紧接上一组终点 afford home ownership。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>交税</td><td><input class="ans" data-uid="8" style="width:10ch"></td></tr><tr><td>2</td><td>征税</td><td><input class="ans" data-uid="9" style="width:11ch"></td></tr><tr><td>3</td><td>增加政府税收</td><td><input class="ans" data-uid="10" style="width:40ch"></td></tr><tr><td>4</td><td>履行纳税义务</td><td><input class="ans" data-uid="11" style="width:29ch"></td></tr><tr><td>5</td><td>财富再分配</td><td><input class="ans" data-uid="12" style="width:39ch"></td></tr><tr><td>6</td><td>缩小贫富差距</td><td><input class="ans" data-uid="13" style="width:39ch"></td></tr><tr><td>7</td><td>减少收入不均</td><td><input class="ans" data-uid="14" style="width:27ch"></td></tr></table></div>
+<h2 class="sec-title">三、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句均融合 S1（赚钱）与 S2（分配）两组表达，注意其间的因果与递进关系。</div>
+<p class="zh"><strong>1.</strong> 中文：为了谋生，个人必须先找到工作并成功进入职场，然后才能开始为经济做贡献。</p>
+<p class="en">In order to <input class="ans" data-uid="15" style="width:16ch">, individuals must first <input class="ans" data-uid="16" style="width:18ch"> and successfully <input class="ans" data-uid="17" style="width:22ch"> before they can begin to contribute to the economy.</p>
+<p class="zh"><strong>2.</strong> 中文：那些努力工作以挣更高薪水并获得稳定收入来源的人，自然会提高生活水平，许多人最终买得起房——此时他们就需要交税。</p>
+<p class="en">Those who work hard to <input class="ans" data-uid="18" style="width:23ch"> and secure <input class="ans" data-uid="19" style="width:28ch"> will naturally <input class="ans" data-uid="20" style="width:35ch">, and many eventually <input class="ans" data-uid="21" style="width:24ch"> — at which point they are required to <input class="ans" data-uid="22" style="width:10ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：为了增加足够的税收来资助公共服务，政府必须征税，而有责任感的公民应履行纳税义务，而非仅仅视其为负担。</p>
+<p class="en">To <input class="ans" data-uid="23" style="width:40ch"> sufficiently to fund public services, the government must <input class="ans" data-uid="24" style="width:11ch">, and responsible citizens should <input class="ans" data-uid="25" style="width:31ch"> rather than view taxation as merely a burden.</p>
+<p class="zh"><strong>4.</strong> 中文：税收的根本目的是实现国家财富的再分配，这有助于缩小贫富差距，并在宏观层面减少收入不平等。</p>
+<p class="en">The fundamental purpose of taxation is to <input class="ans" data-uid="26" style="width:39ch">, which helps <input class="ans" data-uid="27" style="width:39ch"> and, at the macro level, <input class="ans" data-uid="28" style="width:27ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：当更多公民找到工作并挣得更高收入时，税基就会扩大，使政府能够有效地进行财富再分配，并最终减少收入不平等。</p>
+<p class="en">When more citizens <input class="ans" data-uid="29" style="width:18ch"> and <input class="ans" data-uid="30" style="width:23ch">, the tax base expands, enabling governments to effectively <input class="ans" data-uid="31" style="width:39ch"> and ultimately <input class="ans" data-uid="32" style="width:27ch">.</p>
+<h2 class="sec-title">四、词汇 · 经济问题与社会后果（S3）</h2>
+<div class="note">本组 7 词聚焦消费端问题，构成一条负向链条：过度消费、冲动购物引发生活成本上升，进而导致经济拮据、失业与贫困，对应 ③ 后果。可与 S1 的正向升级链对照理解。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>过度消费</td><td><input class="ans" data-uid="33" style="width:24ch"></td></tr><tr><td>2</td><td>冲动购物</td><td><input class="ans" data-uid="34" style="width:25ch"></td></tr><tr><td>3</td><td>上涨的生活成本</td><td><input class="ans" data-uid="35" style="width:22ch"></td></tr><tr><td>4</td><td>经济拮据</td><td><input class="ans" data-uid="36" style="width:23ch"></td></tr><tr><td>5</td><td>失业</td><td><input class="ans" data-uid="37" style="width:29ch"></td></tr><tr><td>6</td><td>陷入贫困</td><td><input class="ans" data-uid="38" style="width:18ch"></td></tr><tr><td>7</td><td>失业率</td><td><input class="ans" data-uid="39" style="width:24ch"></td></tr></table></div>
+<h2 class="sec-title">五、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S2（分配）与 S3（后果）两组表达，沿因果链条推进。</div>
+<p class="zh"><strong>1.</strong> 中文：即使税收帮助缩小了贫富差距并减少了收入不平等，许多人仍然进行过度消费和冲动购物，这推高了物价并产生新的经济压力。</p>
+<p class="en">Even when taxation helps <input class="ans" data-uid="40" style="width:39ch"> and <input class="ans" data-uid="41" style="width:27ch">, many individuals continue to engage in <input class="ans" data-uid="42" style="width:24ch"> and <input class="ans" data-uid="43" style="width:25ch">, which drives up prices and creates new economic pressures.</p>
+<p class="zh"><strong>2.</strong> 中文：过度消费和冲动购物是生活成本上升的主要推手，迫使普通家庭在工资跟不上物价时陷入经济拮据。</p>
+<p class="en"><input class="ans" data-uid="44" style="width:24ch"> and <input class="ans" data-uid="45" style="width:28ch"> are the primary drivers of <input class="ans" data-uid="46" style="width:22ch">, which forces ordinary families to <input class="ans" data-uid="47" style="width:23ch"> as their wages fail to keep pace.</p>
+<p class="zh"><strong>3.</strong> 中文：当家庭因生活成本上升而经济拮据时，企业面临更高的经营成本并可能裁员，导致许多人失业并最终陷入贫困。</p>
+<p class="en">When families <input class="ans" data-uid="48" style="width:23ch"> due to <input class="ans" data-uid="49" style="width:22ch">, businesses face higher operating costs and may lay off workers, causing many to <input class="ans" data-uid="50" style="width:17ch"> and eventually <input class="ans" data-uid="51" style="width:18ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：尽管政府通过征税努力进行财富再分配，但如果公民不履行纳税义务，贫困循环和上升的失业率将持续存在。</p>
+<p class="en">Despite government efforts to <input class="ans" data-uid="52" style="width:39ch"> through <input class="ans" data-uid="53" style="width:11ch">, if citizens do not <input class="ans" data-uid="54" style="width:31ch">, the cycle of poverty and the rising <input class="ans" data-uid="55" style="width:20ch"> will persist.</p>
+<p class="zh"><strong>5.</strong> 中文：当大量人口同时失业并陷入贫困时，失业率上升，这反过来又削弱了政府增加税收的能力——形成恶性循环。</p>
+<p class="en"><input class="ans" data-uid="56" style="width:24ch"> rises when large numbers of people simultaneously <input class="ans" data-uid="57" style="width:17ch"> and <input class="ans" data-uid="58" style="width:18ch">, which in turn undermines the government's ability to <input class="ans" data-uid="59" style="width:40ch">.</p>
+<h2 class="sec-title">六、词汇 · 政府干预政策 · 动词短语（S4）</h2>
+<div class="note">本组 8 个动词短语代表政府的应对动作，与 S3 中的各项问题逐一对应，构成"问题—方案"关系，对应 ④ 解决。句中划线的介词为考点，注意搭配。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>为……提供保障</td><td><input class="ans" data-uid="60" style="width:40ch"></td></tr><tr><td>2</td><td>公正分配资源</td><td><input class="ans" data-uid="61" style="width:28ch"></td></tr><tr><td>3</td><td>投资于……</td><td><input class="ans" data-uid="62" style="width:18ch"></td></tr><tr><td>4</td><td>增加公共设施</td><td><input class="ans" data-uid="63" style="width:29ch"></td></tr><tr><td>5</td><td>资助艺术家</td><td><input class="ans" data-uid="64" style="width:20ch"></td></tr><tr><td>6</td><td>降低成本</td><td><input class="ans" data-uid="65" style="width:19ch"></td></tr><tr><td>7</td><td>免除……纳税</td><td><input class="ans" data-uid="66" style="width:39ch"></td></tr><tr><td>8</td><td>征收高额惩罚性税收</td><td><input class="ans" data-uid="67" style="width:31ch"></td></tr></table></div>
+<div class="note">⚠ <strong>介词考点</strong>：provide <strong>for</strong> / invest <strong>in</strong> / exempt <strong>from</strong> / impose <strong>on</strong> —— 介词写错整句扣分。</div>
+<h2 class="sec-title">七、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为问题（S3）、后半为对策（S4），请对应识别其"问题—方案"结构。</div>
+<p class="zh"><strong>1.</strong> 中文：过度消费驱动的冲动购物导致生活成本上升，迫使普通家庭经济拮据，并最终为了维持生计而失业。</p>
+<p class="en"><input class="ans" data-uid="68" style="width:24ch"> driven by <input class="ans" data-uid="69" style="width:28ch"> leads to <input class="ans" data-uid="70" style="width:22ch">, which causes ordinary families to <input class="ans" data-uid="71" style="width:23ch"> and eventually <input class="ans" data-uid="72" style="width:17ch"> to make ends meet.</p>
+<p class="zh"><strong>2.</strong> 中文：当大量工人失业且陷入贫困时，失业率不可避免地飙升，给社会福利系统带来压力。</p>
+<p class="en">When a significant number of workers <input class="ans" data-uid="73" style="width:17ch"> and <input class="ans" data-uid="74" style="width:18ch">, <input class="ans" data-uid="75" style="width:24ch"> inevitably spikes, putting pressure on the social welfare system.</p>
+<p class="zh"><strong>3.</strong> 中文：为了应对不断上升的失业率，政府应首先为有需要的人提供安全网，然后公正地分配资源，确保援助到达最需要的人手中。</p>
+<p class="en">To address <input class="ans" data-uid="76" style="width:24ch"> when it continues to rise, the government should first <input class="ans" data-uid="77" style="width:40ch"> and then <input class="ans" data-uid="78" style="width:28ch"> to ensure that aid reaches those who need it most.</p>
+<p class="zh"><strong>4.</strong> 中文：全面的应对要求政府投资基础设施建设、增加学校医院等公共设施、并在创意产业中资助艺术家以创造就业。</p>
+<p class="en">A comprehensive response requires governments to <input class="ans" data-uid="79" style="width:18ch"> infrastructure, to <input class="ans" data-uid="80" style="width:29ch"> such as schools and hospitals, and to <input class="ans" data-uid="81" style="width:20ch"> in creative sectors to generate employment.</p>
+<p class="zh"><strong>5.</strong> 中文：为了减轻低收入家庭的负担，政府可以为贫困人口免税并降低成本，同时对造成问题的企业征收高额惩罚性税收。</p>
+<p class="en">To ease the burden on low-income families, the government can <input class="ans" data-uid="82" style="width:39ch"> for the poor and <input class="ans" data-uid="83" style="width:19ch">, and <input class="ans" data-uid="84" style="width:31ch"> corporations that contribute to the problem.</p>
+<h2 class="sec-title">八、练习 · 句子填空（课本原题 · 课后句子填空 p14）</h2>
+<div class="note">于空白处填入恰当的词或短语。本题不设词库，须凭记忆完成；注意词形变化。括号内为中文提示。</div>
+<p class="en"><strong>1.</strong> If the government has <input class="ans" data-uid="85" style="width:14ch">, then it can <input class="ans" data-uid="86" style="width:34ch">, including building public schools and hospitals. <span class="hint">（税收，资助公共设施项目）</span></p>
+<p class="en"><strong>2.</strong> Public schools can provide children with <input class="ans" data-uid="87" style="width:28ch"> and <input class="ans" data-uid="88" style="width:27ch">, which <input class="ans" data-uid="89" style="width:36ch">. <span class="hint">（教育机会，增加他们的知识，对经济也有好处）</span></p>
+<p class="en"><strong>3.</strong> <input class="ans" data-uid="90" style="width:17ch"> can reduce people's <input class="ans" data-uid="91" style="width:20ch">. <span class="hint">（交税，可支配的收入）</span></p>
+<p class="en"><strong>4.</strong> Some people hold that women should <input class="ans" data-uid="92" style="width:31ch"> after they get married, which can <input class="ans" data-uid="93" style="width:40ch">, because nowadays <input class="ans" data-uid="94" style="width:16ch"> often requires double incomes. <span class="hint">（找工作，减轻家庭的经济负担，一份体面的生活）</span></p>
+<p class="en"><strong>5.</strong> Some large companies that used to <input class="ans" data-uid="95" style="width:35ch"> may <input class="ans" data-uid="96" style="width:14ch">, especially during the times of economic recession, so many people will <input class="ans" data-uid="97" style="width:17ch">. <span class="hint">（雇佣大量员工，破产，失业）</span></p>
+<h2 class="sec-title">九、练习 · 段落填空（课本原题 · 课后段落翻译改编 p15）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。</div>
+<p class="zh"><strong>中文原文：</strong> 与老龄化相关的一个问题是医疗费用会增加，会给纳税人带来负担。众所周知，大部分的医疗需求都发生在晚年。这意味着政府必须花更多的钱照顾老年人，但是其他的基础设施，例如教育，就可能资金不足。这个问题会给社会进步带来负面影响，因为有些年轻人可能由于得不到政府的经济援助而上不了大学。</p>
+<p class="en">One problem related to <input class="ans" data-uid="98" style="width:23ch"> is that <input class="ans" data-uid="99" style="width:30ch">, <input class="ans" data-uid="100" style="width:32ch">. As we all know, <input class="ans" data-uid="101" style="width:21ch"> happen in later years. It means that the government must <input class="ans" data-uid="102" style="width:40ch">, but other infrastructure, such as education, can be <input class="ans" data-uid="103" style="width:14ch">. This problem will <input class="ans" data-uid="104" style="width:40ch">, because some young people are unable to go to university as they cannot <input class="ans" data-uid="105" style="width:28ch">.</p>
+<h2 class="sec-title">十、练习 · 句子翻译（课本原题 · 课堂操练 p10-11）</h2>
+<div class="note">将下列中文译为英文，须使用括号内提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：旅游业的发展可以促进经济的发展，产生大量的就业机会和外汇收入。<span class="hint">（stimulate, enormous, foreign exchange earning）</span></p>
+<div class="translate"><textarea class="ans" data-uid="106" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：接受正规教育对于贫困地区的小孩而言是一种奢侈的梦想。<span class="hint">（luxurious, in the poverty-stricken areas, it is + n + for sb + to do sth）</span></p>
+<div class="translate"><textarea class="ans" data-uid="107" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：政府的收入有很大一部分是来自个人所得税，政府应该向纳税人提供医疗和教育来作为回报。<span class="hint">（government revenue, reward taxpayers with sth）</span></p>
+<div class="translate"><textarea class="ans" data-uid="108" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：政府资助艺术家和音乐家是滥用纳税人的钱。<span class="hint">（It is a great waste of taxpayers' money for sb to do sth, subsidize）</span></p>
+<div class="translate"><textarea class="ans" data-uid="109" rows="3"></textarea></div>
+<h2 class="sec-title">十一、关键知识点与逻辑</h2>
+<div class="note">本课专设思路框架环节：掌握题型判断与大纲写法，并借此示范如何调用九大原则组织观点。后续原则讲义如无对应重点，可略过本节。</div>
+<h3 class="sub">11.1 四步逻辑链</h3>
+<div class="chain"><span class="step now">① 赚钱</span><b>→</b><span class="step now">② 分配</span><b>→</b><span class="step now">③ 后果</span><b>→</b><span class="step now">④ 解决</span></div>
+<div class="note">概括而言：个人通过工作获取收入 → 社会经税收与再分配调节 → 分配失衡催生过度消费、失业与贫困 → 政府与个人共同应对。本课词汇均归属此链条，每节对应一个环节。</div>
+<h3 class="sub">11.2 雅思大作文 3 种题型判断</h3>
+<div class="table-wrap"><table><tr><th>题型</th><th>问法关键词</th><th>答题任务</th></tr><tr><td>① 辩论型（最常见）</td><td>agree / disagree · discuss both views · outweigh · positive or negative</td><td>选立场 + 让步反驳</td></tr><tr><td>② 原因措施型</td><td>causes? · solutions? · problems?</td><td>找原因 + 提方案</td></tr><tr><td>③ 辩论+原因措施型</td><td>why? + is it positive?</td><td>先分析原因，再辩论正反</td></tr></table></div>
+<div class="note">快速判断：<code>positive or negative effects</code>、<code>outweigh</code> 属辩论型；<code>causes?</code>、<code>solutions?</code> 属原因措施型；<code>why?</code> 与 <code>is it positive?</code> 组合属辩论+原因措施型。</div>
+<h3 class="sub">11.3 大纲四段骨架（让步反驳）</h3>
+<div class="table-wrap"><table><tr><th>段落</th><th>内容</th><th>一句话</th></tr><tr><td>Introduction</td><td>背景句（换词复述题目）+ 观点句</td><td>While... I believe... because R1 and R2</td></tr><tr><td>Body 1 · 让步</td><td>先承认对方有道理 → 解释</td><td>Some people argue that...</td></tr><tr><td>Body 2 · 反驳</td><td>我的核心理由 → 解释（因果链）→ 例子</td><td>However, I believe that...</td></tr><tr><td>Conclusion</td><td>换说法重申立场 + 两个理由</td><td>不引入新观点</td></tr></table></div>
+<h3 class="sub">11.4 公式速查卡</h3>
+<p class="en">- <strong>Intro</strong>：<code>While... I believe ... because R1 and R2</code>　（R1、R2 = 正文两个理由） - <strong>论点</strong>：<code>[主体] + [方向] + [结果]</code> - <strong>解释</strong>：<code>因为 [A↑] → [B↑] → [C↓]</code>　（因果链，推 2–3 步） - <strong>例子</strong>：<code>[主体] + [具体细节] + [结果]</code>　（加分项；想不到例子就再推一步因果） - <strong>Concl</strong>：换说法重申立场 + 两个理由，不引入新观点</p>
+<div class="note">实用建议：Introduction 可留到最后落笔——届时正文思路已定，反而不易偏题。Conclusion 不应出现正文未讨论的观点；若写完发现多出内容，删去即可。</div>
+<h3 class="sub">11.5 论点从哪来：九大原则</h3>
+<div class="note">任一原则均可从正反两方提取论点，本课重点训练经济原则。Body 段结构为"论点 → 解释 →（例子）"。作答时先定位经济角度，再扩展至其他维度。</div>
+<p class="en"><strong>示例 · 用经济原则为"老龄化"题找观点</strong></p>
+<div class="note">以教材示范题练习九大原则的应用：In many countries, the proportion of older people is steadily increasing. Does this trend have positive or negative effects on society?<br>先用经济原则为正反两方各列一个大观点，再补充其他角度。</div>
+<div class="table-wrap"><table><tr><th></th><th>经济角度</th><th>其他角度</th></tr><tr><td>坏处 (Negative Effects)</td><td><textarea class="ans" data-uid="110" rows="3"></textarea></td><td><textarea class="ans" data-uid="111" rows="3"></textarea></td></tr><tr><td>好处 (Positive Effects)</td><td><textarea class="ans" data-uid="112" rows="3"></textarea></td><td><textarea class="ans" data-uid="113" rows="3"></textarea></td></tr></table></div>
+<h3 class="sub">11.6 四步流水线（看到题 → 写大纲）</h3>
+<div class="note">完整流程：审题（30 秒，圈关键词并判题型）→ 找论点（2 分钟，九大原则正反方各取 2–3 条）→ 组织论点（论点 → 解释 → 例子）→ 套入四段大纲。完成后逐段核查：Introduction 是否预告两个理由？Body 1 是否让步？Body 2 是否反驳？Conclusion 是否换说重申？</div>
+<h2 class="sec-title">十二、真题 · 国际旅游</h2>
+<h3 class="sub">12.1 题目</h3>
+<div class="exam-box"><em>Some people think the problems caused by international travel outweigh its benefits. To what extent do you agree or disagree?</em></div>
+<h3 class="sub">12.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="114" style="width:6ch">。判断关键词：<input class="ans" data-uid="115" style="width:11ch">（+ agree or disagree）。<br>问"好还是坏 / 同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认旅游有问题），Body2 反驳（但好处更大）。</div>
+<h3 class="sub">12.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理经济角度（与本课主题直接相关），再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>经济角度</th><th>其他角度</th></tr><tr><td>坏处 (Problems)</td><td><textarea class="ans" data-uid="116" rows="3"></textarea></td><td><textarea class="ans" data-uid="117" rows="3"></textarea></td></tr><tr><td>好处 (Benefits)</td><td><textarea class="ans" data-uid="118" rows="3"></textarea></td><td><textarea class="ans" data-uid="119" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"关键知识点"一节的大纲骨架完成四段：Introduction（背景+立场）→ Body 1 让步 → Body 2 反驳 → Conclusion 换说重申。</div>
+<p class="foot">《经济原则》讲义 · 雅思写作基础 · 第 1 课</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans') && el.dataset.uid) {
+      try { localStorage.setItem(KEY + el.dataset.uid, el.value); } catch(_){}
+    }
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    if (!el.dataset.uid) return;
+    try { var v = localStorage.getItem(KEY + el.dataset.uid); if (v != null) el.value = v; } catch(_){}
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      if (el.dataset.uid) { try { localStorage.removeItem(KEY + el.dataset.uid); } catch(_){} }
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      // 按打印布局（通栏、页面末尾）测量笔记高度，避免按屏幕 400px 宽算出的高度虚高
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+})();
+</script>
+
+</body>
+</html>

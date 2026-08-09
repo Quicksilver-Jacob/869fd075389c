@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>环保原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:17px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:16px 20px 80px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:26px; margin:18px 0 4px; }
+.sec-title { font-size:21px; color:var(--c1); border-left:6px solid var(--c1); padding-left:10px; margin:34px 0 10px; }
+.sub { font-size:17px; color:var(--dark); margin:22px 0 8px; }
+.sub .tag { font-size:12px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:10px 14px; margin:10px 0; line-height:1.7; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:12px 0 4px; line-height:1.6; }
+p.en { margin:4px 0 16px; line-height:2.0; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:10px 0; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th { background:var(--dark); color:#fff; padding:8px 10px; text-align:left; font-weight:700; }
+td { padding:8px 10px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:10px 12px; margin:12px 0; line-height:1.9; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:2px 9px; margin:3px 6px 0 0; font-size:15px; }
+
+input.ans { font:inherit; font-size:16px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+            padding:3px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:16px; line-height:1.6; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+               padding:6px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:10px 12px;
+                color:var(--dark); line-height:1.7; font-size:15px; margin:6px 0 16px; }
+.translate { margin:4px 0 16px; }
+.translate textarea.ans { width:100%; min-height:84px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:14px 18px;
+            margin:10px 0; font-style:italic; font-size:16px; line-height:1.6; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:26px; }
+  textarea.ans { min-height:30px; }
+  .note, .wordbank, .exam-box { break-inside:avoid; }
+  table, tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:14mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="toolbar">
+<span class="tt">环保原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button>
+<button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button>
+<button class="btn no-print" id="btn-notes" type="button">📝 笔记</button>
+</div>
+<h1>环保原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇 · 污染来源与破坏 · 名词/动词短语（S1）</h2>
+<div class="note">本节为中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。本组 7 词构成"污染从哪来"链条——从过度开发到日常消费，对应链条第一步 ① 污染来源。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>过度工业化</td><td><input class="ans" data-uid="1" style="width:25ch"></td></tr><tr><td>2</td><td>大范围伐木采矿</td><td><input class="ans" data-uid="2" style="width:31ch"></td></tr><tr><td>3</td><td>未经处理排入河流</td><td><input class="ans" data-uid="3" style="width:40ch"></td></tr><tr><td>4</td><td>白色污染</td><td><input class="ans" data-uid="4" style="width:18ch"></td></tr><tr><td>5</td><td>一次性筷子</td><td><input class="ans" data-uid="5" style="width:36ch"></td></tr><tr><td>6</td><td>车辆尾气</td><td><input class="ans" data-uid="6" style="width:16ch"></td></tr><tr><td>7</td><td>破坏环境</td><td><input class="ans" data-uid="7" style="width:32ch"></td></tr></table></div>
+<h2 class="sec-title">二、词汇 · 环境后果 · 名词短语（S2）</h2>
+<div class="note">本组 8 词由污染来源转入后果：从森林砍伐、水土流失到全球变暖，构成"来源—后果"因果链，对应 ② 环境后果。可与 S1 的来源词对照理解。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>森林砍伐</td><td><input class="ans" data-uid="8" style="width:16ch"></td></tr><tr><td>2</td><td>水土流失</td><td><input class="ans" data-uid="9" style="width:15ch"></td></tr><tr><td>3</td><td>空气质量恶化</td><td><input class="ans" data-uid="10" style="width:35ch"></td></tr><tr><td>4</td><td>温室效应</td><td><input class="ans" data-uid="11" style="width:24ch"></td></tr><tr><td>5</td><td>全球变暖</td><td><input class="ans" data-uid="12" style="width:17ch"></td></tr><tr><td>6</td><td>破坏生态系统</td><td><input class="ans" data-uid="13" style="width:23ch"></td></tr><tr><td>7</td><td>对自然栖息地构成威胁</td><td><input class="ans" data-uid="14" style="width:36ch"></td></tr><tr><td>8</td><td>濒危野生动物</td><td><input class="ans" data-uid="15" style="width:22ch"></td></tr></table></div>
+<h2 class="sec-title">三、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（污染来源）与 S2（环境后果）两组表达，体现"污染→后果"因果链。</div>
+<p class="zh"><strong>1.</strong> 中文：过度工业化的疯狂驱动加剧了大范围伐木采矿和森林砍伐，直接导致广泛的水土流失、严重的生态破坏。</p>
+<p class="en">The relentless drive of <input class="ans" data-uid="16" style="width:25ch"> has fuelled <input class="ans" data-uid="17" style="width:31ch"> and <input class="ans" data-uid="18" style="width:16ch">, which directly result in widespread <input class="ans" data-uid="19" style="width:15ch"> and lasting <input class="ans" data-uid="20" style="width:26ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：当消费者依赖一次性筷子、产生白色污染、工厂未经过滤就将废水倾倒入河流时，这些看似独立的行为共同破坏了人们赖以生存的环境。</p>
+<p class="en">When consumers rely on <input class="ans" data-uid="21" style="width:36ch">, generate <input class="ans" data-uid="22" style="width:18ch">, and factories <input class="ans" data-uid="23" style="width:40ch">, these seemingly separate actions collectively <input class="ans" data-uid="24" style="width:32ch"> that communities depend on.</p>
+<p class="zh"><strong>3.</strong> 中文：随着车辆和工厂排放的尾气不断累积，它们加速了温室效应，进而推动全球变暖并使全球城市的空气质量恶化。</p>
+<p class="en">As <input class="ans" data-uid="25" style="width:16ch"> from vehicles and factories accumulate, they accelerate the <input class="ans" data-uid="26" style="width:20ch">, which in turn drives <input class="ans" data-uid="27" style="width:17ch"> and worsens the <input class="ans" data-uid="28" style="width:31ch"> in cities worldwide.</p>
+<p class="zh"><strong>4.</strong> 中文：持续的森林砍伐不仅破坏了碳汇，还对自然栖息地构成威胁——随着这些栖息地的消失，每年都有更多的濒危野生动物物种走向灭绝边缘。</p>
+<p class="en">Continued <input class="ans" data-uid="29" style="width:16ch"> not only destroys carbon sinks but also <input class="ans" data-uid="30" style="width:37ch"> — and as these habitats vanish, more <input class="ans" data-uid="31" style="width:22ch"> species edge closer to extinction each year.</p>
+<p class="zh"><strong>5.</strong> 中文：过度工业化、水土流失和失控的全球变暖的综合效应将不可逆转地破坏生态系统，而濒危野生动物则是最显眼的预警信号。</p>
+<p class="en">The combined effects of <input class="ans" data-uid="32" style="width:25ch">, <input class="ans" data-uid="33" style="width:15ch">, and unchecked <input class="ans" data-uid="34" style="width:17ch"> will <input class="ans" data-uid="35" style="width:23ch"> beyond repair, with <input class="ans" data-uid="36" style="width:22ch"> serving as the most visible warning sign.</p>
+<h2 class="sec-title">四、词汇 · 污染的深层后果 · 名词短语（S3）</h2>
+<div class="note">本组 7 词由环境后果转入对人类与自然的深层冲击：从污染物、毒化学品到健康风险，构成"后果—深层后果"穿透链，对应 ③ 深层后果。可与 S2 的后果词对照。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>污染物</td><td><input class="ans" data-uid="37" style="width:28ch"></td></tr><tr><td>2</td><td>有毒化学品</td><td><input class="ans" data-uid="38" style="width:18ch"></td></tr><tr><td>3</td><td>酸雨</td><td><input class="ans" data-uid="39" style="width:12ch"></td></tr><tr><td>4</td><td>食物链污染</td><td><input class="ans" data-uid="40" style="width:27ch"></td></tr><tr><td>5</td><td>水资源稀缺</td><td><input class="ans" data-uid="41" style="width:28ch"></td></tr><tr><td>6</td><td>永久性破坏</td><td><input class="ans" data-uid="42" style="width:33ch"></td></tr><tr><td>7</td><td>对人类健康构成风险</td><td><input class="ans" data-uid="43" style="width:30ch"></td></tr></table></div>
+<h2 class="sec-title">五、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S2（环境后果）与 S3（深层后果）两组表达，体现"环境后果→深层后果"穿透逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：森林砍伐、水土流失和生态系统破坏对地貌造成的可见破坏，又被不可见的威胁所加剧：释放到环境中的污染物变成渗入地下水的有毒化学品，而酸雨污染了降雨并进入食物链。</p>
+<p class="en">The visible toll of <input class="ans" data-uid="44" style="width:16ch">, <input class="ans" data-uid="45" style="width:15ch">, and <input class="ans" data-uid="46" style="width:26ch"> on landscapes is compounded by invisible threats: <input class="ans" data-uid="47" style="width:28ch"> released into the environment become <input class="ans" data-uid="48" style="width:18ch"> that seep into groundwater, while <input class="ans" data-uid="49" style="width:12ch"> pollutes rainfall and enters the <input class="ans" data-uid="50" style="width:13ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：日益恶化的空气质量和加速的全球变暖不仅降低了空气品质，还加剧了水资源短缺与稀缺，因为更高的温度使有毒化学品在水源中浓缩。</p>
+<p class="en">The worsening <input class="ans" data-uid="51" style="width:31ch"> and accelerating <input class="ans" data-uid="52" style="width:17ch"> not only degrade air quality but also intensify <input class="ans" data-uid="53" style="width:28ch">, as higher temperatures concentrate <input class="ans" data-uid="54" style="width:18ch"> in water sources.</p>
+<p class="zh"><strong>3.</strong> 中文：随着温室效应困住热量并扰乱天气模式，它加剧了水资源稀缺，并放大了污染物通过食物链的扩散，危及野生动物和人类健康。</p>
+<p class="en">As the <input class="ans" data-uid="55" style="width:20ch"> traps heat and disrupts weather patterns, it worsens <input class="ans" data-uid="56" style="width:28ch"> and amplifies the spread of <input class="ans" data-uid="57" style="width:28ch"> through the <input class="ans" data-uid="58" style="width:13ch">, endangering both wildlife and human health.</p>
+<p class="zh"><strong>4.</strong> 中文：当工业和农业将有毒化学品释放到土壤和河流中时，这些化学物质通过食物链传播，最终对人类构成健康风险，造成无法逆转的永久性破坏。</p>
+<p class="en">When industries and agriculture release <input class="ans" data-uid="59" style="width:18ch"> into soil and rivers, these chemicals travel through the <input class="ans" data-uid="60" style="width:13ch"> and ultimately <input class="ans" data-uid="61" style="width:30ch">, causing <input class="ans" data-uid="62" style="width:33ch"> that cannot be reversed.</p>
+<p class="zh"><strong>5.</strong> 中文：污染造成的系统性生态系统破坏意味着，即使我们明天就停止排放，已经对自然系统造成的永久性破坏仍将在未来几代人中持续对人类构成健康风险。</p>
+<p class="en">The systematic <input class="ans" data-uid="63" style="width:26ch"> caused by pollution means that even if we halt emissions tomorrow, the <input class="ans" data-uid="64" style="width:33ch"> already done to natural systems will continue to <input class="ans" data-uid="65" style="width:30ch"> for generations.</p>
+<h2 class="sec-title">六、词汇 · 治理与可持续发展 · 动词短语（S4）</h2>
+<div class="note">本组 8 个动词短语代表政府与社会的应对动作，与 S3 中的各项问题逐一对应，构成"问题—方案"对应链条，对应 ④ 治理。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>提升环保意识</td><td><input class="ans" data-uid="66" style="width:40ch"></td></tr><tr><td>2</td><td>加强环境保护</td><td><input class="ans" data-uid="67" style="width:38ch"></td></tr><tr><td>3</td><td>对……征收高额惩罚性税收</td><td><input class="ans" data-uid="68" style="width:28ch"></td></tr><tr><td>4</td><td>减少污物排放</td><td><input class="ans" data-uid="69" style="width:37ch"></td></tr><tr><td>5</td><td>实施回收计划</td><td><input class="ans" data-uid="70" style="width:34ch"></td></tr><tr><td>6</td><td>开发可再生资源</td><td><input class="ans" data-uid="71" style="width:30ch"></td></tr><tr><td>7</td><td>促进可持续发展</td><td><input class="ans" data-uid="72" style="width:34ch"></td></tr><tr><td>8</td><td>创造良好生态环境</td><td><input class="ans" data-uid="73" style="width:40ch"></td></tr></table></div>
+<h2 class="sec-title">七、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为深层后果（S3）、后半为治理对策（S4），体现"问题→方案"对应逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：要打破污染物和有毒化学品通过食物链传播并对人类构成健康风险的循环，政府必须首先提升公众的环保意识。</p>
+<p class="en">To break the cycle whereby <input class="ans" data-uid="74" style="width:28ch"> and <input class="ans" data-uid="75" style="width:18ch"> travel through the <input class="ans" data-uid="76" style="width:13ch"> and cause <input class="ans" data-uid="77" style="width:25ch">, governments must first <input class="ans" data-uid="78" style="width:40ch"> among the public.</p>
+<p class="zh"><strong>2.</strong> 中文：一旦公众意识被唤醒，当局应加强环境保护，制定更严格的法律，对污染行业征收高额惩罚性税收，并要求企业从源头减少污物排放。</p>
+<p class="en">Once public consciousness is awakened, authorities should <input class="ans" data-uid="79" style="width:38ch"> by enacting stricter laws, <input class="ans" data-uid="80" style="width:28ch"> polluting industries, and requiring companies to <input class="ans" data-uid="81" style="width:37ch"> at the source.</p>
+<p class="zh"><strong>3.</strong> 中文：在社区层面，地方政府必须实施回收计划（如垃圾分类和再利用），以解决累积垃圾造成的水资源稀缺和清洁水源被酸雨污染的问题。</p>
+<p class="en">At the community level, local governments must <input class="ans" data-uid="82" style="width:34ch"> such as sorting and reusing waste to address <input class="ans" data-uid="83" style="width:28ch"> caused by accumulated garbage and the <input class="ans" data-uid="84" style="width:22ch"> of clean water supplies.</p>
+<p class="zh"><strong>4.</strong> 中文：解决酸雨和水资源稀缺的长期方案在于开发太阳能和风能等可再生资源，使社会能够在不过度消耗自然资源的前提下促进可持续发展。</p>
+<p class="en">The long-term solution to <input class="ans" data-uid="85" style="width:12ch"> and <input class="ans" data-uid="86" style="width:28ch"> lies in <input class="ans" data-uid="87" style="width:33ch"> like solar and wind energy, which enables societies to <input class="ans" data-uid="88" style="width:34ch"> without further depleting natural resources.</p>
+<p class="zh"><strong>5.</strong> 中文：只有将提升公众意识与征收高额惩罚性税收、开发可再生资源和全社会对可持续发展的承诺相结合，我们才能逆转已经造成的永久性破坏，并最终创造一个良好的生态环境。</p>
+<p class="en">Only by combining <input class="ans" data-uid="89" style="width:29ch"> with <input class="ans" data-uid="90" style="width:27ch">, <input class="ans" data-uid="91" style="width:33ch">, and a societal commitment to <input class="ans" data-uid="92" style="width:26ch"> can we reverse the <input class="ans" data-uid="93" style="width:33ch"> already inflicted and ultimately <input class="ans" data-uid="94" style="width:40ch">.</p>
+<h2 class="sec-title">八、练习 · 句子填空（课本原题 · 课后句子填空）</h2>
+<div class="note">于空白处填入恰当的词或短语。本题不设词库，须凭记忆完成；注意词形变化。括号内为中文提示。</div>
+<p class="en"><strong>1.</strong> For governments all over the world, encouraging or even impelling <input class="ans" data-uid="95" style="width:34ch"> to adopt clean technology is a productive approach. <span class="hint">（工业和生产）</span></p>
+<p class="en"><strong>2.</strong> On the other hand, <input class="ans" data-uid="96" style="width:19ch"> that economic progress is actually accompanied by <input class="ans" data-uid="97" style="width:28ch">, which is particularly true in some underdeveloped countries. <span class="hint">（必须承认，环境恶化）</span></p>
+<p class="en"><strong>3.</strong> By <input class="ans" data-uid="98" style="width:24ch"> in environmental management, countries can <input class="ans" data-uid="99" style="width:18ch"> with greater efficiency and at lower costs. <span class="hint">（交流经验，处理问题）</span></p>
+<p class="en"><strong>4.</strong> If individuals <input class="ans" data-uid="100" style="width:40ch">, such as <input class="ans" data-uid="101" style="width:32ch"> and shopping plastic bags, the amount of <input class="ans" data-uid="102" style="width:26ch"> would be reduced to the minimum. <span class="hint">（减少不耐用物品的使用，一次性塑料餐盒，不可生物降解的废物）</span></p>
+<p class="en"><strong>5.</strong> Owing to <input class="ans" data-uid="103" style="width:37ch">, ordinary people are incapable of <input class="ans" data-uid="104" style="width:40ch">, such as <input class="ans" data-uid="105" style="width:29ch">. <span class="hint">（缺乏专业知识，应对严重的环境问题，如山体滑坡和水土流失）</span></p>
+<h2 class="sec-title">九、练习 · 段落填空（课本原题 · 段落翻译改编）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。两段分别讲个人与政府如何行动、宣传活动如何开展。</div>
+<p class="zh"><strong>中文原文：</strong> 另一方面，不可否认，普通人民和各国政府的实际行动也能在恢复遭到破坏的环境中起到各自的作用。如果个人减少不耐用物品的使用，如一次性塑料餐盒和购物袋，不可生物降解的废物数量将被减少到最低。各国政府可以通过补贴环保设备的引进帮助企业变得更具环保责任，这可以最佳利用资源并妥善处理废物。</p>
+<p class="en">On the other hand, there is no denying that <input class="ans" data-uid="106" style="width:20ch"> of ordinary people and national governments can <input class="ans" data-uid="107" style="width:20ch"> in restoring the damaged environment. If individuals <input class="ans" data-uid="108" style="width:40ch">, such as disposable lunch boxes and shopping plastic bags, the amount of <input class="ans" data-uid="109" style="width:26ch"> would be reduced to the minimum. Governments could help businesses become more <input class="ans" data-uid="110" style="width:27ch"> by <input class="ans" data-uid="111" style="width:40ch">, which is capable of <input class="ans" data-uid="112" style="width:31ch"> and dealing with wastes.</p>
+<p class="zh"><strong>中文原文：</strong> 首先，应该举办更多环保活动，向市民灌输个人行为是问题解决过程中不可或缺的部分这一观念。例如，人们可以对生活垃圾进行分类以方便废物回收，可以减少汽车的使用以减少废气的排放。</p>
+<p class="en">First of all, more <input class="ans" data-uid="113" style="width:24ch"> should be launched to <input class="ans" data-uid="114" style="width:24ch"> the concept that individual actions are an indispensable part in the problem-solving process. For example, one can <input class="ans" data-uid="115" style="width:29ch"> to recollect wastes and <input class="ans" data-uid="116" style="width:17ch"> to reduce the emission of <input class="ans" data-uid="117" style="width:16ch">.</p>
+<h2 class="sec-title">十、练习 · 句子翻译（课本原题 · 课堂操练）</h2>
+<div class="note">将下列中文译为英文，须使用括号内提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：政府有权制定严格的法律法规来阻止个人和公司破坏环境。<span class="hint">（enact strict laws, deter, damage the environment）</span></p>
+<div class="translate"><textarea class="ans" data-uid="118" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：对资源的日益增长的需求导致大范围伐木和采矿，这是水土流失的主要原因。<span class="hint">（increasing demand, extensive logging and mining, soil erosion）</span></p>
+<div class="translate"><textarea class="ans" data-uid="119" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：政府可以对危害环境的产品征收高额惩罚性税收，并用这笔税收资助环保项目。<span class="hint">（impose high tax penalties, fund, environmental protection）</span></p>
+<div class="translate"><textarea class="ans" data-uid="120" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：栖息地破坏使许多动物无家可归并成为濒危物种。<span class="hint">（habitat destruction, homeless, endangered species）</span></p>
+<div class="translate"><textarea class="ans" data-uid="121" rows="3"></textarea></div>
+<h2 class="sec-title">十一、真题 · 替代能源</h2>
+<h3 class="sub">11.1 题目</h3>
+<div class="exam-box"><em>Fossil fuels, such as coal, oil and natural gas, are the main sources of energy for many countries. However, some people think that alternative energy sources should be used instead. To what extent do you agree or disagree?</em></div>
+<h3 class="sub">11.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="122" style="width:6ch">。判断关键词：<input class="ans" data-uid="123" style="width:40ch">。<br>问"同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认推广替代能源有现实困难），Body2 反驳（但环境与健康收益更大）。</div>
+<h3 class="sub">11.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（环保）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>本原则角度（环保）</th><th>其他角度补充</th></tr><tr><td>正方：应该推广替代能源 (Agree)</td><td><textarea class="ans" data-uid="124" rows="3"></textarea></td><td><textarea class="ans" data-uid="125" rows="3"></textarea></td></tr><tr><td>反方：推广替代能源有困难 (Challenges)</td><td><textarea class="ans" data-uid="126" rows="3"></textarea></td><td><textarea class="ans" data-uid="127" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"让步反驳"骨架完成四段：Introduction（背景+立场）→ Body 1 让步（承认对方顾虑）→ Body 2 反驳（环境与健康收益）→ Conclusion 换说重申。</div>
+<h2 class="sec-title">十二、真题 · 个人与政府</h2>
+<h3 class="sub">12.1 题目</h3>
+<div class="exam-box"><em>Environmental problems are too big for individual countries or people to solve. They can only be addressed at an international level. To what extent do you agree or disagree?</em></div>
+<h3 class="sub">12.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="128" style="width:6ch">。判断关键词：<input class="ans" data-uid="129" style="width:40ch">。<br>问"同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认国际层面不可替代），Body2 反驳（但国家与个人同样关键）。折中立场最合理。</div>
+<h3 class="sub">12.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（环保）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>本原则角度（环保）</th><th>其他角度补充</th></tr><tr><td>政府责任更大 (Government Responsibility)</td><td><textarea class="ans" data-uid="130" rows="3"></textarea></td><td><textarea class="ans" data-uid="131" rows="3"></textarea></td></tr><tr><td>个人也有责任 (Individual Responsibility)</td><td><textarea class="ans" data-uid="132" rows="3"></textarea></td><td><textarea class="ans" data-uid="133" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"让步反驳"骨架完成四段：Introduction（背景+立场）→ Body 1 让步（承认国际层面重要）→ Body 2 反驳（国家与个人执行关键）→ Conclusion 换说重申。</div>
+<p class="foot">《环保原则》讲义 · 雅思写作基础 · 第 4 课</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans') && el.dataset.uid) {
+      try { localStorage.setItem(KEY + el.dataset.uid, el.value); } catch(_){}
+    }
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    if (!el.dataset.uid) return;
+    try { var v = localStorage.getItem(KEY + el.dataset.uid); if (v != null) el.value = v; } catch(_){}
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      if (el.dataset.uid) { try { localStorage.removeItem(KEY + el.dataset.uid); } catch(_){} }
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      // 按打印布局（通栏、页面末尾）测量笔记高度，避免按屏幕 400px 宽算出的高度虚高
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+})();
+</script>
+
+</body>
+</html>

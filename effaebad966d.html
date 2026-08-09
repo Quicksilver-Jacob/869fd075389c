@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时间效率原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:17px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:16px 20px 80px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:26px; margin:18px 0 4px; }
+.sec-title { font-size:21px; color:var(--c1); border-left:6px solid var(--c1); padding-left:10px; margin:34px 0 10px; }
+.sub { font-size:17px; color:var(--dark); margin:22px 0 8px; }
+.sub .tag { font-size:12px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:10px 14px; margin:10px 0; line-height:1.7; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:12px 0 4px; line-height:1.6; }
+p.en { margin:4px 0 16px; line-height:2.0; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:10px 0; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th { background:var(--dark); color:#fff; padding:8px 10px; text-align:left; font-weight:700; }
+td { padding:8px 10px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:10px 12px; margin:12px 0; line-height:1.9; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:2px 9px; margin:3px 6px 0 0; font-size:15px; }
+
+input.ans { font:inherit; font-size:16px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+            padding:3px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:16px; line-height:1.6; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+               padding:6px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:10px 12px;
+                color:var(--dark); line-height:1.7; font-size:15px; margin:6px 0 16px; }
+.translate { margin:4px 0 16px; }
+.translate textarea.ans { width:100%; min-height:84px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:14px 18px;
+            margin:10px 0; font-style:italic; font-size:16px; line-height:1.6; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:26px; }
+  textarea.ans { min-height:30px; }
+  .note, .wordbank, .exam-box { break-inside:avoid; }
+  table, tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:14mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="toolbar">
+<span class="tt">时间效率原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button>
+<button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button>
+<button class="btn no-print" id="btn-notes" type="button">📝 笔记</button>
+</div>
+<h1>时间效率原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇 · 时间的消耗（S1）</h2>
+<div class="note">本节为中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。本组 7 词构成"时间被占用"链条——从通勤到屏幕，逐级递进，对应链条第一步 ① 占用。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>通勤 / 长途上班</td><td><input class="ans" data-uid="1" style="width:40ch"></td></tr><tr><td>2</td><td>交通量</td><td><input class="ans" data-uid="2" style="width:20ch"></td></tr><tr><td>3</td><td>交通堵塞</td><td><input class="ans" data-uid="3" style="width:18ch"></td></tr><tr><td>4</td><td>通勤时间</td><td><input class="ans" data-uid="4" style="width:17ch"></td></tr><tr><td>5</td><td>忙于工作</td><td><input class="ans" data-uid="5" style="width:30ch"></td></tr><tr><td>6</td><td>占用学习时间</td><td><input class="ans" data-uid="6" style="width:20ch"></td></tr><tr><td>7</td><td>盯着电脑屏幕</td><td><input class="ans" data-uid="7" style="width:29ch"></td></tr></table></div>
+<h2 class="sec-title">二、词汇 · 效率的损失 · 介词考点（S2）</h2>
+<div class="note">本组 7 词由"时间被占用"转入"效率受损"：从分心、干扰到成瘾，构成"占用—损失"链条，对应 ② 损失。句中划线的介词为考点，注意搭配。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>使……从……分心</td><td><input class="ans" data-uid="8" style="width:23ch"></td></tr><tr><td>2</td><td>干扰工作/学习</td><td><input class="ans" data-uid="9" style="width:34ch"></td></tr><tr><td>3</td><td>沉迷于</td><td><input class="ans" data-uid="10" style="width:17ch"></td></tr><tr><td>4</td><td>过度依赖电脑</td><td><input class="ans" data-uid="11" style="width:29ch"></td></tr><tr><td>5</td><td>缺乏自控力和自律</td><td><input class="ans" data-uid="12" style="width:40ch"></td></tr><tr><td>6</td><td>降低效率</td><td><input class="ans" data-uid="13" style="width:28ch"></td></tr><tr><td>7</td><td>耗时的</td><td><input class="ans" data-uid="14" style="width:20ch"></td></tr></table></div>
+<div class="note">⚠ <strong>介词考点</strong>：distract sb <strong>from</strong> sth / interfere <strong>with</strong> / be addicted <strong>to</strong> / rely too much <strong>on</strong> —— 介词写错整句扣分。</div>
+<h2 class="sec-title">三、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（时间被占用）与 S2（效率损失）两组表达，注意其间的因果与循环关系。</div>
+<p class="zh"><strong>1.</strong> 中文：由交通量大和频繁堵车造成的长时间通勤意味着员工到达工作岗位时已经筋疲力尽，这不可避免地让他们从工作任务中分心。</p>
+<p class="en">Long hours spent on <input class="ans" data-uid="15" style="width:12ch"> caused by heavy <input class="ans" data-uid="16" style="width:20ch"> and frequent <input class="ans" data-uid="17" style="width:15ch"> mean that employees arrive at work already exhausted, which inevitably <input class="ans" data-uid="18" style="width:17ch"> from their tasks.</p>
+<p class="zh"><strong>2.</strong> 中文：当人们连续几小时盯着屏幕并完全忙于工作时，他们几乎没有时间学习，而持续不断的通知会干扰工作，进一步降低效率。</p>
+<p class="en">When people <input class="ans" data-uid="19" style="width:8ch"> at screens for hours and are fully <input class="ans" data-uid="20" style="width:27ch">, they have little time left for study, and constant notifications <input class="ans" data-uid="21" style="width:28ch">, further reducing productivity.</p>
+<p class="zh"><strong>3.</strong> 中文：一旦员工沉迷于电子设备且缺乏自控和自律，他们就开始降低效率，连简单任务也变得耗时。</p>
+<p class="en">Once workers become <input class="ans" data-uid="22" style="width:14ch"> their devices and <input class="ans" data-uid="23" style="width:40ch">, they begin to <input class="ans" data-uid="24" style="width:20ch">, and even simple tasks become <input class="ans" data-uid="25" style="width:17ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：过长的通勤时间不仅吞噬了学习时间，也是个体过度依赖电子设备乃至成瘾的关键原因。</p>
+<p class="en">Excessive <input class="ans" data-uid="26" style="width:17ch"> not only eats into <input class="ans" data-uid="27" style="width:13ch"> but is also a key reason why individuals <input class="ans" data-uid="28" style="width:16ch"> on electronic devices to the point of addiction.</p>
+<p class="zh"><strong>5.</strong> 中文：长时间堵车、持续屏幕暴露和缺乏自律的组合形成了一个循环：员工效率降低，最终在做任何事情时都会分心。</p>
+<p class="en">The combination of long <input class="ans" data-uid="29" style="width:15ch">, constant screen exposure, and <input class="ans" data-uid="30" style="width:26ch"> creates a cycle where workers <input class="ans" data-uid="31" style="width:18ch">, ultimately causing them to <input class="ans" data-uid="32" style="width:20ch"> at everything they do.</p>
+<h2 class="sec-title">四、词汇 · 对生活的深层影响（S3）</h2>
+<div class="note">本组 7 词聚焦效率损失的长期后果，构成一条负向延伸：时间被低效吞噬，生活变得忙碌而孤立，对应 ③ 影响。可与 S1 的正向占用对照理解。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>有限的时间精力</td><td><input class="ans" data-uid="33" style="width:26ch"></td></tr><tr><td>2</td><td>被动娱乐</td><td><input class="ans" data-uid="34" style="width:24ch"></td></tr><tr><td>3</td><td>巨大的时间浪费</td><td><input class="ans" data-uid="35" style="width:24ch"></td></tr><tr><td>4</td><td>过忙碌的生活</td><td><input class="ans" data-uid="36" style="width:21ch"></td></tr><tr><td>5</td><td>低效无产出的学习</td><td><input class="ans" data-uid="37" style="width:40ch"></td></tr><tr><td>6</td><td>逃课</td><td><input class="ans" data-uid="38" style="width:24ch"></td></tr><tr><td>7</td><td>社交孤立</td><td><input class="ans" data-uid="39" style="width:19ch"></td></tr></table></div>
+<h2 class="sec-title">五、词汇 · 时间管理与效率优化 · 动词短语（S4）</h2>
+<div class="note">本组 8 个动词短语代表个人与组织的应对动作，与 S3 中的各项损失逐一对应，构成"问题—方案"关系，对应 ④ 优化。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>节省时间</td><td><input class="ans" data-uid="40" style="width:12ch"></td></tr><tr><td>2</td><td>专注于</td><td><input class="ans" data-uid="41" style="width:28ch"></td></tr><tr><td>3</td><td>减少干扰</td><td><input class="ans" data-uid="42" style="width:22ch"></td></tr><tr><td>4</td><td>抵挡诱惑</td><td><input class="ans" data-uid="43" style="width:24ch"></td></tr><tr><td>5</td><td>避开高峰交通</td><td><input class="ans" data-uid="44" style="width:26ch"></td></tr><tr><td>6</td><td>在家办公</td><td><input class="ans" data-uid="45" style="width:17ch"></td></tr><tr><td>7</td><td>实现工作生活平衡</td><td><input class="ans" data-uid="46" style="width:28ch"></td></tr><tr><td>8</td><td>与家人共度优质时光</td><td><input class="ans" data-uid="47" style="width:33ch"></td></tr></table></div>
+<h2 class="sec-title">六、练习 · 句子填空（课本原题 · 课后句子填空 p22-23）</h2>
+<div class="note">于空白处填入恰当的词或短语。本题不设词库，须凭记忆完成；注意词形变化。括号内为中文提示。</div>
+<p class="en"><strong>1.</strong> Television viewing can <input class="ans" data-uid="48" style="width:17ch"> children's studies and other activities which can benefit these children's development. <span class="hint">（干扰）</span></p>
+<p class="en"><strong>2.</strong> Children can <input class="ans" data-uid="49" style="width:17ch"> easily, especially when they watch TV without adults' supervision. <span class="hint">（分心）</span></p>
+<p class="en"><strong>3.</strong> They may not <input class="ans" data-uid="50" style="width:28ch"> learning tasks, a problem which can lead to <input class="ans" data-uid="51" style="width:28ch">. <span class="hint">（集中精力，成绩差）</span></p>
+<p class="en"><strong>4.</strong> Many students do not regard unpaid work as a <input class="ans" data-uid="52" style="width:23ch"> of educational value. <span class="hint">（值得的体验）</span></p>
+<p class="en"><strong>5.</strong> <input class="ans" data-uid="53" style="width:15ch"> will decline if they change their lifestyles. <span class="hint">（生活成本）</span></p>
+<h2 class="sec-title">七、练习 · 段落填空（课本原题 · 课后段落翻译改编 p24）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。</div>
+<p class="zh"><strong>中文原文：</strong> 社区服务的好处——通过提供社区服务，学生可以提高技能、增加实践经验。学生在参与这些社区服务时，可能会遇到许多在学校里很少见的问题和挑战。例如，在为慈善机构筹募资金时，他们需要学会如何与捐助者沟通、组织活动并与他人合作。这些活动可以增强他们的自信心，提高他们解决问题的能力。</p>
+<p class="en">By providing community services, students can <input class="ans" data-uid="54" style="width:40ch">. Students may <input class="ans" data-uid="55" style="width:21ch"> many problems and challenges, most of which are rare at school, when they are involved in these community services. For example, when <input class="ans" data-uid="56" style="width:30ch">, they should figure out how to <input class="ans" data-uid="57" style="width:31ch">, organize events and work with others. These activities can <input class="ans" data-uid="58" style="width:40ch">.</p>
+<p class="zh"><strong>中文原文：</strong> 另一方面，我们不能排除无薪工作可能浪费志愿者时间和精力的可能性。如果组织不当，志愿项目会变得乏味，许多学生并不认为无薪工作是一种具有教育价值的宝贵体验。年轻的志愿者不愿意投入时间去做无薪工作，因为他们发现不了自己所做事情的价值。他们也可能把志愿工作看作一种占用学习时间、干扰学习的活动。</p>
+<p class="en">On the other hand, we cannot <input class="ans" data-uid="59" style="width:27ch"> that unpaid work can <input class="ans" data-uid="60" style="width:40ch">. If not well-organized, voluntary projects are tedious, and many students do not regard unpaid work as a <input class="ans" data-uid="61" style="width:23ch"> of educational value. Young volunteers are not willing to <input class="ans" data-uid="62" style="width:17ch"> unpaid work, since they do not <input class="ans" data-uid="63" style="width:24ch"> what they do. They may also see voluntary work as a service which can <input class="ans" data-uid="64" style="width:40ch">.</p>
+<h2 class="sec-title">八、练习 · 句子翻译（课本原题 · 课堂操练 p19-20）</h2>
+<div class="note">将下列中文译为英文，须使用括号内提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：家长总是给孩子报很多辅导班来帮他们培养兴趣爱好，但是高密度的课业占据了大部分的课余时间，这反而给孩子们带来了消极影响。<span class="hint">（sign up, intensive school work）</span></p>
+<div class="translate"><textarea class="ans" data-uid="65" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：有些电视节目非常吸引人，令人分心，所以不少小孩很难专心学习。<span class="hint">（attractive, distracting, find it hard to do）</span></p>
+<div class="translate"><textarea class="ans" data-uid="66" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：各种各样的家用电器可以帮助人们节省时间，使人们从繁重的体力劳动中解放出来，让他们在家的生活更为舒适和便利。<span class="hint">（time-saving, spare sb from sth, tiresome）</span></p>
+<div class="translate"><textarea class="ans" data-uid="67" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：有些孩子缺乏自控和自律，容易沉迷于电脑游戏，导致学习成绩下降。<span class="hint">（lack self-control and self-discipline）</span></p>
+<div class="translate"><textarea class="ans" data-uid="68" rows="3"></textarea></div>
+<h2 class="sec-title">九、关键知识点与逻辑</h2>
+<div class="note">本课专设思路框架环节：掌握辩论型的统一大纲——让步反驳结构。后续真题（机器人 + 社区服务）即练习场。</div>
+<h3 class="sub">9.1 四步逻辑链</h3>
+<div class="chain"><span class="step now">① 时间被占用</span><b>→</b><span class="step now">② 效率损失</span><b>→</b><span class="step now">③ 深层影响</span><b>→</b><span class="step now">④ 优化对策</span></div>
+<div class="note">概括而言：时间被通勤与屏幕占用 → 分心、成瘾、效率受损 → 进一步吞噬学习与生活 → 个人通过时间管理应对。本课词汇均归属此链条，每节对应一个环节。</div>
+<h3 class="sub">9.2 让步反驳结构（辩论型统一大纲）</h3>
+<div class="note">所有辩论型（agree/disagree、discuss both views、outweigh）共用同一套骨架。让步让论证更完整，反驳让立场更坚定。</div>
+<div class="table-wrap"><table><tr><th>段落</th><th>内容</th><th>一句话</th></tr><tr><td>Introduction</td><td>背景句（换词复述题目）+ 观点句</td><td>While... I believe... because R1 and R2</td></tr><tr><td>Body 1 · 让步</td><td>先承认对方有道理 → 解释</td><td>Some people argue that...</td></tr><tr><td>Body 2 · 反驳</td><td>我的核心理由 → 解释（因果链）→ 例子</td><td>However, I believe that...</td></tr><tr><td>Conclusion</td><td>权衡双方后重申立场，不引入新观点</td><td>换说法重申</td></tr></table></div>
+<div class="note amber">💡 <strong>九大原则怎么用</strong>：每个原则都能从正方和反方两个角度切入。原则帮你找论点 → 让步反驳帮你排顺序 → 大纲帮你组织段落。同一套词汇正反两方都能打。</div>
+<h3 class="sub">9.3 审题到成文三步</h3>
+<div class="note">① 30 秒判断题型（看关键词）→ ② 找论点（九大原则正反方各取 2–3 条）→ ③ 选一个论点写出解释 + 例子关键词。成文后对照自检：Body 1 是否让步？Body 2 是否反驳？Conclusion 是否权衡重申？</div>
+<h2 class="sec-title">十、真题 · 机器人</h2>
+<h3 class="sub">10.1 题目</h3>
+<div class="exam-box"><em>Some people think that robots are important to the development of society, while others think that they have negative effects on society. Discuss both views and give your own opinion.</em></div>
+<h3 class="sub">10.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="69" style="width:6ch">。判断关键词：<input class="ans" data-uid="70" style="width:40ch">。<br>问"讨论双方并给出自己观点"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认机器人有好处），Body2 反驳（但坏处更值得关注）。</div>
+<h3 class="sub">10.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理时间效率角度（与本课主题直接相关），再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>时间效率角度</th><th>其他角度</th></tr><tr><td>正方：好处 (Benefits)</td><td><textarea class="ans" data-uid="71" rows="3"></textarea></td><td><textarea class="ans" data-uid="72" rows="3"></textarea></td></tr><tr><td>反方：坏处 (Problems)</td><td><textarea class="ans" data-uid="73" rows="3"></textarea></td><td><textarea class="ans" data-uid="74" rows="3"></textarea></td></tr></table></div>
+<h2 class="sec-title">十一、真题 · 社区服务的强制力</h2>
+<h3 class="sub">11.1 题目</h3>
+<div class="exam-box"><em>Some people believe that unpaid community service should be a compulsory part of high school programmes (for example working for a charity, improving the neighborhood or teaching sports to younger children). To what extent do you agree or disagree?</em></div>
+<h3 class="sub">11.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="75" style="width:6ch">。判断关键词：<input class="ans" data-uid="76" style="width:40ch">。<br>问"同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认社区服务有价值），Body2 反驳（但强制占用时间且无效）。</div>
+<h3 class="sub">11.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理时间效率角度（同一段时间怎么用才是 gain、怎么用是 waste），再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>时间效率角度</th><th>其他角度</th></tr><tr><td>正方：支持 (Agree)</td><td><textarea class="ans" data-uid="77" rows="3"></textarea></td><td><textarea class="ans" data-uid="78" rows="3"></textarea></td></tr><tr><td>反方：反对 (Disagree)</td><td><textarea class="ans" data-uid="79" rows="3"></textarea></td><td><textarea class="ans" data-uid="80" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"关键知识点与逻辑"一节的让步反驳骨架完成四段：Introduction（背景+立场）→ Body 1 让步 → Body 2 反驳 → Conclusion 换说重申。</div>
+<p class="foot">《时间效率原则》讲义 · 雅思写作基础 · 第 1 课</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans') && el.dataset.uid) {
+      try { localStorage.setItem(KEY + el.dataset.uid, el.value); } catch(_){}
+    }
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    if (!el.dataset.uid) return;
+    try { var v = localStorage.getItem(KEY + el.dataset.uid); if (v != null) el.value = v; } catch(_){}
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      if (el.dataset.uid) { try { localStorage.removeItem(KEY + el.dataset.uid); } catch(_){} }
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      // 按打印布局（通栏、页面末尾）测量笔记高度，避免按屏幕 400px 宽算出的高度虚高
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+})();
+</script>
+
+</body>
+</html>

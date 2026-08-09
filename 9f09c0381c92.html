@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>权利义务原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:17px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:16px 20px 80px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:26px; margin:18px 0 4px; }
+.sec-title { font-size:21px; color:var(--c1); border-left:6px solid var(--c1); padding-left:10px; margin:34px 0 10px; }
+.sub { font-size:17px; color:var(--dark); margin:22px 0 8px; }
+.sub .tag { font-size:12px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:10px 14px; margin:10px 0; line-height:1.7; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:12px 0 4px; line-height:1.6; }
+p.en { margin:4px 0 16px; line-height:2.0; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:10px 0; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th { background:var(--dark); color:#fff; padding:8px 10px; text-align:left; font-weight:700; }
+td { padding:8px 10px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:10px 12px; margin:12px 0; line-height:1.9; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:2px 9px; margin:3px 6px 0 0; font-size:15px; }
+
+input.ans { font:inherit; font-size:16px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+            padding:3px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:16px; line-height:1.6; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:8px;
+               padding:6px 8px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:10px 12px;
+                color:var(--dark); line-height:1.7; font-size:15px; margin:6px 0 16px; }
+.translate { margin:4px 0 16px; }
+.translate textarea.ans { width:100%; min-height:84px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:14px 18px;
+            margin:10px 0; font-style:italic; font-size:16px; line-height:1.6; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:26px; }
+  textarea.ans { min-height:30px; }
+  .note, .wordbank, .exam-box { break-inside:avoid; }
+  table, tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:14mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="toolbar">
+<span class="tt">权利义务原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button>
+<button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button>
+<button class="btn no-print" id="btn-notes" type="button">📝 笔记</button>
+</div>
+<h1>权利义务原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇 · 权利类型与侵犯 · 名词/动词短语（S1）</h2>
+<div class="note">本节为中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。本组 5 词聚焦"有哪些权利、如何被侵犯"——从人权到性别歧视，构成链条第一步 ① 权利类型。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>人权 / 公民权利</td><td><input class="ans" data-uid="1" style="width:30ch"></td></tr><tr><td>2</td><td>言论自由</td><td><input class="ans" data-uid="2" style="width:20ch"></td></tr><tr><td>3</td><td>隐私权</td><td><input class="ans" data-uid="3" style="width:23ch"></td></tr><tr><td>4</td><td>侵犯</td><td><input class="ans" data-uid="4" style="width:30ch"></td></tr><tr><td>5</td><td>性别歧视</td><td><input class="ans" data-uid="5" style="width:24ch"></td></tr></table></div>
+<h2 class="sec-title">二、词汇 · 法律限制与约束 · 动词短语（S2）</h2>
+<div class="note">本组 6 词聚焦"谁有权设边界"——从施加限制到剥夺权利，构成"权利—边界"链条，对应 ② 限制与约束。可与 S1 的权利对照。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>对……施加限制</td><td><input class="ans" data-uid="6" style="width:25ch"></td></tr><tr><td>2</td><td>禁止 / 取缔</td><td><input class="ans" data-uid="7" style="width:26ch"></td></tr><tr><td>3</td><td>制定严厉法律法规</td><td><input class="ans" data-uid="8" style="width:35ch"></td></tr><tr><td>4</td><td>干涉</td><td><input class="ans" data-uid="9" style="width:17ch"></td></tr><tr><td>5</td><td>监控摄像头</td><td><input class="ans" data-uid="10" style="width:23ch"></td></tr><tr><td>6</td><td>剥夺某人某物</td><td><input class="ans" data-uid="11" style="width:20ch"></td></tr></table></div>
+<h2 class="sec-title">三、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（权利类型）与 S2（限制与约束）两组表达，体现"权利→边界"逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：民主社会保障每个公民的基本人权，包括言论自由和隐私权，然而当政府过度扩张时——例如通过未经监督的监控摄像头监视公民——这些权利就可能被侵犯。</p>
+<p class="en">Democratic societies guarantee every citizen fundamental <input class="ans" data-uid="12" style="width:30ch">, including <input class="ans" data-uid="13" style="width:20ch"> and <input class="ans" data-uid="14" style="width:23ch">, yet these rights can be <input class="ans" data-uid="15" style="width:33ch"> when governments overreach — for example, through unchecked <input class="ans" data-uid="16" style="width:23ch"> that monitor citizens without oversight.</p>
+<p class="zh"><strong>2.</strong> 中文：虽然言论自由是民主的基石，但政府可以合法地对某些表达形式施加限制以保护公共安全，而立法机关必须制定严厉的法律法规来界定边界所在。</p>
+<p class="en">While <input class="ans" data-uid="17" style="width:20ch"> is a cornerstone of democracy, governments may legitimately <input class="ans" data-uid="18" style="width:25ch"> certain forms of expression to protect public safety, and legislatures must <input class="ans" data-uid="19" style="width:35ch"> to define where the boundary lies.</p>
+<p class="zh"><strong>3.</strong> 中文：当一个国家未经同意使用监控摄像头监视公民时，它可能侵犯了个人的基本隐私权，这就是为什么法律必须明确施加限制，并在必要时禁止或取缔此类监控。</p>
+<p class="en">When a state uses <input class="ans" data-uid="20" style="width:23ch"> to monitor citizens without consent, it may <input class="ans" data-uid="21" style="width:30ch"> the fundamental <input class="ans" data-uid="22" style="width:19ch"> of individuals, which is why laws must clearly <input class="ans" data-uid="23" style="width:25ch"> and, if necessary, <input class="ans" data-uid="24" style="width:26ch"> such surveillance.</p>
+<p class="zh"><strong>4.</strong> 中文：职场中的系统性性别歧视——拒绝给予女性晋升或同工同酬——不仅侵犯了她们的基本人权，也要求政府制定惩罚歧视性做法的严厉法律。</p>
+<p class="en">Systemic <input class="ans" data-uid="25" style="width:24ch"> in the workplace — denying women promotions or equal pay — not only violates their basic <input class="ans" data-uid="26" style="width:30ch"> but also calls for governments to <input class="ans" data-uid="27" style="width:35ch"> that penalise discriminatory practices.</p>
+<p class="zh"><strong>5.</strong> 中文：一个声称捍卫人权的社会不仅必须禁止或取缔有害行为，还必须确保其法律体系能够剥夺那些持续侵犯他人权利者的权利。</p>
+<p class="en">A society that claims to defend <input class="ans" data-uid="28" style="width:30ch"> must not only <input class="ans" data-uid="29" style="width:26ch"> harmful conduct but also ensure that its legal system can <input class="ans" data-uid="30" style="width:10ch"> those who persistently <input class="ans" data-uid="31" style="width:30ch"> the rights of others.</p>
+<h2 class="sec-title">四、词汇 · 权利冲突与平衡 · 名词/动词短语（S3）</h2>
+<div class="note">本组 6 词聚焦"权利之间如何相处"——从个人与集体的对立到平等，构成"限制—平衡"链条，对应 ③ 权利冲突与平衡。可与 S2 的限制对照。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>个人权利 vs 集体利益</td><td><input class="ans" data-uid="32" style="width:40ch"></td></tr><tr><td>2</td><td>自由 vs 安全</td><td><input class="ans" data-uid="33" style="width:22ch"></td></tr><tr><td>3</td><td>公众知情权</td><td><input class="ans" data-uid="34" style="width:20ch"></td></tr><tr><td>4</td><td>在……之间取得平衡</td><td><input class="ans" data-uid="35" style="width:27ch"></td></tr><tr><td>5</td><td>性别平等</td><td><input class="ans" data-uid="36" style="width:18ch"></td></tr><tr><td>6</td><td>平等</td><td><input class="ans" data-uid="37" style="width:11ch"></td></tr></table></div>
+<h2 class="sec-title">五、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S2（限制与约束）与 S3（权利冲突与平衡）两组表达，体现"管理工具→内在张力→平衡"的完整逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：当政府为了公共秩序对言论或集会施加限制时，他们必须在个人权利与集体利益之间取得平衡——保护集体而不压制个体。</p>
+<p class="en">When governments <input class="ans" data-uid="38" style="width:25ch"> speech or assembly for the sake of public order, they must <input class="ans" data-uid="39" style="width:27ch"> <input class="ans" data-uid="40" style="width:40ch"> — protecting the collective without crushing the individual.</p>
+<p class="zh"><strong>2.</strong> 中文：广泛使用监控摄像头可能有助于警方威慑犯罪，但它也在自由与安全之间制造了根本张力——这一冲突只有通过学会在竞争性价值之间取得平衡来解决。</p>
+<p class="en">The widespread use of <input class="ans" data-uid="41" style="width:23ch"> may help police deter crime, but it also creates a fundamental tension between <input class="ans" data-uid="42" style="width:22ch"> and personal liberty — a conflict that can only be resolved by learning to <input class="ans" data-uid="43" style="width:27ch"> competing values.</p>
+<p class="zh"><strong>3.</strong> 中文：在一个健康的民主社会中，媒体的知情权必须受到保护，但当报道侵犯个人生活时，立法者必须通过立法来干涉，界定何时这种侵入越界。</p>
+<p class="en">In a healthy democracy, the media's <input class="ans" data-uid="44" style="width:16ch"> must be protected, yet when reporting intrudes on personal lives, lawmakers must <input class="ans" data-uid="45" style="width:17ch"> such intrusion through legislation that defines when it goes too far.</p>
+<p class="zh"><strong>4.</strong> 中文：禁止或取缔有害言论的法律并不必然剥夺个人的合法表达；相反，它们在保护弱势群体和维护公开辩论之间取得平衡——这种平衡就是平等的本质。</p>
+<p class="en">Laws that <input class="ans" data-uid="46" style="width:26ch"> harmful speech do not necessarily <input class="ans" data-uid="47" style="width:10ch"> individuals of legitimate expression; rather, they <input class="ans" data-uid="48" style="width:27ch"> protecting the vulnerable and preserving open debate — and this balance is the essence of <input class="ans" data-uid="49" style="width:11ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：一个公正的法律体系必须制定明确界定犯罪的严厉法律，对伤害他人者施加限制，有节制地使用监控摄像头，只在最极端的情况下剥夺罪犯的自由，并始终在公共保护与个人自由之间取得平衡——因为法律的终极目的不是控制，而是人人平等。</p>
+<p class="en">A just legal system must <input class="ans" data-uid="50" style="width:35ch"> defining crimes clearly, <input class="ans" data-uid="51" style="width:25ch"> those who harm others, use tools like <input class="ans" data-uid="52" style="width:23ch"> with restraint, <input class="ans" data-uid="53" style="width:10ch"> offenders of their freedom only in the most extreme cases, and always <input class="ans" data-uid="54" style="width:27ch"> public protection and individual liberty — because the ultimate purpose of law is not control but <input class="ans" data-uid="55" style="width:11ch"> for all.</p>
+<h2 class="sec-title">六、词汇 · 保障机制 · 动词短语（S4）</h2>
+<div class="note">本组 8 词聚焦"权利如何落实"——从立法到维权，构成"冲突—保障"链条，对应 ④ 保障机制。可与 S3 的平衡对照。</div>
+<div class="table-wrap"><table><tr><th>#</th><th>中文</th><th>英文</th></tr><tr><td>1</td><td>制定（法律法规）</td><td><input class="ans" data-uid="56" style="width:36ch"></td></tr><tr><td>2</td><td>废除（不合理的法律）</td><td><input class="ans" data-uid="57" style="width:10ch"></td></tr><tr><td>3</td><td>废除（不公平的制度）</td><td><input class="ans" data-uid="58" style="width:15ch"></td></tr><tr><td>4</td><td>对网络进行审查</td><td><input class="ans" data-uid="59" style="width:36ch"></td></tr><tr><td>5</td><td>抑制某人做某事</td><td><input class="ans" data-uid="60" style="width:31ch"></td></tr><tr><td>6</td><td>做出道德选择</td><td><input class="ans" data-uid="61" style="width:21ch"></td></tr><tr><td>7</td><td>起诉</td><td><input class="ans" data-uid="62" style="width:11ch"></td></tr><tr><td>8</td><td>尊严</td><td><input class="ans" data-uid="63" style="width:10ch"></td></tr></table></div>
+<h2 class="sec-title">七、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为冲突（S3）、后半为保障（S4），请对应识别其"冲突→保障"结构。</div>
+<p class="zh"><strong>1.</strong> 中文：当个人权利与集体利益发生冲突时，立法机构必须制定清晰的法律来在二者之间取得平衡。</p>
+<p class="en">When <input class="ans" data-uid="64" style="width:40ch"> come into conflict, legislatures must <input class="ans" data-uid="65" style="width:36ch"> clear laws to <input class="ans" data-uid="66" style="width:27ch"> them.</p>
+<p class="zh"><strong>2.</strong> 中文：自由与安全之间的张力无法完全消除，但政府可以通过对网络进行审查、抑制虚假信息的传播来维护公共安全。</p>
+<p class="en">The tension between <input class="ans" data-uid="67" style="width:22ch"> can never be fully removed, but governments can <input class="ans" data-uid="68" style="width:36ch"> and <input class="ans" data-uid="69" style="width:13ch"> the spread of false information to protect public safety.</p>
+<p class="zh"><strong>3.</strong> 中文：公众的知情权与个人隐私时常冲突；当旧法律无法保护受害者时，立法者就应废除或取消它们。</p>
+<p class="en">The public <input class="ans" data-uid="70" style="width:16ch"> often clashes with personal privacy, and when outdated laws fail to protect victims, lawmakers should <input class="ans" data-uid="71" style="width:10ch"> or <input class="ans" data-uid="72" style="width:15ch"> them.</p>
+<p class="zh"><strong>4.</strong> 中文：性别平等的实现不能仅靠立法，公民需要做出道德选择，受歧视者则应勇敢起诉以主张自己的权利。</p>
+<p class="en"><input class="ans" data-uid="73" style="width:18ch"> cannot be achieved by legislation alone; citizens must <input class="ans" data-uid="74" style="width:21ch">, and those who face discrimination should be encouraged to <input class="ans" data-uid="75" style="width:11ch"> to defend their rights.</p>
+<p class="zh"><strong>5.</strong> 中文：归根结底，保障机制的终极目标是让每个人享有平等的尊严——从立法、监管到教育、维权，每一步都服务于这一目标。</p>
+<p class="en">Ultimately, the purpose of protective mechanisms is to ensure <input class="ans" data-uid="76" style="width:11ch"> and <input class="ans" data-uid="77" style="width:10ch"> for all — from legislation and regulation to education and litigation, every step serves this goal.</p>
+<h2 class="sec-title">八、练习 · 句子填空（课本原题 · 课后句子填空）</h2>
+<div class="note">于空白处填入恰当的词或短语。本题不设词库，须凭记忆完成；注意词形变化。括号内为中文提示。</div>
+<p class="en"><strong>1.</strong> Some animal rights supporters argue that subjecting animals to experimentation is <input class="ans" data-uid="78" style="width:30ch">. <span class="hint">（不人道和在道义上不公正的）</span></p>
+<p class="en"><strong>2.</strong> Meanwhile, those animal tests <input class="ans" data-uid="79" style="width:26ch"> should be banned. <span class="hint">（为商业目的）</span></p>
+<p class="en"><strong>3.</strong> The sharp fall in wild animals is primarily <input class="ans" data-uid="80" style="width:16ch"> people's continued and heavy reliance on them for their own interests. <span class="hint">（主要归因于）</span></p>
+<p class="en"><strong>4.</strong> For example, one can control any activity that is likely to <input class="ans" data-uid="81" style="width:40ch">, such as stopping the use of animal products and the <input class="ans" data-uid="82" style="width:30ch">. <span class="hint">（威胁野生动物的生存，吃珍惜动物）</span></p>
+<p class="en"><strong>5.</strong> People <input class="ans" data-uid="83" style="width:34ch"> from animals for different purposes. <span class="hint">（获取材料和物质）</span></p>
+<h2 class="sec-title">九、练习 · 段落填空（课本原题 · 段落翻译改编）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。两段分别讲动物福利活动如何开展、动物在医学测试中的作用。</div>
+<p class="zh"><strong>中文原文：</strong> 其次，应该举办更多动物福利活动，向市民灌输个人行为是问题解决过程中不可或缺的部分这一观念。例如，人们可以控制任何可能威胁到野生动物生存的活动，例如：减少动物制品的使用和戒掉吃珍惜动物的习惯。</p>
+<p class="en">Moreover, more <input class="ans" data-uid="84" style="width:31ch"> should be launched to <input class="ans" data-uid="85" style="width:22ch"> the public that individual actions are an indispensable part in the problem-solving process. For example, one can control any activity that is likely to <input class="ans" data-uid="86" style="width:40ch">, such as <input class="ans" data-uid="87" style="width:40ch">.</p>
+<p class="zh"><strong>中文原文：</strong> 我的看法是，动物是医学测试中不可或缺的一部分，主要是因为在科学发展的现阶段没有更多可行的替代品。同时，在实验过程中，痛苦应该被控制到最低。</p>
+<p class="en">My view is that, animals are an <input class="ans" data-uid="88" style="width:40ch">, mainly because there are no more accessible alternatives at the current stage of scientific development. Meanwhile, it is certain that suffering should be <input class="ans" data-uid="89" style="width:28ch"> during experimentation.</p>
+<h2 class="sec-title">十、练习 · 句子翻译（课本原题 · 课堂操练）</h2>
+<div class="note">将下列中文译为英文，须使用括号内提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：远离自然栖息地并被剥夺自由的动物园动物，常常遭受严重的心理痛苦，变得烦躁并表现出异常行为。<span class="hint">（natural habitat, deprive of freedom, severe psychological distress, abnormal behavior）</span></p>
+<div class="translate"><textarea class="ans" data-uid="90" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：动物实验是一种残忍且不文明的做法，给动物带来痛苦。<span class="hint">（animal testing, cruel and uncivilized, cause pain to）</span></p>
+<div class="translate"><textarea class="ans" data-uid="91" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：禁止女性参军的政策公然歧视女性。<span class="hint">（prohibit women from serving in the army, openly discriminate against）</span></p>
+<div class="translate"><textarea class="ans" data-uid="92" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：无论是否为名人，人们的隐私都值得尊重，并应保持私密。<span class="hint">（privacy, deserve to be respected, remain private, celebrities）</span></p>
+<div class="translate"><textarea class="ans" data-uid="93" rows="3"></textarea></div>
+<h2 class="sec-title">十一、真题 · 女性参军</h2>
+<h3 class="sub">11.1 题目</h3>
+<div class="exam-box"><em>Some people think that women should be allowed to join the army and serve in combat roles on an equal basis with men. To what extent do you agree or disagree?</em></div>
+<h3 class="sub">11.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="94" style="width:6ch">（同不同意）。判断关键词：<input class="ans" data-uid="95" style="width:40ch">。<br>问"同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认体力差异等现实顾虑），Body2 反驳（但平等权利与技术化战争使顾虑不再成立）。</div>
+<h3 class="sub">11.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（权利义务）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><tr><th></th><th>本原则角度（权利义务）</th><th>其他角度补充</th></tr><tr><td>正方：同意参军 (Agree)</td><td><textarea class="ans" data-uid="96" rows="3"></textarea></td><td><textarea class="ans" data-uid="97" rows="3"></textarea></td></tr><tr><td>反方：顾虑 (Concerns)</td><td><textarea class="ans" data-uid="98" rows="3"></textarea></td><td><textarea class="ans" data-uid="99" rows="3"></textarea></td></tr></table></div>
+<div class="note">确定立场后，依据"让步反驳"骨架完成四段：Introduction（背景+立场）→ Body 1 让步（承认对方顾虑）→ Body 2 反驳（我的核心理由）→ Conclusion 换说重申。</div>
+<p class="foot">《权利义务原则》讲义 · 雅思写作基础 · 第 6 课</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans') && el.dataset.uid) {
+      try { localStorage.setItem(KEY + el.dataset.uid, el.value); } catch(_){}
+    }
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    if (!el.dataset.uid) return;
+    try { var v = localStorage.getItem(KEY + el.dataset.uid); if (v != null) el.value = v; } catch(_){}
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      if (el.dataset.uid) { try { localStorage.removeItem(KEY + el.dataset.uid); } catch(_){} }
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      // 按打印布局（通栏、页面末尾）测量笔记高度，避免按屏幕 400px 宽算出的高度虚高
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+})();
+</script>
+
+</body>
+</html>
