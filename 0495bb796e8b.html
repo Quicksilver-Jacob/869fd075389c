@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经济原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:15px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:8px 14px 40px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:21px; margin:8px 0 3px; }
+.sec-title { font-size:17px; color:var(--c1); border-left:5px solid var(--c1); padding-left:9px; margin:16px 0 6px; }
+.sub { font-size:14px; color:var(--dark); margin:8px 0 3px; }
+.sub .tag { font-size:11px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:6px 11px; margin:6px 0; line-height:1.45; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:4px 0 1px; line-height:1.32; }
+p.en { margin:2px 0 6px; line-height:1.42; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:6px 0; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:var(--dark); color:#fff; padding:4px 6px; text-align:left; font-weight:700; }
+td { padding:4px 6px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:6px 10px; margin:7px 0; line-height:1.5; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:1px 7px; margin:2px 5px 0 0; font-size:13px; }
+
+input.ans { font:inherit; font-size:14.5px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+            padding:2px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:14.5px; line-height:1.45; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+               padding:3px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }   /* 真题观点库等表格：留足手写空间（屏幕+打印） */
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:6px 10px;
+                color:var(--dark); line-height:1.5; font-size:13.5px; margin:4px 0 9px; }
+.translate { margin:3px 0 9px; }
+.translate textarea.ans { width:100%; min-height:44px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:8px 13px;
+            margin:6px 0; font-style:italic; font-size:15px; line-height:1.5; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:19px; }
+  textarea.ans { min-height:20px; }
+  .wordbank, .exam-box { break-inside:avoid; }
+  table { break-inside:auto; page-break-inside:auto; }
+  tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  thead { display:table-header-group; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:9mm; }
+</style>
+</head>
+<body data-principle="经济原则" data-version="vn7eoht">
+<div class="page">
+<div class="toolbar">
+<span class="tt">经济原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button><button class="btn no-print" id="btn-export" type="button" title="导出我的作答（JSON 文件，交给老师批改）">💾 导出数据</button><button class="btn no-print" id="btn-import" type="button" title="导入作答文件（在另一台设备继续填写）">📂 导入数据</button><button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button><button class="btn no-print" id="btn-notes" type="button">📝 笔记</button><input type="file" id="import-file" accept=".json,application/json" hidden>
+</div>
+<h1>经济原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇总表（S1–S4 · 29 词）</h2>
+<div class="note">中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。左列 S1／S2（赚钱→分配），右列 S3／S4（后果→解决）。</div>
+<p class="en"><strong>S1 经济活动与谋生　|　S2 财富分配与税收</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>谋生</td><td><input class="ans" data-uid="1" data-sig="1kiscmn" style="width:16ch"></td><td>交税</td><td><input class="ans" data-uid="2" data-sig="e4cx9p" style="width:10ch"></td></tr><tr><td>找到工作</td><td><input class="ans" data-uid="3" data-sig="1hbuyi1" style="width:18ch"></td><td>征税</td><td><input class="ans" data-uid="4" data-sig="1e2jvez" style="width:11ch"></td></tr><tr><td>进入职场</td><td><input class="ans" data-uid="5" data-sig="ifu9a4" style="width:22ch"></td><td>增加政府税收</td><td><input class="ans" data-uid="6" data-sig="1behh3y" style="width:40ch"></td></tr><tr><td>挣更高薪水</td><td><input class="ans" data-uid="7" data-sig="1kiu57g" style="width:23ch"></td><td>履行纳税义务</td><td><input class="ans" data-uid="8" data-sig="129ppum" style="width:29ch"></td></tr><tr><td>有稳定收入来源</td><td><input class="ans" data-uid="9" data-sig="1s7knhb" style="width:33ch"></td><td>财富再分配</td><td><input class="ans" data-uid="10" data-sig="1778o2l" style="width:39ch"></td></tr><tr><td>提高生活水平</td><td><input class="ans" data-uid="11" data-sig="1c12bew" style="width:38ch"></td><td>缩小贫富差距</td><td><input class="ans" data-uid="12" data-sig="oltzpm" style="width:39ch"></td></tr><tr><td>负担得起买房</td><td><input class="ans" data-uid="13" data-sig="lkau77" style="width:24ch"></td><td>减少收入不均</td><td><input class="ans" data-uid="14" data-sig="15co9q9" style="width:27ch"></td></tr></tbody></table></div>
+<p class="en"><strong>S3 经济问题与社会后果　|　S4 政府干预政策</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>过度消费</td><td><input class="ans" data-uid="15" data-sig="wxvs1d" style="width:24ch"></td><td>为……提供保障</td><td><input class="ans" data-uid="16" data-sig="1ib5aib" style="width:40ch"></td></tr><tr><td>冲动购物</td><td><input class="ans" data-uid="17" data-sig="7ak9gf" style="width:25ch"></td><td>公正分配资源</td><td><input class="ans" data-uid="18" data-sig="1ovjqal" style="width:28ch"></td></tr><tr><td>上涨的生活成本</td><td><input class="ans" data-uid="19" data-sig="19th8cw" style="width:22ch"></td><td>投资于……</td><td><input class="ans" data-uid="20" data-sig="p9a7hu" style="width:18ch"></td></tr><tr><td>经济拮据</td><td><input class="ans" data-uid="21" data-sig="okkxkg" style="width:23ch"></td><td>增加公共设施</td><td><input class="ans" data-uid="22" data-sig="kxk50y" style="width:29ch"></td></tr><tr><td>失业</td><td><input class="ans" data-uid="23" data-sig="qip7g4" style="width:29ch"></td><td>资助艺术家</td><td><input class="ans" data-uid="24" data-sig="1wtkdrq" style="width:20ch"></td></tr><tr><td>陷入贫困</td><td><input class="ans" data-uid="25" data-sig="jno2x3" style="width:18ch"></td><td>降低成本</td><td><input class="ans" data-uid="26" data-sig="d3bplx" style="width:19ch"></td></tr><tr><td>失业率</td><td><input class="ans" data-uid="27" data-sig="y0tmnd" style="width:24ch"></td><td>免除……纳税</td><td><input class="ans" data-uid="28" data-sig="10vjkob" style="width:39ch"></td></tr><tr><td></td><td></td><td>征收高额惩罚性税收</td><td><input class="ans" data-uid="29" data-sig="cf4q3x" style="width:31ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">二、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句均融合 S1（赚钱）与 S2（分配）两组表达，注意其间的因果与递进关系。</div>
+<p class="zh"><strong>1.</strong> 中文：为了谋生，个人必须先找到工作并成功进入职场，然后才能开始为经济做贡献。</p>
+<p class="en">In order to <input class="ans" data-uid="30" data-sig="ubcax3" style="width:16ch">, individuals must first <input class="ans" data-uid="31" data-sig="ubcax2" style="width:18ch"> and successfully <input class="ans" data-uid="32" data-sig="ubcax1" style="width:22ch"> before they can begin to contribute to the economy.</p>
+<p class="zh"><strong>2.</strong> 中文：那些努力工作以挣更高薪水并获得稳定收入来源的人，自然会提高生活水平，许多人最终买得起房——而和所有有收入的人一样，他们也要为收入纳税。</p>
+<p class="en">Those who work hard to <input class="ans" data-uid="33" data-sig="19drmzy" style="width:23ch"> and secure <input class="ans" data-uid="34" data-sig="19drmzz" style="width:28ch"> will naturally <input class="ans" data-uid="35" data-sig="19drmzw" style="width:35ch">, and many eventually <input class="ans" data-uid="36" data-sig="19drmzx" style="width:24ch"> — and, like all earners, they must <input class="ans" data-uid="37" data-sig="19drmzu" style="width:10ch"> on that income.</p>
+<p class="zh"><strong>3.</strong> 中文：为了增加足够的税收来资助公共服务，政府必须征税，而有责任感的公民应履行纳税义务，而非仅仅视其为负担。</p>
+<p class="en">To <input class="ans" data-uid="38" data-sig="5adngk" style="width:40ch"> sufficiently to fund public services, the government must <input class="ans" data-uid="39" data-sig="5adngl" style="width:11ch">, and responsible citizens should <input class="ans" data-uid="40" data-sig="5adngm" style="width:31ch"> rather than view taxation as merely a burden.</p>
+<p class="zh"><strong>4.</strong> 中文：税收的根本目的是实现国家财富的再分配，这有助于缩小贫富差距，并在宏观层面减少收入不平等。</p>
+<p class="en">The fundamental purpose of taxation is to <input class="ans" data-uid="41" data-sig="1o6asmo" style="width:39ch">, which helps <input class="ans" data-uid="42" data-sig="1o6asmp" style="width:39ch"> and, at the macro level, <input class="ans" data-uid="43" data-sig="1o6asmq" style="width:27ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：当更多公民找到工作并挣得更高收入时，税基就会扩大，使政府能够有效地进行财富再分配，并最终减少收入不平等。</p>
+<p class="en">When more citizens <input class="ans" data-uid="44" data-sig="10gtc1h" style="width:18ch"> and <input class="ans" data-uid="45" data-sig="10gtc1g" style="width:23ch">, the tax base expands, enabling governments to effectively <input class="ans" data-uid="46" data-sig="10gtc1j" style="width:39ch"> and ultimately <input class="ans" data-uid="47" data-sig="10gtc1i" style="width:27ch">.</p>
+<h2 class="sec-title">三、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S2（分配）与 S3（后果）两组表达，沿因果链条推进。</div>
+<p class="zh"><strong>1.</strong> 中文：即使税收帮助缩小了贫富差距并减少了收入不平等，许多人仍然进行过度消费和冲动购物，这推高了物价并产生新的经济压力。</p>
+<p class="en">Even when taxation helps <input class="ans" data-uid="48" data-sig="uo755h" style="width:39ch"> and <input class="ans" data-uid="49" data-sig="uo755g" style="width:27ch">, many individuals continue to engage in <input class="ans" data-uid="50" data-sig="uo755j" style="width:24ch"> and <input class="ans" data-uid="51" data-sig="uo755i" style="width:25ch">, which drives up prices and creates new economic pressures.</p>
+<p class="zh"><strong>2.</strong> 中文：过度消费和冲动购物是生活成本上升的主要推手，迫使普通家庭在工资跟不上物价时陷入经济拮据。</p>
+<p class="en"><input class="ans" data-uid="52" data-sig="1nqydna" style="width:24ch"> and <input class="ans" data-uid="53" data-sig="1nqydnb" style="width:28ch"> are the primary drivers of <input class="ans" data-uid="54" data-sig="1nqydn8" style="width:22ch">, which forces ordinary families to <input class="ans" data-uid="55" data-sig="1nqydn9" style="width:23ch"> as their wages fail to keep pace.</p>
+<p class="zh"><strong>3.</strong> 中文：当家庭因生活成本上升而经济拮据时，企业面临更高的经营成本并可能裁员，导致许多人失业并最终陷入贫困。</p>
+<p class="en">When families <input class="ans" data-uid="56" data-sig="vgc1lc" style="width:23ch"> due to <input class="ans" data-uid="57" data-sig="vgc1ld" style="width:22ch">, businesses face higher operating costs and may lay off workers, causing many to <input class="ans" data-uid="58" data-sig="vgc1le" style="width:17ch"> and eventually <input class="ans" data-uid="59" data-sig="vgc1lf" style="width:18ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：尽管政府通过征税努力进行财富再分配，但如果公民不履行纳税义务，贫困循环和上升的失业率将持续存在。</p>
+<p class="en">Despite government efforts to <input class="ans" data-uid="60" data-sig="1kaztep" style="width:39ch"> through <input class="ans" data-uid="61" data-sig="1kazteo" style="width:11ch">, if citizens do not <input class="ans" data-uid="62" data-sig="1kazter" style="width:31ch">, the cycle of poverty and the rising <input class="ans" data-uid="63" data-sig="1kazteq" style="width:20ch"> will persist.</p>
+<p class="zh"><strong>5.</strong> 中文：当大量人口同时失业并陷入贫困时，失业率上升，这反过来又削弱了政府增加税收的能力——形成恶性循环。</p>
+<p class="en"><input class="ans" data-uid="64" data-sig="17im2rw" style="width:24ch"> rises when large numbers of people simultaneously <input class="ans" data-uid="65" data-sig="17im2rx" style="width:17ch"> and <input class="ans" data-uid="66" data-sig="17im2ry" style="width:18ch">, which in turn undermines the government's ability to <input class="ans" data-uid="67" data-sig="17im2rz" style="width:40ch">.</p>
+<h2 class="sec-title">四、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为问题（S3）、后半为对策（S4），请对应识别其"问题—方案"结构。</div>
+<p class="zh"><strong>1.</strong> 中文：冲动购物驱动的过度消费导致生活成本上升，迫使普通家庭经济拮据，并最终使许多人失业。</p>
+<p class="en"><input class="ans" data-uid="68" data-sig="qwbkwj" style="width:24ch"> driven by <input class="ans" data-uid="69" data-sig="qwbkwi" style="width:28ch"> leads to <input class="ans" data-uid="70" data-sig="qwbkwh" style="width:22ch">, which causes ordinary families to <input class="ans" data-uid="71" data-sig="qwbkwg" style="width:23ch"> and eventually <input class="ans" data-uid="72" data-sig="qwbkwn" style="width:17ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：当大量工人失业且陷入贫困时，失业率不可避免地飙升，给社会福利系统带来压力。</p>
+<p class="en">When a significant number of workers <input class="ans" data-uid="73" data-sig="1fwhp9g" style="width:17ch"> and <input class="ans" data-uid="74" data-sig="1fwhp9h" style="width:18ch">, <input class="ans" data-uid="75" data-sig="1fwhp9i" style="width:24ch"> inevitably spikes, putting pressure on the social welfare system.</p>
+<p class="zh"><strong>3.</strong> 中文：为了应对不断上升的失业率，政府应首先为有需要的人提供安全网，然后公正地分配资源，确保援助到达最需要的人手中。</p>
+<p class="en">To address <input class="ans" data-uid="76" data-sig="a7hpsv" style="width:24ch"> when it continues to rise, the government should first <input class="ans" data-uid="77" data-sig="a7hpsu" style="width:40ch"> and then <input class="ans" data-uid="78" data-sig="a7hpst" style="width:28ch"> to ensure that aid reaches those who need it most.</p>
+<p class="zh"><strong>4.</strong> 中文：全面的应对要求政府投资基础设施建设、增加学校医院等公共设施、并在创意产业中资助艺术家以创造就业。</p>
+<p class="en">A comprehensive response requires governments to <input class="ans" data-uid="79" data-sig="kjkula" style="width:18ch"> infrastructure, to <input class="ans" data-uid="80" data-sig="kjkulb" style="width:29ch"> such as schools and hospitals, and to <input class="ans" data-uid="81" data-sig="kjkul8" style="width:20ch"> in creative sectors to generate employment.</p>
+<p class="zh"><strong>5.</strong> 中文：为了减轻低收入家庭的负担，政府可以为贫困人口免税并降低成本，同时对造成问题的企业征收高额惩罚性税收。</p>
+<p class="en">To ease the burden on low-income families, the government can <input class="ans" data-uid="82" data-sig="t3nzrz" style="width:39ch"> for the poor and <input class="ans" data-uid="83" data-sig="t3nzry" style="width:19ch">, and <input class="ans" data-uid="84" data-sig="t3nzrx" style="width:31ch"> corporations that contribute to the problem.</p>
+<h2 class="sec-title">五、练习 · 句子填空</h2>
+<div class="note">于空白处填入恰当的词或短语。本题不设词库，须凭记忆完成；注意词形变化。括号内为中文提示。</div>
+<p class="en"><strong>1.</strong> If the government has <input class="ans" data-uid="85" data-sig="146gwfg" style="width:14ch">, then it can <input class="ans" data-uid="86" data-sig="146gwfh" style="width:34ch">, including building public schools and hospitals. <span class="hint">（税收，资助公共设施项目）</span></p>
+<p class="en"><strong>2.</strong> Public schools can provide children with <input class="ans" data-uid="87" data-sig="1ar9u20" style="width:28ch"> and <input class="ans" data-uid="88" data-sig="1ar9u21" style="width:27ch">, which <input class="ans" data-uid="89" data-sig="1ar9u22" style="width:36ch">. <span class="hint">（教育机会，增加他们的知识，对经济也有好处）</span></p>
+<p class="en"><strong>3.</strong> <input class="ans" data-uid="90" data-sig="sytd6r" style="width:17ch"> can reduce people's <input class="ans" data-uid="91" data-sig="sytd6q" style="width:20ch">. <span class="hint">（交税，可支配的收入）</span></p>
+<p class="en"><strong>4.</strong> Some people hold that women should <input class="ans" data-uid="92" data-sig="w70q0a" style="width:31ch"> after they get married, which can <input class="ans" data-uid="93" data-sig="w70q0b" style="width:40ch">, because nowadays <input class="ans" data-uid="94" data-sig="w70q08" style="width:16ch"> often requires double incomes. <span class="hint">（找工作，减轻家庭的经济负担，一份体面的生活）</span></p>
+<p class="en"><strong>5.</strong> Some large companies that used to <input class="ans" data-uid="95" data-sig="1dlhnrf" style="width:35ch"> may <input class="ans" data-uid="96" data-sig="1dlhnre" style="width:14ch">, especially during the times of economic recession, so many people will <input class="ans" data-uid="97" data-sig="1dlhnrd" style="width:17ch">. <span class="hint">（雇佣大量员工，破产，失业）</span></p>
+<h2 class="sec-title">六、练习 · 段落填空</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。</div>
+<p class="zh"><strong>中文原文：</strong> 与人口老龄化相关的一个问题是，这会给政府财政带来负担。我们都知道，医疗需求通常在晚年出现。这意味着政府需要在医疗系统上花更多钱，而其他领域如教育可能会资金不足。这个问题会阻碍社会进步，因为一些年轻人由于无法支付学费而不能上大学。</p>
+<p class="en">One problem related to <input class="ans" data-uid="98" data-sig="i40p0v" style="width:23ch"> is that it <input class="ans" data-uid="99" data-sig="i40p0u" style="width:38ch"> government finances. As we all know, <input class="ans" data-uid="100" data-sig="i40p0t" style="width:16ch"> happen in later years. It means that more <input class="ans" data-uid="101" data-sig="i40p0s" style="width:22ch"> needs to be directed to the medical system, but other areas, such as education, can be <input class="ans" data-uid="102" data-sig="i40p0r" style="width:14ch">. This problem will <input class="ans" data-uid="103" data-sig="i40p0q" style="width:25ch">, because some young people are unable to go to university as they cannot <input class="ans" data-uid="104" data-sig="i40p0p" style="width:26ch">.</p>
+<h2 class="sec-title">七、练习 · 句子翻译</h2>
+<div class="note">将下列中文译为英文，须使用括号内的提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：政府资助艺术家和音乐家是滥用纳税人的钱。<span class="hint">（It is a great waste of taxpayers' money for sb to do sth, subsidize）</span></p>
+<div class="translate"><textarea class="ans" data-uid="105" data-sig="3rt9oj" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：政府的收入有很大一部分是来自个人所得税，政府应该向纳税人提供医疗和教育来作为回报。<span class="hint">（government revenue, reward taxpayers with sth）</span></p>
+<div class="translate"><textarea class="ans" data-uid="106" data-sig="vehcro" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：随着日益增加的医疗需求，老龄化人口会给社会和政府造成沉重的负担，这意味着政府需要花更多的钱照顾老年人。<span class="hint">（an ageing population, put a heavy burden on, medical needs, senior citizens）</span></p>
+<div class="translate"><textarea class="ans" data-uid="107" data-sig="1hy06dj" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：提供完全免费的大学教育会使政府的公共预算严重吃紧，从而迫使政府削减其他重要领域的支出，比如中小学教育、医疗和公共基础设施。<span class="hint">（strain public finances, make serious cuts）</span></p>
+<div class="translate"><textarea class="ans" data-uid="108" data-sig="1fdsypc" rows="3"></textarea></div>
+<h2 class="sec-title">八、关键知识点与逻辑</h2>
+<div class="note">本课专设思路框架环节：掌握题型判断与大纲写法。后续原则讲义如无对应重点，可略过本节。</div>
+<h3 class="sub">8.1 雅思大作文 3 种题型判断</h3>
+<div class="table-wrap"><table><thead><tr><th>题型</th><th>问法关键词</th><th>答题任务</th></tr></thead><tbody><tr><td>① 辩论型（最常见）</td><td>agree / disagree · discuss both views · outweigh · positive or negative</td><td>选立场 + 让步反驳</td></tr><tr><td>② 原因措施型</td><td>causes? · solutions? · problems?</td><td>找原因 + 提方案</td></tr><tr><td>③ 辩论+原因措施型</td><td>why? + is it positive?</td><td>先分析原因，再辩论正反</td></tr></tbody></table></div>
+<div class="note">快速判断：<code>positive or negative effects</code>、<code>outweigh</code> 属辩论型；<code>causes?</code>、<code>solutions?</code> 属原因措施型；<code>why?</code> 与 <code>is it positive?</code> 组合属辩论+原因措施型。</div>
+<h3 class="sub">8.2 大纲四段骨架（让步反驳）</h3>
+<div class="table-wrap"><table><thead><tr><th>段落</th><th>内容</th><th>一句话</th></tr></thead><tbody><tr><td>Introduction</td><td>背景句（换词复述题目）+ 观点句</td><td>While... I believe... because R1 and R2</td></tr><tr><td>Body 1 · 让步</td><td>先承认对方有道理 → 解释</td><td>Some people argue that...</td></tr><tr><td>Body 2 · 反驳</td><td>我的核心理由 → 解释（因果链）→ 例子</td><td>However, I believe that...</td></tr><tr><td>Conclusion</td><td>换说法重申立场 + 两个理由</td><td>不引入新观点</td></tr></tbody></table></div>
+<h2 class="sec-title">九、真题 · 老龄化社会</h2>
+<h3 class="sub">9.1 题目</h3>
+<div class="exam-box"><em>In many countries, the proportion of older people is steadily increasing. Does this trend have positive or negative effects on society?</em></div>
+<h3 class="sub">9.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="109" data-sig="mxne7n" style="width:6ch">。判断关键词：<input class="ans" data-uid="110" data-sig="mxne7m" style="width:31ch">。<br>问"好还是坏 / 同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认老龄化有好处），Body2 反驳（但坏处更大）。</div>
+<h3 class="sub">9.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理经济角度（与本课主题直接相关），再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>经济角度</th><th>其他角度</th></tr></thead><tbody><tr><td>坏处 (Negative Effects)</td><td><textarea class="ans" data-uid="111" data-sig="vyuden" rows="3"></textarea></td><td><textarea class="ans" data-uid="112" data-sig="1hpegsd" rows="3"></textarea></td></tr><tr><td>好处 (Positive Effects)</td><td><textarea class="ans" data-uid="113" data-sig="480izp" rows="3"></textarea></td><td><textarea class="ans" data-uid="114" data-sig="1l3rccn" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">9.4 匹配练习 · 例子 → 逻辑链（老龄化）</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（写笔记时可按 ①②③… 给每条编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 日本：老年人储蓄率高、消费谨慎，内需增长乏力</td><td><input class="ans" data-uid="115" data-sig="1gfixdm" style="width:37ch"></td></tr><tr><td><strong>B</strong> 意大利：养老金支出居高不下，挤占教育等公共开支</td><td><input class="ans" data-uid="116" data-sig="ij4aai" style="width:38ch"></td></tr><tr><td><strong>C</strong> 德国：企业返聘退休工程师带教新人，缓解技工短缺</td><td><input class="ans" data-uid="117" data-sig="bxvrfa" style="width:36ch"></td></tr><tr><td><strong>D</strong> 中国：老年康养、旅游产业迅速扩张，成为新增长点</td><td><input class="ans" data-uid="118" data-sig="1wzrqd1" style="width:36ch"></td></tr><tr><td><strong>E</strong> 日本：年轻人求稳、创业意愿低，新兴企业数量长期偏低</td><td><input class="ans" data-uid="119" data-sig="1qqgoan" style="width:26ch"></td></tr><tr><td><strong>F</strong> 中国：祖辈普遍帮带孙辈，减轻双职工家庭育儿负担</td><td><input class="ans" data-uid="120" data-sig="sc7b1j" style="width:37ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">十、真题 · 国际旅游</h2>
+<h3 class="sub">10.1 题目</h3>
+<div class="exam-box"><em>Some people think the problems caused by international travel outweigh its benefits. To what extent do you agree or disagree?</em></div>
+<h3 class="sub">10.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="121" data-sig="6tzj9l" style="width:6ch">。判断关键词：<input class="ans" data-uid="122" data-sig="6tzj9k" style="width:11ch">（+ agree or disagree）。<br>问"好还是坏 / 同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认旅游有问题），Body2 反驳（但好处更大）。</div>
+<h3 class="sub">10.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理经济角度（与本课主题直接相关），再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>经济角度</th><th>其他角度</th></tr></thead><tbody><tr><td>坏处 (Problems)</td><td><textarea class="ans" data-uid="123" data-sig="1k211b4" rows="3"></textarea></td><td><textarea class="ans" data-uid="124" data-sig="91x39e" rows="3"></textarea></td></tr><tr><td>好处 (Benefits)</td><td><textarea class="ans" data-uid="125" data-sig="6tmadq" rows="3"></textarea></td><td><textarea class="ans" data-uid="126" data-sig="oigmwc" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">10.4 匹配练习 · 例子 → 逻辑链（国际旅游）</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（可按 ①②③… 编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 泰国：旅游约占 GDP 18%，支撑数百万酒店、交通、零售岗位</td><td><input class="ans" data-uid="127" data-sig="14jq5ta" style="width:37ch"></td></tr><tr><td><strong>B</strong> 威尼斯：旺季每日数万游客，垃圾清运与供水系统超负荷，市政被迫追加基建支出</td><td><input class="ans" data-uid="128" data-sig="18jso3j" style="width:35ch"></td></tr><tr><td><strong>C</strong> 马尔代夫：度假村多由外资集团运营，利润汇出海外</td><td><input class="ans" data-uid="129" data-sig="edfhe8" style="width:32ch"></td></tr><tr><td><strong>D</strong> 日本：对出境旅客征收观光税，用于旅游基建</td><td><input class="ans" data-uid="130" data-sig="1zch3f" style="width:33ch"></td></tr><tr><td><strong>E</strong> 巴塞罗那：游客推高房租，本地居民被迫搬离</td><td><input class="ans" data-uid="131" data-sig="78j7ae" style="width:33ch"></td></tr><tr><td><strong>F</strong> 泰国：疫情期间游客骤减，旅游业收入几乎腰斩</td><td><input class="ans" data-uid="132" data-sig="1i8gx1w" style="width:32ch"></td></tr></tbody></table></div>
+<p class="foot">《经济原则》讲义 · 雅思写作基础</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var PRINCIPLE = document.body.dataset.principle || '';
+  var VERSION = document.body.dataset.version || '';
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  var NAMEKEY = KEY + 'name';
+  // 值键优先用内容签名（跨讲义迭代稳定），旧数据按 data-uid 存 → 回退迁移
+  function vkey(el){ return KEY + (el.dataset.sig || el.dataset.uid || ''); }
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  function saveEl(el){
+    if (!el || !el.dataset) return;
+    try { localStorage.setItem(vkey(el), el.value); } catch(_){}
+  }
+  function loadEl(el){
+    if (!el || (!el.dataset.uid && !el.dataset.sig)) return;
+    var v = null;
+    try { v = localStorage.getItem(vkey(el)); } catch(_){}
+    if (v == null && el.dataset.sig && el.dataset.uid) {
+      try {
+        var old = localStorage.getItem(KEY + el.dataset.uid);
+        if (old != null) { v = old; localStorage.setItem(vkey(el), old); }
+      } catch(_){}
+    }
+    if (v != null) el.value = v;
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans')) saveEl(el);
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    loadEl(el);
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      try { localStorage.removeItem(vkey(el)); localStorage.removeItem(KEY + (el.dataset.uid || '')); } catch(_){}
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+
+  // ---------------- 导出 / 导入作答 ----------------
+  function download(content, fname, mime){
+    var blob = new Blob([content], { type: mime || 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fname;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  }
+  function safeName(s){
+    return (s || '').replace(/[/:*?"<>|]/g, '_').slice(0, 40);
+  }
+  function collect(){
+    var answers = {}, uids = {};
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = el.value;
+      if (!v || !v.trim()) return;
+      var key = el.dataset.sig || ('uid:' + (el.dataset.uid || ''));
+      answers[key] = v;
+      if (el.dataset.sig && el.dataset.uid) uids[el.dataset.sig] = el.dataset.uid;
+    });
+    var d = {
+      app: 'gedu-handout', format: 1, principle: PRINCIPLE, title: document.title,
+      version: VERSION, student: '', exportedAt: new Date().toISOString(),
+      answers: answers, uids: uids
+    };
+    var nb = document.getElementById('notes-box');
+    if (nb && nb.value && nb.value.trim()) d.notes = nb.value;
+    return d;
+  }
+  var exportBtn = document.getElementById('btn-export');
+  if (exportBtn) exportBtn.addEventListener('click', function(){
+    var last = '';
+    try { last = localStorage.getItem(NAMEKEY) || ''; } catch(_){}
+    var name = window.prompt('请输入你的姓名/学号（老师批改时识别用）：', last);
+    if (name === null) return;
+    name = (name || '').trim() || '未署名';
+    try { localStorage.setItem(NAMEKEY, name); } catch(_){}
+    var d = collect();
+    d.student = name;
+    download(JSON.stringify(d, null, 1), PRINCIPLE + '-作答-' + safeName(name) + '.json', 'application/json');
+  });
+  function applyData(d){
+    var ans = d.answers || {}, uids = d.uids || {}, valByUid = {};
+    Object.keys(ans).forEach(function(k){ if (uids[k] != null) valByUid[String(uids[k])] = ans[k]; });
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = null;
+      if (el.dataset.sig && ans[el.dataset.sig] != null) v = ans[el.dataset.sig];
+      else if (el.dataset.uid && valByUid[el.dataset.uid] != null) v = valByUid[el.dataset.uid];
+      if (v != null) { el.value = v; saveEl(el); autosize(el); }
+    });
+    var nb = document.getElementById('notes-box');
+    if (nb && d.notes != null) { nb.value = d.notes; saveEl(nb); autosize(nb); }
+    syncNotesClass();
+  }
+  function hasAny(){
+    var any = false;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (!any && el.value && el.value.trim()) any = true;
+    });
+    return any;
+  }
+  var importBtn = document.getElementById('btn-import');
+  var fileIn = document.getElementById('import-file');
+  if (importBtn && fileIn) importBtn.addEventListener('click', function(){ fileIn.click(); });
+  if (fileIn) fileIn.addEventListener('change', function(){
+    var f = fileIn.files[0];
+    fileIn.value = '';
+    if (!f) return;
+    var r = new FileReader();
+    r.onload = function(){
+      try {
+        var d = JSON.parse(r.result);
+        if (!d || (d.app !== 'gedu-handout' && !d.answers)) throw new Error('bad');
+        if (d.principle && d.principle !== PRINCIPLE &&
+            !window.confirm('⚠ 这份作答来自《' + d.principle + '》，当前讲义是《' + PRINCIPLE + '》。\n强行导入可能对不上题目，仍要继续吗？')) return;
+        if (hasAny() && !window.confirm('导入会覆盖当前已填写的内容，确定继续吗？')) return;
+        applyData(d);
+        if (d.student) { try { localStorage.setItem(NAMEKEY, d.student); } catch(_){} }
+      } catch(e){ window.alert('文件无法解析，或不是本讲义导出的作答文件。'); }
+    };
+    r.readAsText(f);
+  });
+})();
+</script>
+
+</body>
+</html>

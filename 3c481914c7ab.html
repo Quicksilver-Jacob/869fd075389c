@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会安全原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:15px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:8px 14px 40px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:21px; margin:8px 0 3px; }
+.sec-title { font-size:17px; color:var(--c1); border-left:5px solid var(--c1); padding-left:9px; margin:16px 0 6px; }
+.sub { font-size:14px; color:var(--dark); margin:8px 0 3px; }
+.sub .tag { font-size:11px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:6px 11px; margin:6px 0; line-height:1.45; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:4px 0 1px; line-height:1.32; }
+p.en { margin:2px 0 6px; line-height:1.42; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:6px 0; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:var(--dark); color:#fff; padding:4px 6px; text-align:left; font-weight:700; }
+td { padding:4px 6px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:6px 10px; margin:7px 0; line-height:1.5; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:1px 7px; margin:2px 5px 0 0; font-size:13px; }
+
+input.ans { font:inherit; font-size:14.5px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+            padding:2px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:14.5px; line-height:1.45; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+               padding:3px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }   /* 真题观点库等表格：留足手写空间（屏幕+打印） */
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:6px 10px;
+                color:var(--dark); line-height:1.5; font-size:13.5px; margin:4px 0 9px; }
+.translate { margin:3px 0 9px; }
+.translate textarea.ans { width:100%; min-height:44px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:8px 13px;
+            margin:6px 0; font-style:italic; font-size:15px; line-height:1.5; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:19px; }
+  textarea.ans { min-height:20px; }
+  .wordbank, .exam-box { break-inside:avoid; }
+  table { break-inside:auto; page-break-inside:auto; }
+  tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  thead { display:table-header-group; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:9mm; }
+</style>
+</head>
+<body data-principle="社会安全原则" data-version="v3d8doa">
+<div class="page">
+<div class="toolbar">
+<span class="tt">社会安全原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button><button class="btn no-print" id="btn-export" type="button" title="导出我的作答（JSON 文件，交给老师批改）">💾 导出数据</button><button class="btn no-print" id="btn-import" type="button" title="导入作答文件（在另一台设备继续填写）">📂 导入数据</button><button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button><button class="btn no-print" id="btn-notes" type="button">📝 笔记</button><input type="file" id="import-file" accept=".json,application/json" hidden>
+</div>
+<h1>社会安全原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇总表（S1–S4 · 26 词）</h2>
+<div class="note">中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。左列 S1／S2，右列 S3／S4。</div>
+<p class="en"><strong>S1 犯罪类型 · 名词短语　|　S2 犯罪原因 · 动词/名词短语</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>青少年犯罪</td><td><input class="ans" data-uid="1" data-sig="1bny4k9" style="width:23ch"></td><td>缺乏道德教育</td><td><input class="ans" data-uid="2" data-sig="1kiaxp7" style="width:26ch"></td></tr><tr><td>霸凌</td><td><input class="ans" data-uid="3" data-sig="1l00qpf" style="width:11ch"></td><td>负面榜样</td><td><input class="ans" data-uid="4" data-sig="z2icz5" style="width:23ch"></td></tr><tr><td>吸毒</td><td><input class="ans" data-uid="5" data-sig="ojpw6e" style="width:13ch"></td><td>误导信息</td><td><input class="ans" data-uid="6" data-sig="boptok" style="width:25ch"></td></tr><tr><td>家庭暴力</td><td><input class="ans" data-uid="7" data-sig="gvripn" style="width:20ch"></td><td>模仿</td><td><input class="ans" data-uid="8" data-sig="1ov8dq1" style="width:26ch"></td></tr><tr><td>持枪抢劫</td><td><input class="ans" data-uid="9" data-sig="14hjd0q" style="width:16ch"></td><td>误入歧途</td><td><input class="ans" data-uid="10" data-sig="1romsi0" style="width:12ch"></td></tr><tr><td>犯罪活动</td><td><input class="ans" data-uid="11" data-sig="14volcr" style="width:22ch"></td><td>区分对错</td><td><input class="ans" data-uid="12" data-sig="1kg0mah" style="width:31ch"></td></tr></tbody></table></div>
+<p class="en"><strong>S3 社会影响与改造 · 名词/动词短语　|　S4 预防与应对 · 动词短语</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>社会稳定</td><td><input class="ans" data-uid="13" data-sig="dig17x" style="width:19ch"></td><td>被送进监狱</td><td><input class="ans" data-uid="14" data-sig="gjvxzj" style="width:20ch"></td></tr><tr><td>安全感</td><td><input class="ans" data-uid="15" data-sig="12rs230" style="width:20ch"></td><td>被绳之以法</td><td><input class="ans" data-uid="16" data-sig="1vq3iy6" style="width:24ch"></td></tr><tr><td>社会恐慌</td><td><input class="ans" data-uid="17" data-sig="jy10zy" style="width:15ch"></td><td>重新进入社会</td><td><input class="ans" data-uid="18" data-sig="xgnui4" style="width:19ch"></td></tr><tr><td>有犯罪记录的人</td><td><input class="ans" data-uid="19" data-sig="1fxdihi" style="width:32ch"></td><td>重新融入（社会）</td><td><input class="ans" data-uid="20" data-sig="1r9i9n8" style="width:36ch"></td></tr><tr><td>再犯</td><td><input class="ans" data-uid="21" data-sig="1l2idan" style="width:12ch"></td><td>遏制犯罪</td><td><input class="ans" data-uid="22" data-sig="1har2l" style="width:22ch"></td></tr><tr><td>改造罪犯</td><td><input class="ans" data-uid="23" data-sig="dro7mt" style="width:34ch"></td><td>阻止潜在犯罪者犯罪</td><td><input class="ans" data-uid="24" data-sig="1dofn8n" style="width:40ch"></td></tr><tr><td></td><td></td><td>对媒体进行审查</td><td><input class="ans" data-uid="25" data-sig="1h3azqw" style="width:33ch"></td></tr><tr><td></td><td></td><td>遵守法律</td><td><input class="ans" data-uid="26" data-sig="1yokzgw" style="width:26ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">二、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（犯罪类型）与 S2（犯罪原因）两组表达，体现"犯罪←原因"追溯逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：研究一致表明，青少年犯罪等犯罪活动往往起源于校园中的霸凌行为，若无干预，它们可能升级为包括吸毒甚至持枪抢劫在内的更严重的犯罪行为。</p>
+<p class="en">Research consistently shows that <input class="ans" data-uid="27" data-sig="cjbqel" style="width:22ch"> such as <input class="ans" data-uid="28" data-sig="cjbqek" style="width:23ch"> often originate in schoolyard <input class="ans" data-uid="29" data-sig="cjbqen" style="width:11ch">, and without intervention, they can escalate into more serious offences including <input class="ans" data-uid="30" data-sig="cjbqem" style="width:13ch"> and even <input class="ans" data-uid="31" data-sig="cjbqeh" style="width:16ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：大多数犯罪行为的根源在于缺乏道德教育——从小没学会区分对错的孩子特别容易受到负面榜样的影响，这些人示范了暴力和违法是可以接受的。</p>
+<p class="en">At the root of most criminal behaviour is a <input class="ans" data-uid="32" data-sig="1mao2xm" style="width:26ch">, where children who grow up without learning to <input class="ans" data-uid="33" data-sig="1mao2xn" style="width:31ch"> are particularly vulnerable to <input class="ans" data-uid="34" data-sig="1mao2xk" style="width:23ch">, who demonstrate that violence and lawlessness are acceptable.</p>
+<p class="zh"><strong>3.</strong> 中文：在数字时代，年轻人不断接触到网络上的误导信息，如果没有区分对错的能力，他们可能会模仿在社交媒体上看到的暴力或犯罪行为。</p>
+<p class="en">In the digital age, young people are constantly exposed to <input class="ans" data-uid="35" data-sig="qj4rmf" style="width:25ch"> online, and without the ability to <input class="ans" data-uid="36" data-sig="qj4rme" style="width:31ch">, they may <input class="ans" data-uid="37" data-sig="qj4rmd" style="width:26ch"> violent or criminal behaviours they see on social media.</p>
+<p class="zh"><strong>4.</strong> 中文：当青少年模仿负面榜样的行为，并且缺乏质疑所见的道德指南时，他们很容易误入歧途——这一路径解释了青少年犯罪和其他犯罪活动在青年群体中激增的原因。</p>
+<p class="en">When adolescents <input class="ans" data-uid="38" data-sig="114pldu" style="width:26ch"> the actions of <input class="ans" data-uid="39" data-sig="114pldv" style="width:23ch"> and lack the moral compass to question what they see, they easily <input class="ans" data-uid="40" data-sig="114plds" style="width:12ch"> — and this pathway explains the surge in <input class="ans" data-uid="41" data-sig="114pldt" style="width:23ch"> and other <input class="ans" data-uid="42" data-sig="114pldy" style="width:22ch"> among youth.</p>
+<p class="zh"><strong>5.</strong> 中文：家庭暴力与后续犯罪活动之间的悲剧性联系——例如吸毒如何驱使个体通过持枪抢劫来获取毒资——如果不解决根本原因，即社会的道德教育缺失，就无法被切断。</p>
+<p class="en">The tragic link between <input class="ans" data-uid="43" data-sig="1dwd3du" style="width:20ch"> and later <input class="ans" data-uid="44" data-sig="1dwd3dv" style="width:22ch"> — such as how <input class="ans" data-uid="45" data-sig="1dwd3ds" style="width:13ch"> can drive individuals to fund their addiction through <input class="ans" data-uid="46" data-sig="1dwd3dt" style="width:16ch"> — cannot be broken without addressing the root cause: the <input class="ans" data-uid="47" data-sig="1dwd3dy" style="width:26ch"> in society.</p>
+<h2 class="sec-title">三、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S2（犯罪原因）与 S3（社会影响与改造）两组表达，体现"原因→影响→改造"完整链。</div>
+<p class="zh"><strong>1.</strong> 中文：当越来越多的人因缺乏道德教育和负面榜样的影响而误入歧途时，随之而来的犯罪浪潮动摇了社会稳定，使普通公民感到自己的安全感一天天消失。</p>
+<p class="en">When growing numbers of individuals <input class="ans" data-uid="48" data-sig="ug89lg" style="width:12ch"> due to <input class="ans" data-uid="49" data-sig="ug89lh" style="width:26ch"> and the influence of <input class="ans" data-uid="50" data-sig="ug89li" style="width:23ch">, the resulting wave of crime undermines <input class="ans" data-uid="51" data-sig="ug89lj" style="width:19ch">, leaving ordinary citizens to feel their <input class="ans" data-uid="52" data-sig="ug89lc" style="width:20ch"> slipping away day by day.</p>
+<p class="zh"><strong>2.</strong> 中文：随着社会稳定被侵蚀、公众的安全感消失，社会恐慌会迅速蔓延——一个人们不敢夜晚出门的社会已经开始破裂。</p>
+<p class="en">As <input class="ans" data-uid="53" data-sig="1m94ui5" style="width:19ch"> erodes and the public <input class="ans" data-uid="54" data-sig="1m94ui4" style="width:20ch"> vanishes, <input class="ans" data-uid="55" data-sig="1m94ui7" style="width:15ch"> can spread rapidly — a society in which people are afraid to walk the streets at night has already begun to fracture.</p>
+<p class="zh"><strong>3.</strong> 中文：被污名化为有犯罪记录者的刑满释放人员发现每一扇门都对他们关闭，没有合法的谋生途径，许多人将不可避免地再犯——这形成了一个仅靠惩罚系统无法打破的循环。</p>
+<p class="en">Released prisoners who are stigmatised as <input class="ans" data-uid="56" data-sig="1xu4ie1" style="width:32ch"> often find every door closed to them, and without a legitimate way to earn a living, many will inevitably <input class="ans" data-uid="57" data-sig="1xu4ie0" style="width:12ch"> — creating a cycle that correctional systems alone cannot break.</p>
+<p class="zh"><strong>4.</strong> 中文：阻止有犯罪记录的前囚犯再犯的最有效方法是通过职业培训、心理咨询和社区重返计划来改造和再教育罪犯。</p>
+<p class="en">The most effective way to stop former inmates who are <input class="ans" data-uid="58" data-sig="1axbwq8" style="width:32ch"> from continuing to <input class="ans" data-uid="59" data-sig="1axbwq9" style="width:12ch"> is to <input class="ans" data-uid="60" data-sig="1axbwqa" style="width:34ch"> through vocational training, psychological counselling, and community reintegration programmes.</p>
+<p class="zh"><strong>5.</strong> 中文：解决三项根本原因——缺乏道德教育、负面榜样和误导信息——是恢复社会稳定、重建公众安全感并防止让社区瘫痪的社会恐慌的唯一途径。</p>
+<p class="en">Tackling the root causes — <input class="ans" data-uid="61" data-sig="rnt2t7" style="width:26ch">, <input class="ans" data-uid="62" data-sig="rnt2t6" style="width:23ch">, and <input class="ans" data-uid="63" data-sig="rnt2t5" style="width:25ch"> — is the only way to restore <input class="ans" data-uid="64" data-sig="rnt2t4" style="width:19ch">, rebuild the public's <input class="ans" data-uid="65" data-sig="rnt2tb" style="width:20ch">, and prevent the <input class="ans" data-uid="66" data-sig="rnt2ta" style="width:15ch"> that paralyses communities.</p>
+<h2 class="sec-title">四、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为影响（S3）、后半为对策（S4），请对应识别其"影响→对策"结构。</div>
+<p class="zh"><strong>1.</strong> 中文：犯罪频发会动摇社会稳定、摧毁公众的安全感，因此严重罪犯必须被送进监狱并被绳之以法。</p>
+<p class="en">When crime is rampant, it undermines <input class="ans" data-uid="67" data-sig="ruovg0" style="width:19ch"> and destroys the public <input class="ans" data-uid="68" data-sig="ruovg1" style="width:20ch">, so serious offenders must <input class="ans" data-uid="69" data-sig="ruovg2" style="width:20ch"> and <input class="ans" data-uid="70" data-sig="ruovg3" style="width:24ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：许多有犯罪记录的人出狱后难以重新进入社会，除非他们被重新融入社区，否则很可能会再次犯罪。</p>
+<p class="en">Many <input class="ans" data-uid="71" data-sig="6inejm" style="width:32ch"> find it hard to <input class="ans" data-uid="72" data-sig="6inejn" style="width:19ch"> after release, and unless society helps them <input class="ans" data-uid="73" data-sig="6inejk" style="width:28ch"> the community, they are very likely to <input class="ans" data-uid="74" data-sig="6inejl" style="width:12ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：为遏制犯罪、防止社会恐慌蔓延，当局应从源头阻止潜在犯罪者犯罪。</p>
+<p class="en">To <input class="ans" data-uid="75" data-sig="j136ez" style="width:22ch"> and prevent <input class="ans" data-uid="76" data-sig="j136ey" style="width:15ch"> from spreading, the authorities should <input class="ans" data-uid="77" data-sig="j136ex" style="width:40ch"> at the source.</p>
+<p class="zh"><strong>4.</strong> 中文：社会不应只惩罚罪犯，更要改造和再教育他们、对宣扬暴力的媒体进行审查，并引导公民自觉遵守法律。</p>
+<p class="en">Society should not merely punish offenders but also <input class="ans" data-uid="78" data-sig="1wcrpry" style="width:34ch">, <input class="ans" data-uid="79" data-sig="1wcrprz" style="width:33ch"> that glorifies violence, and guide citizens to <input class="ans" data-uid="80" data-sig="1wcrprw" style="width:26ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：只有惩罚、改造、预防、审查与教育并用，才能真正恢复社会稳定。</p>
+<p class="en">Only by combining punishment, rehabilitation, prevention, censorship and education can <input class="ans" data-uid="81" data-sig="133x84n" style="width:19ch"> be genuinely restored.</p>
+<h2 class="sec-title">五、练习 · 段落填空（综合填空）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。</div>
+<p class="zh"><strong>中文原文：</strong> 青少年犯罪已成为严重社会问题。其主要原因包括缺乏道德教育和贫困，导致青少年误入歧途。网络误导信息使年轻人更难明辨是非。犯罪威胁社会稳定，对公共安全构成风险。有犯罪记录的人出狱后常面临歧视，导致再犯。因此，我们不仅要惩罚，更要改造和再教育罪犯。</p>
+<p class="en"><input class="ans" data-uid="82" data-sig="1fb650t" style="width:23ch"> has become a serious social problem. Its main causes include <input class="ans" data-uid="83" data-sig="1fb650s" style="width:26ch"> and <input class="ans" data-uid="84" data-sig="1fb650v" style="width:10ch">, causing young people to <input class="ans" data-uid="85" data-sig="1fb650u" style="width:12ch">. <input class="ans" data-uid="86" data-sig="1fb650p" style="width:25ch"> online makes it harder for them to <input class="ans" data-uid="87" data-sig="1fb650o" style="width:31ch">. Crime <input class="ans" data-uid="88" data-sig="1fb650r" style="width:29ch"> and <input class="ans" data-uid="89" data-sig="1fb650q" style="width:32ch">. People with a <input class="ans" data-uid="90" data-sig="1fb650l" style="width:18ch"> often <input class="ans" data-uid="91" data-sig="1fb650k" style="width:22ch"> after release, leading to <input class="ans" data-uid="92" data-sig="1nj1c9o" style="width:15ch">. Therefore, we should not only punish but also <input class="ans" data-uid="93" data-sig="1nj1c9p" style="width:26ch"> offenders.</p>
+<h2 class="sec-title">六、练习 · 句子翻译（课堂操练）</h2>
+<div class="note">将下列中文译为英文，须使用括号内的提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：青少年犯罪危害社会稳定。<span class="hint">（juvenile delinquency, do harm to, social stability）</span></p>
+<div class="translate"><textarea class="ans" data-uid="94" data-sig="1vn1rsy" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：校园霸凌对孩子的成长产生极大的影响。<span class="hint">（campus bullying, exert influence on）</span></p>
+<div class="translate"><textarea class="ans" data-uid="95" data-sig="p971el" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：过多媒体的负面消息容易引起社会恐慌。<span class="hint">（negative reports, be likely to, social panic）</span></p>
+<div class="translate"><textarea class="ans" data-uid="96" data-sig="1lt6kd4" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：小孩子们喜欢模仿电视上偶像的行为，会受到负面榜样的影响。<span class="hint">（copy / simulate, negative role models）</span></p>
+<div class="translate"><textarea class="ans" data-uid="97" data-sig="1rd36ez" rows="3"></textarea></div>
+<h2 class="sec-title">七、真题 · 青少年犯罪</h2>
+<h3 class="sub">7.1 题目</h3>
+<div class="exam-box"><em>In many parts of the world, there has been an increase in youth crime. Why is this happening? How to address this issue?</em></div>
+<h3 class="sub">7.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="98" data-sig="nyvn07" style="width:8ch">。判断关键词：<input class="ans" data-uid="99" data-sig="nyvn06" style="width:40ch"><br>问"原因 + 措施"→ 原因措施型，用"原因→措施"大纲：先列原因，再从原因反推措施，确保每项措施都回应某条原因。</div>
+<h3 class="sub">7.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（社会安全）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>本原则角度（社会安全）</th><th>其他角度补充</th></tr></thead><tbody><tr><td>原因 (Reasons)</td><td><textarea class="ans" data-uid="100" data-sig="1hr5vf8" rows="3"></textarea></td><td><textarea class="ans" data-uid="101" data-sig="157hrx5" rows="3"></textarea></td></tr><tr><td>方案 (Solutions)</td><td><textarea class="ans" data-uid="102" data-sig="1qodu7b" rows="3"></textarea></td><td><textarea class="ans" data-uid="103" data-sig="1clsley" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">7.4 匹配练习 · 例子 → 逻辑链</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（可按 ①②③… 编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 留守儿童：父母外出务工、无人管教 → 不辨是非、抽烟打架 → 教育缺失</td><td><input class="ans" data-uid="104" data-sig="1mp9q98" style="width:31ch"></td></tr><tr><td><strong>B</strong> 短视频上的"炫富""斗狠"内容 → 青少年争相模仿、误入歧途 → 不良影响</td><td><input class="ans" data-uid="105" data-sig="1ug7blm" style="width:40ch"></td></tr><tr><td><strong>C</strong> 巴西贫民窟青年失业、找不到工作 → 走投无路 → 被贩毒集团招募</td><td><input class="ans" data-uid="106" data-sig="96tbsv" style="width:40ch"></td></tr><tr><td><strong>D</strong> 中国中小学开设法治与品德课 → 学生学会分清是非、懂法守法 → 从源头减少青少年犯罪</td><td><input class="ans" data-uid="107" data-sig="1xx90oy" style="width:40ch"></td></tr><tr><td><strong>E</strong> 德国监狱：以职业培训 + 心理辅导帮助服刑者改造 → 出狱后重新就业 → 再犯率明显下降</td><td><input class="ans" data-uid="108" data-sig="1erl7q4" style="width:40ch"></td></tr><tr><td><strong>F</strong> 社区推行刑满释放者帮扶计划（就业 + 安家） → 再犯减少、居民安全感回升 → 社会恐慌消退</td><td><input class="ans" data-uid="109" data-sig="nvaa0i" style="width:40ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">八、真题 · 刑满释放再犯</h2>
+<h3 class="sub">8.1 题目</h3>
+<div class="exam-box"><em>Research suggests that the majority of criminals who were sent to prisons would continue to commit crimes when set free. Why is the case? What can be done to solve this problem?</em></div>
+<h3 class="sub">8.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="110" data-sig="nyvn07-2" style="width:8ch">。判断关键词：<input class="ans" data-uid="111" data-sig="nyvn06-2" style="width:40ch"><br>问"原因 + 措施"→ 原因措施型，用"原因→措施"大纲：先列原因，再从原因反推措施，确保每项措施都回应某条原因。</div>
+<h3 class="sub">8.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（社会安全）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>本原则角度（社会安全）</th><th>其他角度补充</th></tr></thead><tbody><tr><td>再犯原因 (Reasons)</td><td><textarea class="ans" data-uid="112" data-sig="18axok6" rows="3"></textarea></td><td><textarea class="ans" data-uid="113" data-sig="s5zavv" rows="3"></textarea></td></tr><tr><td>解决方案 (Solutions)</td><td><textarea class="ans" data-uid="114" data-sig="1x0vod3" rows="3"></textarea></td><td><textarea class="ans" data-uid="115" data-sig="7a5w4a" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">8.4 匹配练习 · 例子 → 逻辑链</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（可按 ①②③… 编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 美国部分州立监狱以关押为主、削减职业培训 → 出狱即失业 → 重操旧业、再犯率高</td><td><input class="ans" data-uid="116" data-sig="1f6y5vs" style="width:40ch"></td></tr><tr><td><strong>B</strong> 有犯罪记录 → 求职、租房被拒 → 走投无路 → 只能回到旧圈子</td><td><input class="ans" data-uid="117" data-sig="176ae0t" style="width:40ch"></td></tr><tr><td><strong>C</strong> 挪威哈尔登监狱：木工、编程等职业培训 → 出狱后有一技之长、自食其力 → 再犯率极低</td><td><input class="ans" data-uid="118" data-sig="z8hqai" style="width:40ch"></td></tr><tr><td><strong>D</strong> 新加坡"黄丝带计划"：企业受税收激励聘用前囚犯、提供住宿支持 → 犯罪诱因减少 → 顺利回归社会</td><td><input class="ans" data-uid="119" data-sig="skl8gl" style="width:40ch"></td></tr><tr><td><strong>E</strong> 出狱后无住所、无心理辅导、无职业安置 → 生活失控、流落街头 → 再次作案</td><td><input class="ans" data-uid="120" data-sig="189laco" style="width:38ch"></td></tr><tr><td><strong>F</strong> 长期监禁 → 家庭破裂、与社会脱节 → 出狱后无依无靠 → 更容易再犯</td><td><input class="ans" data-uid="121" data-sig="1w30fe3" style="width:40ch"></td></tr></tbody></table></div>
+<p class="foot">《社会安全原则》讲义 · 雅思写作基础</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var PRINCIPLE = document.body.dataset.principle || '';
+  var VERSION = document.body.dataset.version || '';
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  var NAMEKEY = KEY + 'name';
+  // 值键优先用内容签名（跨讲义迭代稳定），旧数据按 data-uid 存 → 回退迁移
+  function vkey(el){ return KEY + (el.dataset.sig || el.dataset.uid || ''); }
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  function saveEl(el){
+    if (!el || !el.dataset) return;
+    try { localStorage.setItem(vkey(el), el.value); } catch(_){}
+  }
+  function loadEl(el){
+    if (!el || (!el.dataset.uid && !el.dataset.sig)) return;
+    var v = null;
+    try { v = localStorage.getItem(vkey(el)); } catch(_){}
+    if (v == null && el.dataset.sig && el.dataset.uid) {
+      try {
+        var old = localStorage.getItem(KEY + el.dataset.uid);
+        if (old != null) { v = old; localStorage.setItem(vkey(el), old); }
+      } catch(_){}
+    }
+    if (v != null) el.value = v;
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans')) saveEl(el);
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    loadEl(el);
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      try { localStorage.removeItem(vkey(el)); localStorage.removeItem(KEY + (el.dataset.uid || '')); } catch(_){}
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+
+  // ---------------- 导出 / 导入作答 ----------------
+  function download(content, fname, mime){
+    var blob = new Blob([content], { type: mime || 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fname;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  }
+  function safeName(s){
+    return (s || '').replace(/[/:*?"<>|]/g, '_').slice(0, 40);
+  }
+  function collect(){
+    var answers = {}, uids = {};
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = el.value;
+      if (!v || !v.trim()) return;
+      var key = el.dataset.sig || ('uid:' + (el.dataset.uid || ''));
+      answers[key] = v;
+      if (el.dataset.sig && el.dataset.uid) uids[el.dataset.sig] = el.dataset.uid;
+    });
+    var d = {
+      app: 'gedu-handout', format: 1, principle: PRINCIPLE, title: document.title,
+      version: VERSION, student: '', exportedAt: new Date().toISOString(),
+      answers: answers, uids: uids
+    };
+    var nb = document.getElementById('notes-box');
+    if (nb && nb.value && nb.value.trim()) d.notes = nb.value;
+    return d;
+  }
+  var exportBtn = document.getElementById('btn-export');
+  if (exportBtn) exportBtn.addEventListener('click', function(){
+    var last = '';
+    try { last = localStorage.getItem(NAMEKEY) || ''; } catch(_){}
+    var name = window.prompt('请输入你的姓名/学号（老师批改时识别用）：', last);
+    if (name === null) return;
+    name = (name || '').trim() || '未署名';
+    try { localStorage.setItem(NAMEKEY, name); } catch(_){}
+    var d = collect();
+    d.student = name;
+    download(JSON.stringify(d, null, 1), PRINCIPLE + '-作答-' + safeName(name) + '.json', 'application/json');
+  });
+  function applyData(d){
+    var ans = d.answers || {}, uids = d.uids || {}, valByUid = {};
+    Object.keys(ans).forEach(function(k){ if (uids[k] != null) valByUid[String(uids[k])] = ans[k]; });
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = null;
+      if (el.dataset.sig && ans[el.dataset.sig] != null) v = ans[el.dataset.sig];
+      else if (el.dataset.uid && valByUid[el.dataset.uid] != null) v = valByUid[el.dataset.uid];
+      if (v != null) { el.value = v; saveEl(el); autosize(el); }
+    });
+    var nb = document.getElementById('notes-box');
+    if (nb && d.notes != null) { nb.value = d.notes; saveEl(nb); autosize(nb); }
+    syncNotesClass();
+  }
+  function hasAny(){
+    var any = false;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (!any && el.value && el.value.trim()) any = true;
+    });
+    return any;
+  }
+  var importBtn = document.getElementById('btn-import');
+  var fileIn = document.getElementById('import-file');
+  if (importBtn && fileIn) importBtn.addEventListener('click', function(){ fileIn.click(); });
+  if (fileIn) fileIn.addEventListener('change', function(){
+    var f = fileIn.files[0];
+    fileIn.value = '';
+    if (!f) return;
+    var r = new FileReader();
+    r.onload = function(){
+      try {
+        var d = JSON.parse(r.result);
+        if (!d || (d.app !== 'gedu-handout' && !d.answers)) throw new Error('bad');
+        if (d.principle && d.principle !== PRINCIPLE &&
+            !window.confirm('⚠ 这份作答来自《' + d.principle + '》，当前讲义是《' + PRINCIPLE + '》。\n强行导入可能对不上题目，仍要继续吗？')) return;
+        if (hasAny() && !window.confirm('导入会覆盖当前已填写的内容，确定继续吗？')) return;
+        applyData(d);
+        if (d.student) { try { localStorage.setItem(NAMEKEY, d.student); } catch(_){} }
+      } catch(e){ window.alert('文件无法解析，或不是本讲义导出的作答文件。'); }
+    };
+    r.readAsText(f);
+  });
+})();
+</script>
+
+</body>
+</html>

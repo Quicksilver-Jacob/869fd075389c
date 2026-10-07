@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智力教育原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:15px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:8px 14px 40px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:21px; margin:8px 0 3px; }
+.sec-title { font-size:17px; color:var(--c1); border-left:5px solid var(--c1); padding-left:9px; margin:16px 0 6px; }
+.sub { font-size:14px; color:var(--dark); margin:8px 0 3px; }
+.sub .tag { font-size:11px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:6px 11px; margin:6px 0; line-height:1.45; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:4px 0 1px; line-height:1.32; }
+p.en { margin:2px 0 6px; line-height:1.42; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:6px 0; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:var(--dark); color:#fff; padding:4px 6px; text-align:left; font-weight:700; }
+td { padding:4px 6px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:6px 10px; margin:7px 0; line-height:1.5; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:1px 7px; margin:2px 5px 0 0; font-size:13px; }
+
+input.ans { font:inherit; font-size:14.5px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+            padding:2px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:14.5px; line-height:1.45; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+               padding:3px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }   /* 真题观点库等表格：留足手写空间（屏幕+打印） */
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:6px 10px;
+                color:var(--dark); line-height:1.5; font-size:13.5px; margin:4px 0 9px; }
+.translate { margin:3px 0 9px; }
+.translate textarea.ans { width:100%; min-height:44px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:8px 13px;
+            margin:6px 0; font-style:italic; font-size:15px; line-height:1.5; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:19px; }
+  textarea.ans { min-height:20px; }
+  .wordbank, .exam-box { break-inside:avoid; }
+  table { break-inside:auto; page-break-inside:auto; }
+  tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  thead { display:table-header-group; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:9mm; }
+</style>
+</head>
+<body data-principle="智力教育原则" data-version="v5ex58s">
+<div class="page">
+<div class="toolbar">
+<span class="tt">智力教育原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button><button class="btn no-print" id="btn-export" type="button" title="导出我的作答（JSON 文件，交给老师批改）">💾 导出数据</button><button class="btn no-print" id="btn-import" type="button" title="导入作答文件（在另一台设备继续填写）">📂 导入数据</button><button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button><button class="btn no-print" id="btn-notes" type="button">📝 笔记</button><input type="file" id="import-file" accept=".json,application/json" hidden>
+</div>
+<h1>智力教育原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇总表（S1–S4 · 32 词）</h2>
+<div class="note">中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。左列 S1／S2，右列 S3／S4。</div>
+<p class="en"><strong>S1 教育内容与类型 · 名词短语　|　S2 教学方式与过程 · 动词短语</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>获取知识</td><td><input class="ans" data-uid="1" data-sig="15s1diw" style="width:20ch"></td><td>传授知识</td><td><input class="ans" data-uid="2" data-sig="2yz6ze" style="width:19ch"></td></tr><tr><td>必修课</td><td><input class="ans" data-uid="3" data-sig="ta1hfs" style="width:19ch"></td><td>灌输给某人</td><td><input class="ans" data-uid="4" data-sig="10wp8p6" style="width:22ch"></td></tr><tr><td>理论知识</td><td><input class="ans" data-uid="5" data-sig="1g04tf9" style="width:24ch"></td><td>激发对……的兴趣</td><td><input class="ans" data-uid="6" data-sig="16es7tj" style="width:30ch"></td></tr><tr><td>选修课</td><td><input class="ans" data-uid="7" data-sig="jm2tmc" style="width:19ch"></td><td>互动学习</td><td><input class="ans" data-uid="8" data-sig="150pnue" style="width:23ch"></td></tr><tr><td>职业培训</td><td><input class="ans" data-uid="9" data-sig="1nfyf8a" style="width:22ch"></td><td>培养 / 发展</td><td><input class="ans" data-uid="10" data-sig="k1tet4" style="width:31ch"></td></tr><tr><td>实用技能</td><td><input class="ans" data-uid="11" data-sig="192wg4h" style="width:19ch"></td><td>把理论用于实践</td><td><input class="ans" data-uid="12" data-sig="1ucx37n" style="width:33ch"></td></tr><tr><td>各种技能</td><td><input class="ans" data-uid="13" data-sig="1coovm0" style="width:25ch"></td><td>掌握</td><td><input class="ans" data-uid="14" data-sig="5xa4oa" style="width:17ch"></td></tr><tr><td>具备（能力）</td><td><input class="ans" data-uid="15" data-sig="cgqaj7" style="width:19ch"></td><td>丰富经历</td><td><input class="ans" data-uid="16" data-sig="dlc1pt" style="width:26ch"></td></tr></tbody></table></div>
+<p class="en"><strong>S3 学习成果与个人能力 · 名词短语　|　S4 教育的社会影响 · 动词短语</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>学业表现</td><td><input class="ans" data-uid="17" data-sig="8vsdh7" style="width:23ch"></td><td>增加就业力</td><td><input class="ans" data-uid="18" data-sig="14yhbg9" style="width:30ch"></td></tr><tr><td>读写能力</td><td><input class="ans" data-uid="19" data-sig="1jgxm0j" style="width:11ch"></td><td>赋能个人</td><td><input class="ans" data-uid="20" data-sig="f0yfht" style="width:22ch"></td></tr><tr><td>计算能力</td><td><input class="ans" data-uid="21" data-sig="1ythnzi" style="width:11ch"></td><td>贡献经济增长</td><td><input class="ans" data-uid="22" data-sig="1jytggc" style="width:32ch"></td></tr><tr><td>智力发展</td><td><input class="ans" data-uid="23" data-sig="1iktmh2" style="width:27ch"></td><td>驱动创新</td><td><input class="ans" data-uid="24" data-sig="zwqq4k" style="width:19ch"></td></tr><tr><td>沟通能力</td><td><input class="ans" data-uid="25" data-sig="nftt2f" style="width:24ch"></td><td>促进社会流动</td><td><input class="ans" data-uid="26" data-sig="v1zy85" style="width:26ch"></td></tr><tr><td>团队精神</td><td><input class="ans" data-uid="27" data-sig="1g6nrd9" style="width:22ch"></td><td>降低犯罪率</td><td><input class="ans" data-uid="28" data-sig="4u2ar3" style="width:21ch"></td></tr><tr><td>独立能力</td><td><input class="ans" data-uid="29" data-sig="puo7sl" style="width:15ch"></td><td>提升公众意识</td><td><input class="ans" data-uid="30" data-sig="19pop5j" style="width:28ch"></td></tr><tr><td>责任感</td><td><input class="ans" data-uid="31" data-sig="2012iu" style="width:28ch"></td><td>对……产生深远影响</td><td><input class="ans" data-uid="32" data-sig="7az4ck" style="width:30ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">二、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（内容）与 S2（教学方式）两组表达，体现"学什么—怎么教"对应逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：教育的首要目的是帮助学生获取知识，这始于必修课和理论知识等基础，随后扩展到让他们能够探索个人兴趣的选修课。</p>
+<p class="en">The primary aim of education is to help students <input class="ans" data-uid="33" data-sig="1d6xa49" style="width:20ch">, which begins with <input class="ans" data-uid="34" data-sig="1d6xa48" style="width:19ch"> such as <input class="ans" data-uid="35" data-sig="1d6xa4b" style="width:24ch"> and later expands to <input class="ans" data-uid="36" data-sig="1d6xa4a" style="width:19ch"> that allow them to explore personal interests.</p>
+<p class="zh"><strong>2.</strong> 中文：传统教学严重依赖教师传授知识并将其灌输给学生，而现代教学方式旨在通过互动学习和项目式作业来激发兴趣。</p>
+<p class="en">While traditional teaching relies heavily on teachers to <input class="ans" data-uid="37" data-sig="11ixuiy" style="width:19ch"> and <input class="ans" data-uid="38" data-sig="11ixuiz" style="width:10ch"> knowledge into students, modern approaches aim to <input class="ans" data-uid="39" data-sig="11ixuiw" style="width:27ch"> through <input class="ans" data-uid="40" data-sig="11ixuix" style="width:23ch"> and project-based work.</p>
+<p class="zh"><strong>3.</strong> 中文：一个设计良好的职业培训项目可以培养实用能力，而包含必修课和选修课的广泛课程能确保学生为未来的挑战做好准备。</p>
+<p class="en">A well-designed <input class="ans" data-uid="41" data-sig="6qu1yx" style="width:22ch"> programme can <input class="ans" data-uid="42" data-sig="6qu1yw" style="width:12ch"> practical abilities, while a broad curriculum including both <input class="ans" data-uid="43" data-sig="6qu1yz" style="width:19ch"> and <input class="ans" data-uid="44" data-sig="6qu1yy" style="width:19ch"> ensures students <input class="ans" data-uid="45" data-sig="6qu1z1" style="width:31ch"> for future challenges.</p>
+<p class="zh"><strong>4.</strong> 中文：只接受理论知识而没有机会将理论付诸实践的学生往往难以掌握所学内容，而那些通过动手实践丰富经历的学生则能更有效地理解概念。</p>
+<p class="en">Students who only receive <input class="ans" data-uid="46" data-sig="96inxk" style="width:24ch"> without the opportunity to <input class="ans" data-uid="47" data-sig="96inxl" style="width:33ch"> often struggle to <input class="ans" data-uid="48" data-sig="96inxm" style="width:9ch"> the material, whereas those who <input class="ans" data-uid="49" data-sig="96inxn" style="width:26ch"> through hands-on practice tend to <input class="ans" data-uid="50" data-sig="96inxo" style="width:8ch"> concepts more effectively.</p>
+<p class="zh"><strong>5.</strong> 中文：真正全面的教育不仅仅是让学生具备信息知识，而是通过实用技能、广泛技能和互动学习的结合来培养他们的潜力。</p>
+<p class="en">A truly comprehensive education does not merely <input class="ans" data-uid="51" data-sig="1gnstxr" style="width:8ch"> students with information but seeks to <input class="ans" data-uid="52" data-sig="1gnstxq" style="width:12ch"> their potential through a combination of <input class="ans" data-uid="53" data-sig="1gnstxp" style="width:19ch">, <input class="ans" data-uid="54" data-sig="1gnstxo" style="width:25ch">, and <input class="ans" data-uid="55" data-sig="1gnstxn" style="width:23ch">.</p>
+<h2 class="sec-title">三、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S2（教学方式）与 S3（学习成果）两组表达，体现"方法→成果"逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：当教师不再仅仅是灌输知识，而是通过互动学习来激发学生的好奇心和兴趣时，结果不仅是更好的学业表现，还有更深层次的智力发展。</p>
+<p class="en">When teachers move beyond simply <input class="ans" data-uid="56" data-sig="hcg2nc" style="width:13ch"> knowledge and instead use <input class="ans" data-uid="57" data-sig="hcg2nd" style="width:23ch"> to <input class="ans" data-uid="58" data-sig="hcg2ne" style="width:12ch"> students' curiosity, the result is not just better <input class="ans" data-uid="59" data-sig="hcg2nf" style="width:23ch"> but also deeper <input class="ans" data-uid="60" data-sig="hcg2ng" style="width:27ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：一个只灌输知识而不鼓励学生将理论付诸实践的教育体系，将培养出考试高分但沟通能力差、团队精神薄弱的学生。</p>
+<p class="en">An education system that only <input class="ans" data-uid="61" data-sig="xbqmrw" style="width:11ch"> knowledge without encouraging students to <input class="ans" data-uid="62" data-sig="xbqmrx" style="width:33ch"> will produce graduates with high test scores but poor <input class="ans" data-uid="63" data-sig="xbqmry" style="width:24ch"> and a weak <input class="ans" data-uid="64" data-sig="xbqmrz" style="width:18ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：有机会通过讨论与合作来丰富经历的学生，在学习与他人共事的过程中自然发展出沟通能力和团队精神。</p>
+<p class="en">Students who are given opportunities to <input class="ans" data-uid="65" data-sig="1wu4fcq" style="width:26ch"> through discussion and collaboration naturally develop both <input class="ans" data-uid="66" data-sig="1wu4fcr" style="width:24ch"> and <input class="ans" data-uid="67" data-sig="1wu4fco" style="width:22ch"> as they learn to work with others.</p>
+<p class="zh"><strong>4.</strong> 中文：掌握复杂问题的能力需要以扎实的读写能力和计算能力为基础，而这些只有在教师培养独立思考而非一味灌输时才得以发展。</p>
+<p class="en">The ability to <input class="ans" data-uid="68" data-sig="vu1mi" style="width:9ch"> complex problems requires strong <input class="ans" data-uid="69" data-sig="vu1mj" style="width:11ch"> and <input class="ans" data-uid="70" data-sig="vu1mg" style="width:11ch"> as a foundation, which can only be developed when teachers <input class="ans" data-uid="71" data-sig="vu1mh" style="width:12ch"> independent thinking rather than lecture.</p>
+<p class="zh"><strong>5.</strong> 中文：当学生被鼓励为自己的学习负责时，他们会发展出独立能力和责任感——这是真正的智力发展的标志。</p>
+<p class="en">When students are encouraged to take ownership of their learning, they develop <input class="ans" data-uid="72" data-sig="1d6is3i" style="width:15ch"> and <input class="ans" data-uid="73" data-sig="1d6is3j" style="width:28ch">, which are the hallmarks of genuine <input class="ans" data-uid="74" data-sig="1d6is3g" style="width:27ch">.</p>
+<h2 class="sec-title">四、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为成果（S3）、后半为社会影响（S4），体现"个人→社会"的放大逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：扎实的学业表现、读写能力和计算能力为智力发展提供了基础，这反过来又帮助个人在就业市场中提高就业能力。</p>
+<p class="en">Strong <input class="ans" data-uid="75" data-sig="hns725" style="width:23ch"> combined with solid <input class="ans" data-uid="76" data-sig="hns724" style="width:11ch"> and <input class="ans" data-uid="77" data-sig="hns727" style="width:11ch"> provides the foundation for <input class="ans" data-uid="78" data-sig="hns726" style="width:27ch">, which in turn helps individuals <input class="ans" data-uid="79" data-sig="hns721" style="width:30ch"> in the job market.</p>
+<p class="zh"><strong>2.</strong> 中文：具备沟通能力、团队精神和责任感的毕业生不仅更有就业优势，而且更能为经济增长做出贡献并在各自领域推动创新。</p>
+<p class="en">Graduates who possess <input class="ans" data-uid="80" data-sig="1crexbx" style="width:24ch">, <input class="ans" data-uid="81" data-sig="1crexbw" style="width:18ch">, and <input class="ans" data-uid="82" data-sig="1crexbz" style="width:28ch"> are not only more employable but are also better positioned to <input class="ans" data-uid="83" data-sig="1crexby" style="width:32ch"> and <input class="ans" data-uid="84" data-sig="1crexbt" style="width:19ch"> in their fields.</p>
+<p class="zh"><strong>3.</strong> 中文：培养独立性和责任感的教育不仅惠及个人，还通过为弱势群体提供更好的机会来促进社会流动。</p>
+<p class="en">Education that fosters <input class="ans" data-uid="85" data-sig="1j5lwre" style="width:15ch"> and <input class="ans" data-uid="86" data-sig="1j5lwrf" style="width:28ch"> does more than benefit individuals; it helps to <input class="ans" data-uid="87" data-sig="1j5lwrc" style="width:26ch"> by giving disadvantaged groups a pathway to better opportunities.</p>
+<p class="zh"><strong>4.</strong> 中文：通过提升公众意识，普及教育可以降低犯罪率并促进社会流动，展示了学习对社会各个层面的深远影响。</p>
+<p class="en">By <input class="ans" data-uid="88" data-sig="8vcy99" style="width:27ch"> among citizens, widespread education can <input class="ans" data-uid="89" data-sig="8vcy98" style="width:21ch"> and <input class="ans" data-uid="90" data-sig="8vcy9b" style="width:26ch">, demonstrating how learning <input class="ans" data-uid="91" data-sig="8vcy9a" style="width:28ch"> on every aspect of society.</p>
+<p class="zh"><strong>5.</strong> 中文：一个投资教育的国家不仅赋能其公民，还让他们通过创业和研究推动创新，同时提升社会问题的公众意识，最终帮助降低犯罪率。</p>
+<p class="en">A nation that invests in education not only <input class="ans" data-uid="92" data-sig="etintp" style="width:11ch"> its citizens but also enables them to <input class="ans" data-uid="93" data-sig="etinto" style="width:19ch"> through entrepreneurship and research, while <input class="ans" data-uid="94" data-sig="etintr" style="width:27ch"> on social issues and ultimately helping to <input class="ans" data-uid="95" data-sig="etintq" style="width:21ch">.</p>
+<h2 class="sec-title">五、练习 · 段落填空（综合填空）</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。</div>
+<p class="zh"><strong>中文原文：</strong> 教育的目的不仅是传授知识，更是培养学生的批判性思维和解决问题的能力。传统的机械记忆已不能满足现代社会的需求。互动式学习和动手实践可以帮助学生获取实用技能，成为全面发展的人。此外，因材施教可以满足不同学生的个体需求，提高整体学业表现。从社会角度看，好的教育体系能促进社会流动、缩小贫富差距、驱动创新和经济增长。</p>
+<p class="en">The purpose of education is not only to <input class="ans" data-uid="96" data-sig="4gy0vj" style="width:19ch"> but also to cultivate students' <input class="ans" data-uid="97" data-sig="4gy0vi" style="width:20ch"> and <input class="ans" data-uid="98" data-sig="4gy0vh" style="width:25ch">. Traditional <input class="ans" data-uid="99" data-sig="4gy0vg" style="width:20ch"> can no longer meet the needs of modern society. <input class="ans" data-uid="100" data-sig="4gy0vf" style="width:23ch"> and <input class="ans" data-uid="101" data-sig="4gy0ve" style="width:22ch"> can help students acquire practical skills and become <input class="ans" data-uid="102" data-sig="4gy0vd" style="width:15ch"> individuals.</p>
+<p class="en">Moreover, <input class="ans" data-uid="103" data-sig="1gecopx" style="width:24ch"> students can improve overall <input class="ans" data-uid="104" data-sig="1gecopw" style="width:23ch">. From a social perspective, a good education system can promote <input class="ans" data-uid="105" data-sig="1gecopz" style="width:18ch">, <input class="ans" data-uid="106" data-sig="1gecopy" style="width:17ch"> between rich and poor, and <input class="ans" data-uid="107" data-sig="1gecopt" style="width:19ch"> as well as economic growth.</p>
+<h2 class="sec-title">六、练习 · 句子翻译（课堂操练）</h2>
+<div class="note">将下列中文译为英文，须使用括号内的提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：因为孩子们不会区分对错，他们很容易被网络上的不当信息误导。<span class="hint">（distinguish right from wrong, be misled）</span></p>
+<div class="translate"><textarea class="ans" data-uid="108" data-sig="1ohq2w8" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：看太多电视对孩子的心理成长有害，因为他们缺少和别人的互动。<span class="hint">（be detrimental for, lack）</span></p>
+<div class="translate"><textarea class="ans" data-uid="109" data-sig="necko5" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：学习众多科目使学生掌握很多知识和技能，从而让他们成为全面发展并且学识渊博的人。<span class="hint">（equip sb with sth, well-rounded）</span></p>
+<div class="translate"><textarea class="ans" data-uid="110" data-sig="1f2xjie" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：有些人认为学校有义务将学生教育成良好的社会成员，而另一些人认为家长有责任给孩子灌输良好的礼貌举止。<span class="hint">（breed good manners into sb）</span></p>
+<div class="translate"><textarea class="ans" data-uid="111" data-sig="socw93" rows="3"></textarea></div>
+<h2 class="sec-title">七、真题 · 课程广度与职业专注</h2>
+<h3 class="sub">7.1 题目</h3>
+<div class="exam-box"><em>Some people think that secondary schools should provide students with a wide range of subjects. Others believe that secondary school students should focus on a narrow range of subjects that are related to particular careers. Discuss both these views and give your own opinion.</em></div>
+<h3 class="sub">7.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="112" data-sig="u4teq5" style="width:6ch">。判断关键词：<input class="ans" data-uid="113" data-sig="u4teq4" style="width:40ch">。<br>问"讨论双方"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认专注课程有价值），Body2 反驳（但广泛课程更利于长期发展）。</div>
+<h3 class="sub">7.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（教育）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>本原则角度（教育）</th><th>其他角度补充</th></tr></thead><tbody><tr><td>正方：广泛课程 (Broad)</td><td><textarea class="ans" data-uid="114" data-sig="famdvd" rows="3"></textarea></td><td><textarea class="ans" data-uid="115" data-sig="1ceit0a" rows="3"></textarea></td></tr><tr><td>反方：专注课程 (Narrow)</td><td><textarea class="ans" data-uid="116" data-sig="oy61ph" rows="3"></textarea></td><td><textarea class="ans" data-uid="117" data-sig="1h5rk6" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">7.4 匹配练习 · 例子 → 逻辑链</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（可按 ①②③… 编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 哈佛"通识教育"：主修之外必修写作、伦理，再自由选修各学科 → 知识面广、技能多样 → 为全面发展打牢基础</td><td><input class="ans" data-uid="118" data-sig="1e73xh4" style="width:40ch"></td></tr><tr><td><strong>B</strong> 美国大学允许"未定专业"(undeclared)入学，先接触不同领域，大二末才依兴趣定主修 → 保留未来的选择权</td><td><input class="ans" data-uid="119" data-sig="5yj226" style="width:39ch"></td></tr><tr><td><strong>C</strong> 招聘不限专业：哲学、历史毕业生凭可迁移能力转入产品、咨询等岗位 → 转行门槛低、更适应变化的市场</td><td><input class="ans" data-uid="120" data-sig="1pxez06" style="width:40ch"></td></tr><tr><td><strong>D</strong> 德国"双元制"职业教育：十五六岁就锁定一个行业，长期深耕 + 企业学徒 → 专业能力扎实</td><td><input class="ans" data-uid="121" data-sig="f9p334" style="width:40ch"></td></tr><tr><td><strong>E</strong> 英国 A-Level / 高中文理分科：只专攻三四门，提前为专业与职业定向 → 大学与职场起步领先</td><td><input class="ans" data-uid="122" data-sig="12bahol" style="width:40ch"></td></tr><tr><td><strong>F</strong> 芬兰综合学校 16 岁前不分科，跨学科广泛学习 → 善于独立思考、批判地解决问题 → 全面发展</td><td><input class="ans" data-uid="123" data-sig="u6ww5c" style="width:38ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">八、真题 · 学习强度与影响</h2>
+<h3 class="sub">8.1 题目</h3>
+<div class="exam-box"><em>In some countries, children spend long time studying both in and after school and have little free time. What are the positive or negative effects of this phenomenon on children and the society they live in?</em></div>
+<h3 class="sub">8.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="124" data-sig="d0t8hg" style="width:6ch">（正负评价）。判断关键词：<input class="ans" data-uid="125" data-sig="d0t8hh" style="width:35ch">。<br>问"有哪些正面/负面影响"→ 正负影响都写，选一边侧重，用"让步反驳"大纲：Body1 让步（承认高强度学习有短期收益），Body2 反驳（但长期负面影响更大）。注意题目要求覆盖"对孩子 + 对社会"两层。</div>
+<h3 class="sub">8.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（教育）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>本原则角度（教育）</th><th>其他角度补充</th></tr></thead><tbody><tr><td>不利 (Negative)</td><td><textarea class="ans" data-uid="126" data-sig="e1qn91" rows="3"></textarea></td><td><textarea class="ans" data-uid="127" data-sig="wodkra" rows="3"></textarea></td></tr><tr><td>有利 (Positive)</td><td><textarea class="ans" data-uid="128" data-sig="1ll6q2h" rows="3"></textarea></td><td><textarea class="ans" data-uid="129" data-sig="1ji7ziy" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">8.4 匹配练习 · 例子 → 逻辑链</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（可按 ①②③… 编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 韩国高中生"四当五落"：为备考长期只睡四五小时 → 体质下降、近视高发 → 损害身体健康</td><td><input class="ans" data-uid="130" data-sig="1pfgjod" style="width:40ch"></td></tr><tr><td><strong>B</strong> 日本"考试地狱"：长期高压下青少年焦虑、倦怠、厌学比例上升 → 损害心理健康</td><td><input class="ans" data-uid="131" data-sig="1trhek7" style="width:39ch"></td></tr><tr><td><strong>C</strong> 从小只刷题、少社交的学生，上大学后难融入社团、合作吃力 → 社会适应力不足、发展受限</td><td><input class="ans" data-uid="132" data-sig="drmh5z" style="width:40ch"></td></tr><tr><td><strong>D</strong> 北京海淀家长年补课投入数十万，农村孩子难以企及 → 优质资源集中、阶层流动下降 → 加剧教育不平等</td><td><input class="ans" data-uid="133" data-sig="1x4192o" style="width:40ch"></td></tr><tr><td><strong>E</strong> 东亚学生高强度学习，在 PISA 数学、科学测评中长期霸榜 → 成绩与竞争力领先</td><td><input class="ans" data-uid="134" data-sig="o7ijk8" style="width:40ch"></td></tr><tr><td><strong>F</strong> 日本小学让孩子自己规划作业、整理书包 → 养成时间管理与自律，学会对自己负责</td><td><input class="ans" data-uid="135" data-sig="1yy0k5q" style="width:40ch"></td></tr></tbody></table></div>
+<p class="foot">《智力教育原则》讲义 · 雅思写作基础</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var PRINCIPLE = document.body.dataset.principle || '';
+  var VERSION = document.body.dataset.version || '';
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  var NAMEKEY = KEY + 'name';
+  // 值键优先用内容签名（跨讲义迭代稳定），旧数据按 data-uid 存 → 回退迁移
+  function vkey(el){ return KEY + (el.dataset.sig || el.dataset.uid || ''); }
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  function saveEl(el){
+    if (!el || !el.dataset) return;
+    try { localStorage.setItem(vkey(el), el.value); } catch(_){}
+  }
+  function loadEl(el){
+    if (!el || (!el.dataset.uid && !el.dataset.sig)) return;
+    var v = null;
+    try { v = localStorage.getItem(vkey(el)); } catch(_){}
+    if (v == null && el.dataset.sig && el.dataset.uid) {
+      try {
+        var old = localStorage.getItem(KEY + el.dataset.uid);
+        if (old != null) { v = old; localStorage.setItem(vkey(el), old); }
+      } catch(_){}
+    }
+    if (v != null) el.value = v;
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans')) saveEl(el);
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    loadEl(el);
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      try { localStorage.removeItem(vkey(el)); localStorage.removeItem(KEY + (el.dataset.uid || '')); } catch(_){}
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+
+  // ---------------- 导出 / 导入作答 ----------------
+  function download(content, fname, mime){
+    var blob = new Blob([content], { type: mime || 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fname;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  }
+  function safeName(s){
+    return (s || '').replace(/[/:*?"<>|]/g, '_').slice(0, 40);
+  }
+  function collect(){
+    var answers = {}, uids = {};
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = el.value;
+      if (!v || !v.trim()) return;
+      var key = el.dataset.sig || ('uid:' + (el.dataset.uid || ''));
+      answers[key] = v;
+      if (el.dataset.sig && el.dataset.uid) uids[el.dataset.sig] = el.dataset.uid;
+    });
+    var d = {
+      app: 'gedu-handout', format: 1, principle: PRINCIPLE, title: document.title,
+      version: VERSION, student: '', exportedAt: new Date().toISOString(),
+      answers: answers, uids: uids
+    };
+    var nb = document.getElementById('notes-box');
+    if (nb && nb.value && nb.value.trim()) d.notes = nb.value;
+    return d;
+  }
+  var exportBtn = document.getElementById('btn-export');
+  if (exportBtn) exportBtn.addEventListener('click', function(){
+    var last = '';
+    try { last = localStorage.getItem(NAMEKEY) || ''; } catch(_){}
+    var name = window.prompt('请输入你的姓名/学号（老师批改时识别用）：', last);
+    if (name === null) return;
+    name = (name || '').trim() || '未署名';
+    try { localStorage.setItem(NAMEKEY, name); } catch(_){}
+    var d = collect();
+    d.student = name;
+    download(JSON.stringify(d, null, 1), PRINCIPLE + '-作答-' + safeName(name) + '.json', 'application/json');
+  });
+  function applyData(d){
+    var ans = d.answers || {}, uids = d.uids || {}, valByUid = {};
+    Object.keys(ans).forEach(function(k){ if (uids[k] != null) valByUid[String(uids[k])] = ans[k]; });
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = null;
+      if (el.dataset.sig && ans[el.dataset.sig] != null) v = ans[el.dataset.sig];
+      else if (el.dataset.uid && valByUid[el.dataset.uid] != null) v = valByUid[el.dataset.uid];
+      if (v != null) { el.value = v; saveEl(el); autosize(el); }
+    });
+    var nb = document.getElementById('notes-box');
+    if (nb && d.notes != null) { nb.value = d.notes; saveEl(nb); autosize(nb); }
+    syncNotesClass();
+  }
+  function hasAny(){
+    var any = false;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (!any && el.value && el.value.trim()) any = true;
+    });
+    return any;
+  }
+  var importBtn = document.getElementById('btn-import');
+  var fileIn = document.getElementById('import-file');
+  if (importBtn && fileIn) importBtn.addEventListener('click', function(){ fileIn.click(); });
+  if (fileIn) fileIn.addEventListener('change', function(){
+    var f = fileIn.files[0];
+    fileIn.value = '';
+    if (!f) return;
+    var r = new FileReader();
+    r.onload = function(){
+      try {
+        var d = JSON.parse(r.result);
+        if (!d || (d.app !== 'gedu-handout' && !d.answers)) throw new Error('bad');
+        if (d.principle && d.principle !== PRINCIPLE &&
+            !window.confirm('⚠ 这份作答来自《' + d.principle + '》，当前讲义是《' + PRINCIPLE + '》。\n强行导入可能对不上题目，仍要继续吗？')) return;
+        if (hasAny() && !window.confirm('导入会覆盖当前已填写的内容，确定继续吗？')) return;
+        applyData(d);
+        if (d.student) { try { localStorage.setItem(NAMEKEY, d.student); } catch(_){} }
+      } catch(e){ window.alert('文件无法解析，或不是本讲义导出的作答文件。'); }
+    };
+    r.readAsText(f);
+  });
+})();
+</script>
+
+</body>
+</html>

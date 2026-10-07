@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人际情感原则 · 讲义</title>
+<style>:root { --c1:#2471a3; --c1-bg:#eaf2f8; --c2:#e67e22; --red:#c0392b; --red-bg:#fdedec;
+        --dark:#2c3e50; --gray:#7f8c8d; --light:#f8f9fa; --l1:#1e8449; --l1-bg:#d5f5e3; }
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:15px; color:var(--dark); background:#eef1f4; }
+.page { max-width:900px; margin:0 auto; padding:8px 14px 40px; background:#fff; min-height:100vh; }
+a { color:var(--c1); }
+
+.toolbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #e5e8eb;
+           display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 0; }
+.toolbar .tt { font-weight:800; font-size:18px; margin-right:auto; }
+button.btn { font:inherit; font-size:15px; padding:8px 16px; min-height:40px; border-radius:8px; border:1px solid #ccd2d8;
+             background:#fff; color:var(--dark); cursor:pointer; }
+button.btn:hover { background:var(--c1-bg); border-color:var(--c1); }
+button.btn.primary { background:var(--c1); color:#fff; border-color:var(--c1); }
+button.btn.danger { color:var(--red); border-color:#e6b0aa; }
+
+h1 { font-size:21px; margin:8px 0 3px; }
+.sec-title { font-size:17px; color:var(--c1); border-left:5px solid var(--c1); padding-left:9px; margin:16px 0 6px; }
+.sub { font-size:14px; color:var(--dark); margin:8px 0 3px; }
+.sub .tag { font-size:11px; color:var(--gray); font-weight:400; margin-left:6px; }
+
+.note { background:var(--c1-bg); border-left:4px solid var(--c1); border-radius:0 8px 8px 0;
+        padding:6px 11px; margin:6px 0; line-height:1.45; }
+.note.amber { background:var(--l1-bg); border-left-color:var(--l1); }
+p.zh { color:var(--gray); margin:4px 0 1px; line-height:1.32; }
+p.en { margin:2px 0 6px; line-height:1.42; }
+.hint { color:var(--gray); font-size:0.88em; }
+.prep { color:var(--red); font-weight:700; }
+code { background:var(--light); border:1px solid #dde2e6; border-radius:4px; padding:1px 6px; font-family:Consolas,monospace; font-size:0.92em; color:var(--dark); }
+
+.table-wrap { overflow-x:auto; margin:6px 0; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:var(--dark); color:#fff; padding:4px 6px; text-align:left; font-weight:700; }
+td { padding:4px 6px; border-bottom:1px solid #e8e8e8; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbfc; }
+
+.wordbank { background:var(--light); border:1px dashed #c3cbd2; border-radius:8px; padding:6px 10px; margin:7px 0; line-height:1.5; }
+.wordbank b { color:var(--gray); font-weight:600; }
+.wordbank span { display:inline-block; background:#fff; border:1px solid #e0e0e0; border-radius:4px; padding:1px 7px; margin:2px 5px 0 0; font-size:13px; }
+
+input.ans { font:inherit; font-size:14.5px; line-height:1; color:var(--dark); background:#fff;
+            border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+            padding:2px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+            transition:border-color .15s ease, box-shadow .15s ease; }
+textarea.ans { font:inherit; font-size:14.5px; line-height:1.45; color:var(--dark); background:#fff;
+               border:1px solid #d3d9e0; border-bottom:2px solid var(--c1); border-radius:7px;
+               padding:3px 6px; box-shadow:inset 0 1px 2px rgba(0,0,0,.05);
+               transition:border-color .15s ease, box-shadow .15s ease; }
+input.ans:hover, textarea.ans:hover { border-color:#aab4bd; }
+input.ans:focus, textarea.ans:focus { outline:none; border-color:var(--c1);
+                                      box-shadow:0 0 0 3px rgba(36,113,163,.16); }
+td input.ans { width:100% !important; }
+td textarea.ans { width:100% !important; min-height:300px; }   /* 真题观点库等表格：留足手写空间（屏幕+打印） */
+.ans-answer { color:var(--c1); font-weight:700; background:#eef6fd; border-bottom:2px dotted var(--c1);
+              padding:0 4px; border-radius:3px; }
+.ans-textarea { background:var(--l1-bg); border:1px solid #b8dfc7; border-radius:8px; padding:6px 10px;
+                color:var(--dark); line-height:1.5; font-size:13.5px; margin:4px 0 9px; }
+.translate { margin:3px 0 9px; }
+.translate textarea.ans { width:100%; min-height:44px; }
+
+.exam-box { background:var(--red-bg); border:1px solid #e6b0aa; border-radius:10px; padding:8px 13px;
+            margin:6px 0; font-style:italic; font-size:15px; line-height:1.5; }
+.chain { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+.chain .step { padding:5px 14px; border-radius:5px; background:#eee; color:#999; font-size:15px; font-weight:600; }
+.chain .step.now { background:var(--c1); color:#fff; }
+.chain b { color:var(--gray); }
+
+.foot { margin-top:40px; padding-top:12px; border-top:1px solid #e5e8eb; color:var(--gray); font-size:13px; }
+
+.notes-backdrop { position:fixed; inset:0; background:rgba(20,30,40,.42); z-index:999; opacity:0; pointer-events:none; transition:opacity .22s ease; }
+.notes-backdrop.show { opacity:1; pointer-events:auto; }
+.notes-tab { position:fixed; top:0; right:0; bottom:0; width:min(400px,90vw); margin:0; padding:16px; background:var(--light); border-left:1px solid #c3cbd2; box-shadow:-6px 0 24px rgba(0,0,0,.18); z-index:1000; transform:translateX(105%); transition:transform .22s ease; overflow-y:auto; }
+.notes-tab.show { transform:translateX(0); }
+.notes-head { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:16px; margin-bottom:8px; }
+#notes-box { width:100%; min-height:120px; resize:vertical; }
+
+@media (max-width:640px) {
+  body { font-size:16px; }
+  .page { padding:10px 12px 60px; }
+  input.ans { width:100% !important; min-height:38px; }
+  textarea.ans { width:100% !important; }
+  table { font-size:14px; }
+  td,th { padding:6px 8px; }
+  .toolbar { padding:6px 0; }
+}
+
+@media print {
+  body { background:#fff; }
+  .page { max-width:none; padding:0; }
+  .toolbar { display:none; }
+  .no-print { display:none; }
+  input.ans, textarea.ans { background:#fff !important; border:1px solid #666 !important; border-radius:0; box-shadow:none !important; }
+  input.ans { min-height:19px; }
+  textarea.ans { min-height:20px; }
+  .wordbank, .exam-box { break-inside:avoid; }
+  table { break-inside:auto; page-break-inside:auto; }
+  tr, td, th { break-inside:avoid; page-break-inside:avoid; }
+  thead { display:table-header-group; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .ans-answer, .ans-textarea { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #notes-backdrop { display:none !important; }
+  #notes-tab { position:static !important; transform:none !important; display:block !important; width:100% !important; height:auto !important; overflow:visible !important; box-shadow:none !important; border:none !important; margin:18px 0 8px; padding:12px 14px; background:var(--light); }
+  #notes-tab:not(.has-notes) { display:none !important; }
+  .notes-head { display:none; }
+  #notes-box { width:100% !important; min-height:0 !important; }
+}
+@page { margin:9mm; }
+</style>
+</head>
+<body data-principle="人际情感原则" data-version="v1jsqj0t">
+<div class="page">
+<div class="toolbar">
+<span class="tt">人际情感原则 · 讲义</span>
+
+<button class="btn primary" id="btn-print" type="button">🖨 打印 / 存 PDF</button><button class="btn no-print" id="btn-export" type="button" title="导出我的作答（JSON 文件，交给老师批改）">💾 导出数据</button><button class="btn no-print" id="btn-import" type="button" title="导入作答文件（在另一台设备继续填写）">📂 导入数据</button><button class="btn danger no-print" id="btn-clear" type="button" title="清空我的填写">🗑</button><button class="btn no-print" id="btn-notes" type="button">📝 笔记</button><input type="file" id="import-file" accept=".json,application/json" hidden>
+</div>
+<h1>人际情感原则 · 讲义</h1>
+<h2 class="sec-title">一、词汇总表（S1–S4 · 28 词）</h2>
+<div class="note">中文 → 英文回忆练习：先凭记忆写出英文，再翻课件核对。左列 S1／S2，右列 S3／S4。</div>
+<p class="en"><strong>S1 关系疏远 · 动词短语　|　S2 冲突与痛苦 · 名词短语</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>使A与B疏远</td><td><input class="ans" data-uid="1" data-sig="8uh7ps" style="width:31ch"></td><td>怨恨</td><td><input class="ans" data-uid="2" data-sig="5x4vrm" style="width:13ch"></td></tr><tr><td>面对面交流变少</td><td><input class="ans" data-uid="3" data-sig="1h3rlxj" style="width:40ch"></td><td>敌意</td><td><input class="ans" data-uid="4" data-sig="96z8v9" style="width:12ch"></td></tr><tr><td>缺少情感交流</td><td><input class="ans" data-uid="5" data-sig="la5tyk" style="width:36ch"></td><td>冷漠 / 无动于衷</td><td><input class="ans" data-uid="6" data-sig="1th4zpq" style="width:24ch"></td></tr><tr><td>产生疏远感</td><td><input class="ans" data-uid="7" data-sig="6rti4z" style="width:40ch"></td><td>隔阂</td><td><input class="ans" data-uid="8" data-sig="1nr81u9" style="width:6ch"></td></tr><tr><td>削弱家庭纽带</td><td><input class="ans" data-uid="9" data-sig="90kgxk" style="width:22ch"></td><td>疏远（名词）</td><td><input class="ans" data-uid="10" data-sig="1n889oa" style="width:13ch"></td></tr><tr><td>对……不尊重</td><td><input class="ans" data-uid="11" data-sig="1iqf82c" style="width:27ch"></td><td>抑郁 / 沮丧</td><td><input class="ans" data-uid="12" data-sig="17kcity" style="width:13ch"></td></tr><tr><td>增加压力与焦虑</td><td><input class="ans" data-uid="13" data-sig="1iv67r4" style="width:40ch"></td><td>绝望</td><td><input class="ans" data-uid="14" data-sig="1raz9he" style="width:10ch"></td></tr></tbody></table></div>
+<p class="en"><strong>S3 关系修复 · 动词短语　|　S4 情感与心理状态 · 形容词/名词</strong></p>
+<div class="table-wrap"><table><thead><tr><th>中文</th><th>英文</th><th>中文</th><th>英文</th></tr></thead><tbody><tr><td>消除误解和偏见</td><td><input class="ans" data-uid="15" data-sig="rba34w" style="width:40ch"></td><td>归属感</td><td><input class="ans" data-uid="16" data-sig="1putjuq" style="width:23ch"></td></tr><tr><td>缓和紧张关系</td><td><input class="ans" data-uid="17" data-sig="1m5j0ep" style="width:27ch"></td><td>关心……</td><td><input class="ans" data-uid="18" data-sig="tvwic3" style="width:21ch"></td></tr><tr><td>对……产生同情</td><td><input class="ans" data-uid="19" data-sig="i82a7l" style="width:20ch"></td><td>热情</td><td><input class="ans" data-uid="20" data-sig="1t7cd9v" style="width:13ch"></td></tr><tr><td>加强家庭纽带</td><td><input class="ans" data-uid="21" data-sig="svfrm6" style="width:26ch"></td><td>真诚</td><td><input class="ans" data-uid="22" data-sig="2v9nho" style="width:12ch"></td></tr><tr><td>弥合隔阂</td><td><input class="ans" data-uid="23" data-sig="1opygy7" style="width:17ch"></td><td>理性的</td><td><input class="ans" data-uid="24" data-sig="1oazsbx" style="width:11ch"></td></tr><tr><td>凝聚力</td><td><input class="ans" data-uid="25" data-sig="1ql3wgj" style="width:11ch"></td><td>忠诚的</td><td><input class="ans" data-uid="26" data-sig="1nuqd75" style="width:8ch"></td></tr><tr><td></td><td></td><td>爱社交的</td><td><input class="ans" data-uid="27" data-sig="1ryr6kc" style="width:11ch"></td></tr><tr><td></td><td></td><td>乐观者</td><td><input class="ans" data-uid="28" data-sig="4i35fo" style="width:11ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">二、练习 · 桥接填空 S1+S2</h2>
+<div class="note">依据中文提示补全词汇。每句融合 S1（疏远）与 S2（冲突）两组表达，体现"疏远→冲突"递进逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：过度使用电子设备往往使人们彼此疏远，这反过来又导致面对面交流减少，使人们忽视情感交流，最终产生疏远感和隔阂。</p>
+<p class="en">The overuse of digital devices tends to <input class="ans" data-uid="29" data-sig="sw896b" style="width:35ch">, which in turn <input class="ans" data-uid="30" data-sig="sw896a" style="width:40ch"> and causes people to <input class="ans" data-uid="31" data-sig="sw8969" style="width:29ch"> in their relationships, eventually creating <input class="ans" data-uid="32" data-sig="sw8968" style="width:40ch">.</p>
+<p class="zh"><strong>2.</strong> 中文：当家庭成员逐渐削弱家庭纽带时，情感距离会滋生对他人的不尊重，并酝酿怨恨，最终表现为公开的敌意。</p>
+<p class="en">When family members gradually <input class="ans" data-uid="33" data-sig="17sd5hb" style="width:22ch">, the emotional distance can <input class="ans" data-uid="34" data-sig="17sd5ha" style="width:23ch"> others and breed <input class="ans" data-uid="35" data-sig="17sd5h9" style="width:13ch">, which later surfaces as open <input class="ans" data-uid="36" data-sig="17sd5h8" style="width:12ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：长期缺乏有意义的互动会增加人们的压力和焦虑水平，如果不加以处理，这种感觉会发展为怨恨，甚至对对方完全的冷漠/无动于衷。</p>
+<p class="en">A prolonged lack of meaningful interaction can <input class="ans" data-uid="37" data-sig="1ahzg3g" style="width:40ch">, and if unaddressed, this feeling can develop into <input class="ans" data-uid="38" data-sig="1ahzg3h" style="width:13ch"> or even total <input class="ans" data-uid="39" data-sig="1ahzg3i" style="width:24ch"> toward the other person.</p>
+<p class="zh"><strong>4.</strong> 中文：随着敌意和冷漠的增长，两人之间的隔阂不断扩大，最初的小误解最终固化为深深的疏远。</p>
+<p class="en">As <input class="ans" data-uid="40" data-sig="9yhytz" style="width:12ch"> and <input class="ans" data-uid="41" data-sig="9yhyty" style="width:24ch"> grow, the <input class="ans" data-uid="42" data-sig="9yhytx" style="width:6ch"> between two people widens, and what began as minor misunderstandings eventually hardens into deep <input class="ans" data-uid="43" data-sig="9yhytw" style="width:13ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：没有干预的话，不受控制的敌意会导致抑郁，而当疏远固化时，一些人可能陷入对和解可能性的绝望。</p>
+<p class="en">Without intervention, unchecked <input class="ans" data-uid="44" data-sig="16kiyh0" style="width:12ch"> can lead to <input class="ans" data-uid="45" data-sig="16kiyh1" style="width:13ch">, and when <input class="ans" data-uid="46" data-sig="16kiyh2" style="width:13ch"> sets in, some individuals may sink into <input class="ans" data-uid="47" data-sig="16kiyh3" style="width:10ch"> about the possibility of reconciliation.</p>
+<h2 class="sec-title">三、练习 · 桥接填空 S2+S3</h2>
+<div class="note">依据中文提示补全词汇。每句前半为冲突（S2）、后半为修复（S3），体现"问题→解药"对应逻辑。</div>
+<p class="zh"><strong>1.</strong> 中文：要解决由长期怨恨、敌意和冷漠积累而成的隔阂，第一步是通过坦诚对话消除误解和偏见。</p>
+<p class="en">To address the <input class="ans" data-uid="48" data-sig="1hrl0fp" style="width:6ch"> built up by long-standing <input class="ans" data-uid="49" data-sig="1hrl0fo" style="width:13ch"> and <input class="ans" data-uid="50" data-sig="1hrl0fr" style="width:12ch">, the first step is to <input class="ans" data-uid="51" data-sig="1hrl0fq" style="width:40ch"> through honest conversation.</p>
+<p class="zh"><strong>2.</strong> 中文：一旦双方消除了误解并开始缓和关系，他们可以逐渐对对方的立场产生同情，这有助于弥合他们之间的隔阂。</p>
+<p class="en">Once both sides <input class="ans" data-uid="52" data-sig="1e82m09" style="width:40ch"> and begin to <input class="ans" data-uid="53" data-sig="1e82m08" style="width:27ch">, they can gradually <input class="ans" data-uid="54" data-sig="1e82m0b" style="width:20ch"> each other's perspective, which helps to <input class="ans" data-uid="55" data-sig="1e82m0a" style="width:17ch"> between them.</p>
+<p class="zh"><strong>3.</strong> 中文：积极缓和关系并展现同情的夫妻，更有可能加强被多年默默积累的怨恨与敌意所侵蚀的家庭纽带。</p>
+<p class="en">Couples who actively <input class="ans" data-uid="56" data-sig="3yyuwk" style="width:27ch"> are more likely to <input class="ans" data-uid="57" data-sig="3yyuwl" style="width:26ch"> that have been eroded by years of quiet <input class="ans" data-uid="58" data-sig="3yyuwm" style="width:13ch">.</p>
+<p class="zh"><strong>4.</strong> 中文：修复受损关系的终极目标是通过相互理解弥合隔阂，用真正的凝聚力取代疏远。</p>
+<p class="en">The ultimate goal of repairing a damaged relationship is to <input class="ans" data-uid="59" data-sig="18pp5v9" style="width:17ch"> through mutual understanding, replacing <input class="ans" data-uid="60" data-sig="18pp5v8" style="width:13ch"> with genuine <input class="ans" data-uid="61" data-sig="18pp5vb" style="width:11ch">.</p>
+<p class="zh"><strong>5.</strong> 中文：当人们感到被困在抑郁或绝望中看不到出路时，最有效的路径是消除误解，学会互相包容，并努力重建凝聚力。</p>
+<p class="en">When people feel trapped in <input class="ans" data-uid="62" data-sig="qcf2v0" style="width:23ch"> and cannot see a way out, the most effective path is to <input class="ans" data-uid="63" data-sig="qcf2v1" style="width:40ch">, learn to <input class="ans" data-uid="64" data-sig="qcf2v2" style="width:20ch"> others, and work toward rebuilding <input class="ans" data-uid="65" data-sig="qcf2v3" style="width:11ch">.</p>
+<h2 class="sec-title">四、练习 · 桥接填空 S3+S4</h2>
+<div class="note">依据中文提示补全词汇。每句前半为修复（S3）、后半为内心转变（S4），从外在到内在递进。</div>
+<p class="zh"><strong>1.</strong> 中文：在夫妻消除了误解并缓和了紧张关系之后，他们可以开始加强家庭纽带并重建归属感，这反过来又给双方更多关怀对方的动力。</p>
+<p class="en">After couples <input class="ans" data-uid="66" data-sig="vb8ob8" style="width:40ch"> and <input class="ans" data-uid="67" data-sig="vb8ob9" style="width:27ch">, they can begin to <input class="ans" data-uid="68" data-sig="vb8oba" style="width:26ch"> and rebuild <input class="ans" data-uid="69" data-sig="vb8obb" style="width:23ch">, which in turn gives both partners more motivation to care.</p>
+<p class="zh"><strong>2.</strong> 中文：一旦个体感到归属感，他们自然会对伴侣的福祉更加关心，并以更大的热情和真诚来经营关系。</p>
+<p class="en">Once individuals feel <input class="ans" data-uid="70" data-sig="1uzygqv" style="width:23ch">, they naturally become more <input class="ans" data-uid="71" data-sig="1uzygqu" style="width:12ch"> about their partner's well-being and approach the relationship with greater <input class="ans" data-uid="72" data-sig="1uzygqt" style="width:13ch"> and <input class="ans" data-uid="73" data-sig="1uzygqs" style="width:12ch">.</p>
+<p class="zh"><strong>3.</strong> 中文：通过坦诚沟通成功弥合隔阂并建立凝聚力的人，发展出在分歧中更加理性的能力，对重要的人保持忠诚，并在社交场合中变得更爱社交。</p>
+<p class="en">People who successfully <input class="ans" data-uid="74" data-sig="1mzreqn" style="width:17ch"> through open communication develop the ability to be more <input class="ans" data-uid="75" data-sig="1mzreqm" style="width:11ch"> in disagreements, remain <input class="ans" data-uid="76" data-sig="1mzreql" style="width:8ch"> to those who matter, and become more <input class="ans" data-uid="77" data-sig="1mzreqk" style="width:11ch"> in social settings.</p>
+<p class="zh"><strong>4.</strong> 中文：一个曾经孤僻的人，在关系中体验到真正的凝聚力与归属感后，可以转变为一个以自信面对生活的乐观者。</p>
+<p class="en">A person who was once withdrawn can, after experiencing true <input class="ans" data-uid="78" data-sig="olpku2" style="width:11ch"> in a relationship, transform into an <input class="ans" data-uid="79" data-sig="olpku3" style="width:11ch"> who approaches life with confidence.</p>
+<p class="zh"><strong>5.</strong> 中文：从孤立到连接的旅程需要首先修复关系，然后培养内在品质如真诚和理性，最终将一个人变为乐观者。</p>
+<p class="en">The journey from isolation to connection requires first <input class="ans" data-uid="80" data-sig="wu7i8q" style="width:16ch"> the relationship, then cultivating inner qualities like <input class="ans" data-uid="81" data-sig="wu7i8r" style="width:12ch"> and <input class="ans" data-uid="82" data-sig="wu7i8o" style="width:14ch">, which ultimately turn a person into an <input class="ans" data-uid="83" data-sig="wu7i8p" style="width:11ch">.</p>
+<h2 class="sec-title">五、练习 · 段落填空</h2>
+<div class="note">先通读中文段落，再于英文对应空白处填入恰当表达；所需表达均出自本课词汇，凭记忆完成。两段分别讲媒体报道的负面影响与正面作用。</div>
+<p class="zh"><strong>中文原文：</strong> 媒体对这些问题的持续报道会增添人们的压力和焦虑程度。而且，对社会问题和紧急情况的频繁接触会让个人对于这些事情变得冷漠，并且对受害者的同情减少。</p>
+<p class="en">Constant media reporting on these problems is likely to <input class="ans" data-uid="84" data-sig="1q4lwq7" style="width:40ch">. Also, <input class="ans" data-uid="85" data-sig="1q4lwq6" style="width:23ch"> social problems and emergencies such as car accidents, building fires and natural disasters may make individuals <input class="ans" data-uid="86" data-sig="1q4lwq5" style="width:22ch"> and <input class="ans" data-uid="87" data-sig="1q4lwq4" style="width:34ch">.</p>
+<p class="zh"><strong>中文原文：</strong> 我认为媒体对社会问题以及紧急事故的报道也有一些好处。这类报道能够让公众更充分地认识到一系列社会问题，例如贫困、性别歧视与犯罪。在民主社会里，公众对于这些问题的意识提高往往能够转化为更多的公众支持和政府资助以解决这些问题。</p>
+<p class="en">I believe that there are some benefits of <input class="ans" data-uid="88" data-sig="1u5ldto" style="width:40ch">. It can <input class="ans" data-uid="89" data-sig="1u5ldtp" style="width:28ch"> a wide range of social problems such as poverty, <input class="ans" data-uid="90" data-sig="1u5ldtq" style="width:24ch"> and crime. In democratic societies, increased public awareness of these problems can often <input class="ans" data-uid="91" data-sig="1u5ldtr" style="width:17ch"> more <input class="ans" data-uid="92" data-sig="1u5ldtk" style="width:17ch"> and <input class="ans" data-uid="93" data-sig="1u5ldtl" style="width:21ch"> for solutions to them.</p>
+<h2 class="sec-title">六、练习 · 句子翻译</h2>
+<div class="note">将下列中文译为英文，须使用括号内提示词。</div>
+<p class="zh"><strong>1.</strong> 中文：在巨大的压力下，人们容易失眠，感到焦虑和忧郁。<span class="hint">（under great pressure, insomnia, depression）</span></p>
+<div class="translate"><textarea class="ans" data-uid="94" data-sig="94gwi3" rows="3"></textarea></div>
+<p class="zh"><strong>2.</strong> 中文：住在敬老院，老人会感到孤独、无助，被他们的孩子抛弃了。<span class="hint">（nursing house, helpless, deserted）</span></p>
+<div class="translate"><textarea class="ans" data-uid="95" data-sig="170ornf" rows="3"></textarea></div>
+<p class="zh"><strong>3.</strong> 中文：电视和互联网使人们和朋友疏远了，因为现在人们缺乏与朋友之间面对面的交流。<span class="hint">（alienate A from B, face-to-face communication）</span></p>
+<div class="translate"><textarea class="ans" data-uid="96" data-sig="14qny3d" rows="3"></textarea></div>
+<p class="zh"><strong>4.</strong> 中文：住在一起可以给家庭成员更多机会沟通，分享情感以及交换观点，这也在很大程度上避免冲突，加强家庭纽带。<span class="hint">（strengthen family bonds）</span></p>
+<div class="translate"><textarea class="ans" data-uid="97" data-sig="17t6s1o" rows="3"></textarea></div>
+<h2 class="sec-title">七、真题 · 旅行与偏见</h2>
+<h3 class="sub">7.1 题目</h3>
+<div class="exam-box"><em>Some people think that international travel makes them prejudiced rather than broad-minded. Give the reasons why people fail to benefit from travel and how to improve the understanding of the country you visit.</em></div>
+<h3 class="sub">7.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="98" data-sig="uruzkk" style="width:9ch">。判断关键词：<input class="ans" data-uid="99" data-sig="uruzkl" style="width:40ch">。<br>问"原因 + 如何改善"→ 原因+改善型，用"原因→改善"大纲：先列偏见的来源，再从原因反推改善方法，确保对称。</div>
+<h3 class="sub">7.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（人际）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>本原则角度（人际）</th><th>其他角度补充</th></tr></thead><tbody><tr><td>产生偏见的原因 (Reasons)</td><td><textarea class="ans" data-uid="100" data-sig="1c8taos" rows="3"></textarea></td><td><textarea class="ans" data-uid="101" data-sig="r7nyob" rows="3"></textarea></td></tr><tr><td>如何增进理解 (How to Improve)</td><td><textarea class="ans" data-uid="102" data-sig="kgaycg" rows="3"></textarea></td><td><textarea class="ans" data-uid="103" data-sig="cqdlrr" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">7.4 匹配练习 · 例子 → 逻辑链（旅行与偏见）</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（可按 ①②③… 编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 打卡式旅行：只去地标拍照就走 → 从未接触当地人生活</td><td><input class="ans" data-uid="104" data-sig="1ljhzhw" style="width:31ch"></td></tr><tr><td><strong>B</strong> 跟团游：10 天跑 6 国，大巴+导游全程安排 → 几乎没有自发交流</td><td><input class="ans" data-uid="105" data-sig="mgphcj" style="width:25ch"></td></tr><tr><td><strong>C</strong> 语言不通：只会说 "hello / thank you" → 交流停在表面</td><td><input class="ans" data-uid="106" data-sig="na3u5i" style="width:21ch"></td></tr><tr><td><strong>D</strong> 文化优越感：游客觉得"我们更文明"，对当地人指手画脚</td><td><input class="ans" data-uid="107" data-sig="1qt5bp5" style="width:24ch"></td></tr><tr><td><strong>E</strong> 泰国寺庙：游客穿背心短裤大声喧哗 → 冒犯当地习俗 → 起冲突</td><td><input class="ans" data-uid="108" data-sig="5ocbnq" style="width:24ch"></td></tr><tr><td><strong>F</strong> 只看新闻里的负面报道 → 出发前就带着偏见</td><td><input class="ans" data-uid="109" data-sig="43z4jg" style="width:24ch"></td></tr></tbody></table></div>
+<h2 class="sec-title">八、真题 · 科技影响</h2>
+<h3 class="sub">8.1 题目</h3>
+<div class="exam-box"><em>Human society has made great technological progress in the last hundred years. Some people think this has had more negative effects on people's lives than positive ones. Do you agree or disagree?</em></div>
+<h3 class="sub">8.2 题型判断</h3>
+<div class="note">本题属 <input class="ans" data-uid="110" data-sig="1tp5rdn" style="width:6ch">。判断关键词：<input class="ans" data-uid="111" data-sig="1tp5rdm" style="width:27ch">。<br>问"同不同意"→ 辩论型，用"让步反驳"大纲：Body1 让步（承认科技有好处），Body2 反驳（但对人际关系的负面影响更大）。</div>
+<h3 class="sub">8.3 观点库框架（自填）</h3>
+<div class="note">独立完成观点库：先梳理本原则（人际）角度，再补充其他角度。每格填写 1–2 个观点，并附一句支撑说明。</div>
+<div class="table-wrap"><table><thead><tr><th></th><th>本原则角度（人际）</th><th>其他角度补充</th></tr></thead><tbody><tr><td>负面影响 (Negative Effects)</td><td><textarea class="ans" data-uid="112" data-sig="1479ny8" rows="3"></textarea></td><td><textarea class="ans" data-uid="113" data-sig="sgkvpz" rows="3"></textarea></td></tr><tr><td>正面影响 (Positive Effects)</td><td><textarea class="ans" data-uid="114" data-sig="1ebl94k" rows="3"></textarea></td><td><textarea class="ans" data-uid="115" data-sig="md8qqr" rows="3"></textarea></td></tr></tbody></table></div>
+<h3 class="sub">8.4 匹配练习 · 例子 → 逻辑链（科技影响）</h3>
+<div class="note">左栏是例子。回忆上面的观点库里你自己列的论点（可按 ①②③… 编号），把每个例子对应的逻辑链写在右栏——有编号笔记的同学直接写序号即可。</div>
+<div class="table-wrap"><table><thead><tr><th>例子</th><th>对应逻辑链</th></tr></thead><tbody><tr><td><strong>A</strong> 朋友聚餐却各自低头刷手机 → 真实交流消失</td><td><input class="ans" data-uid="116" data-sig="vukt5o" style="width:22ch"></td></tr><tr><td><strong>B</strong> 家人各自抱着手机、平板，很少交谈 → 家庭纽带削弱</td><td><input class="ans" data-uid="117" data-sig="1vqggoz" style="width:22ch"></td></tr><tr><td><strong>C</strong> 只会在网上打字，现实中不敢开口 → 社交能力下降</td><td><input class="ans" data-uid="118" data-sig="1rzrtv5" style="width:21ch"></td></tr><tr><td><strong>D</strong> 朋友圈好友上千、天天在线，却缺少真实情感连接 → 常感到孤独和孤立</td><td><input class="ans" data-uid="119" data-sig="zrcv3a" style="width:40ch"></td></tr><tr><td><strong>E</strong> 工作群消息 24 小时不停 → 焦虑和压力上升</td><td><input class="ans" data-uid="120" data-sig="9tqjnf" style="width:21ch"></td></tr><tr><td><strong>F</strong> 留学生靠视频通话维系与家人的联系 → 拉近远方关系</td><td><input class="ans" data-uid="121" data-sig="zvarux" style="width:20ch"></td></tr></tbody></table></div>
+<p class="foot">《人际情感原则》讲义 · 雅思写作基础</p>
+<div class="notes-backdrop no-print" id="notes-backdrop"></div>
+<div class="notes-tab" id="notes-tab">
+<div class="notes-head">📝 课堂笔记 <button class="btn no-print" id="btn-notes-close" type="button">✕</button></div>
+<textarea id="notes-box" class="ans" data-uid="notes" rows="6" placeholder="在这里记录课堂笔记…"></textarea>
+</div>
+</div>
+<script>
+(function(){
+  // key 按本讲义 <title> 加命名空间，避免不同讲义共用 file:// 同源 localStorage 互相串数据
+  var PRINCIPLE = document.body.dataset.principle || '';
+  var VERSION = document.body.dataset.version || '';
+  var KEY = 'handout:' + document.title.replace(/[^0-9A-Za-z一-龥]/g, '') + ':';
+  var NAMEKEY = KEY + 'name';
+  // 值键优先用内容签名（跨讲义迭代稳定），旧数据按 data-uid 存 → 回退迁移
+  function vkey(el){ return KEY + (el.dataset.sig || el.dataset.uid || ''); }
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA') return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  function syncNotesClass(){
+    var nt = document.getElementById('notes-tab');
+    var nb = document.getElementById('notes-box');
+    if (nt) nt.classList.toggle('has-notes', !!(nb && nb.value && nb.value.trim()));
+  }
+  function saveEl(el){
+    if (!el || !el.dataset) return;
+    try { localStorage.setItem(vkey(el), el.value); } catch(_){}
+  }
+  function loadEl(el){
+    if (!el || (!el.dataset.uid && !el.dataset.sig)) return;
+    var v = null;
+    try { v = localStorage.getItem(vkey(el)); } catch(_){}
+    if (v == null && el.dataset.sig && el.dataset.uid) {
+      try {
+        var old = localStorage.getItem(KEY + el.dataset.uid);
+        if (old != null) { v = old; localStorage.setItem(vkey(el), old); }
+      } catch(_){}
+    }
+    if (v != null) el.value = v;
+  }
+  document.addEventListener('input', function(e){
+    var el = e.target;
+    if (el && el.classList && el.classList.contains('ans')) saveEl(el);
+    autosize(el);
+    syncNotesClass();
+  });
+  document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+    loadEl(el);
+    autosize(el);
+  });
+  var notesTab = document.getElementById('notes-tab');
+  if (notesTab) {
+    var notesBtn = document.getElementById('btn-notes');
+    var notesClose = document.getElementById('btn-notes-close');
+    var notesBox = document.getElementById('notes-box');
+    var backdrop = document.getElementById('notes-backdrop');
+    function openNotes(){
+      notesTab.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      if (notesBox) notesBox.focus();
+    }
+    function closeNotes(){
+      notesTab.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+    }
+    if (notesBtn) notesBtn.addEventListener('click', openNotes);
+    if (notesClose) notesClose.addEventListener('click', closeNotes);
+    if (backdrop) backdrop.addEventListener('click', closeNotes);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNotes(); });
+  }
+  syncNotesClass();
+  var clearBtn = document.getElementById('btn-clear');
+  if (clearBtn) clearBtn.addEventListener('click', function(){
+    if (!confirm('确定清空本讲义的所有填写内容？')) return;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.value = '';
+      try { localStorage.removeItem(vkey(el)); localStorage.removeItem(KEY + (el.dataset.uid || '')); } catch(_){}
+    });
+    syncNotesClass();
+  });
+  var printBtn = document.getElementById('btn-print');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  function fitForPrint(){
+    document.querySelectorAll('input.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('span');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.letterSpacing = cs.letterSpacing;
+      tmp.style.whiteSpace = 'pre';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      document.body.appendChild(tmp);
+      var w = tmp.getBoundingClientRect().width;
+      tmp.parentNode.removeChild(tmp);
+      var pad = (parseFloat(cs.paddingLeft)||0) + (parseFloat(cs.paddingRight)||0) + 2;
+      el.style.setProperty('width', (w + pad) + 'px', 'important');
+    });
+    document.querySelectorAll('textarea.ans').forEach(function(el){
+      if (!el.value) return;
+      var cs = getComputedStyle(el);
+      var tmp = document.createElement('div');
+      tmp.textContent = el.value;
+      tmp.style.font = cs.font;
+      tmp.style.lineHeight = cs.lineHeight;
+      tmp.style.whiteSpace = 'pre-wrap';
+      tmp.style.wordBreak = 'break-word';
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.width = (el.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)) + 'px';
+      document.body.appendChild(tmp);
+      var h = tmp.getBoundingClientRect().height;
+      tmp.parentNode.removeChild(tmp);
+      var padV = (parseFloat(cs.paddingTop)||0) + (parseFloat(cs.paddingBottom)||0);
+      el.style.setProperty('min-height', (h + padV + 4) + 'px', 'important');
+    });
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      el.style.removeProperty('width');
+      el.style.removeProperty('min-height');
+    });
+  }
+  window.addEventListener('beforeprint', function(){
+    syncNotesClass();
+    var nt = document.getElementById('notes-tab');
+    if (nt) {
+      nt.classList.remove('show');
+      nt.style.setProperty('position', 'static', 'important');
+      nt.style.setProperty('transform', 'none', 'important');
+      nt.style.setProperty('width', '100%', 'important');
+      nt.style.setProperty('height', 'auto', 'important');
+      nt.style.setProperty('overflow', 'visible', 'important');
+    }
+    fitForPrint();
+    if (nt) {
+      ['position', 'transform', 'width', 'height', 'overflow'].forEach(function(p){ nt.style.removeProperty(p); });
+    }
+  });
+  window.addEventListener('afterprint', restoreAfterPrint);
+
+  // ---------------- 导出 / 导入作答 ----------------
+  function download(content, fname, mime){
+    var blob = new Blob([content], { type: mime || 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fname;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  }
+  function safeName(s){
+    return (s || '').replace(/[/:*?"<>|]/g, '_').slice(0, 40);
+  }
+  function collect(){
+    var answers = {}, uids = {};
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = el.value;
+      if (!v || !v.trim()) return;
+      var key = el.dataset.sig || ('uid:' + (el.dataset.uid || ''));
+      answers[key] = v;
+      if (el.dataset.sig && el.dataset.uid) uids[el.dataset.sig] = el.dataset.uid;
+    });
+    var d = {
+      app: 'gedu-handout', format: 1, principle: PRINCIPLE, title: document.title,
+      version: VERSION, student: '', exportedAt: new Date().toISOString(),
+      answers: answers, uids: uids
+    };
+    var nb = document.getElementById('notes-box');
+    if (nb && nb.value && nb.value.trim()) d.notes = nb.value;
+    return d;
+  }
+  var exportBtn = document.getElementById('btn-export');
+  if (exportBtn) exportBtn.addEventListener('click', function(){
+    var last = '';
+    try { last = localStorage.getItem(NAMEKEY) || ''; } catch(_){}
+    var name = window.prompt('请输入你的姓名/学号（老师批改时识别用）：', last);
+    if (name === null) return;
+    name = (name || '').trim() || '未署名';
+    try { localStorage.setItem(NAMEKEY, name); } catch(_){}
+    var d = collect();
+    d.student = name;
+    download(JSON.stringify(d, null, 1), PRINCIPLE + '-作答-' + safeName(name) + '.json', 'application/json');
+  });
+  function applyData(d){
+    var ans = d.answers || {}, uids = d.uids || {}, valByUid = {};
+    Object.keys(ans).forEach(function(k){ if (uids[k] != null) valByUid[String(uids[k])] = ans[k]; });
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (el.id === 'notes-box') return;
+      var v = null;
+      if (el.dataset.sig && ans[el.dataset.sig] != null) v = ans[el.dataset.sig];
+      else if (el.dataset.uid && valByUid[el.dataset.uid] != null) v = valByUid[el.dataset.uid];
+      if (v != null) { el.value = v; saveEl(el); autosize(el); }
+    });
+    var nb = document.getElementById('notes-box');
+    if (nb && d.notes != null) { nb.value = d.notes; saveEl(nb); autosize(nb); }
+    syncNotesClass();
+  }
+  function hasAny(){
+    var any = false;
+    document.querySelectorAll('input.ans, textarea.ans').forEach(function(el){
+      if (!any && el.value && el.value.trim()) any = true;
+    });
+    return any;
+  }
+  var importBtn = document.getElementById('btn-import');
+  var fileIn = document.getElementById('import-file');
+  if (importBtn && fileIn) importBtn.addEventListener('click', function(){ fileIn.click(); });
+  if (fileIn) fileIn.addEventListener('change', function(){
+    var f = fileIn.files[0];
+    fileIn.value = '';
+    if (!f) return;
+    var r = new FileReader();
+    r.onload = function(){
+      try {
+        var d = JSON.parse(r.result);
+        if (!d || (d.app !== 'gedu-handout' && !d.answers)) throw new Error('bad');
+        if (d.principle && d.principle !== PRINCIPLE &&
+            !window.confirm('⚠ 这份作答来自《' + d.principle + '》，当前讲义是《' + PRINCIPLE + '》。\n强行导入可能对不上题目，仍要继续吗？')) return;
+        if (hasAny() && !window.confirm('导入会覆盖当前已填写的内容，确定继续吗？')) return;
+        applyData(d);
+        if (d.student) { try { localStorage.setItem(NAMEKEY, d.student); } catch(_){} }
+      } catch(e){ window.alert('文件无法解析，或不是本讲义导出的作答文件。'); }
+    };
+    r.readAsText(f);
+  });
+})();
+</script>
+
+</body>
+</html>
